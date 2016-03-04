@@ -3,8 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
+<<<<<<< HEAD
 -- Tiempo de generación: 04-03-2016 a las 10:33:15
 -- Versión del servidor: 5.5.48-cll
+=======
+-- Tiempo de generación: 12-11-2015 a las 09:41:38
+-- Versión del servidor: 5.5.46-cll
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 -- Versión de PHP: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -871,10 +876,17 @@ CREATE TABLE IF NOT EXISTS `ar_currency` (
 --
 
 INSERT INTO `ar_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
+<<<<<<< HEAD
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.00020000, 0, '2016-02-29 23:01:56'),
 (2, 'US Dollar', 'USD', 'US$', '', '2', 0.00030000, 0, '2016-02-29 23:01:56'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.00030000, 0, '2016-02-29 23:01:56'),
 (4, 'Pesos', 'COP', 'COP$', '', '0', 1.00000000, 1, '2016-02-29 23:01:56');
+=======
+(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.00020000, 0, '2015-10-23 14:38:01'),
+(2, 'US Dollar', 'USD', 'US$', '', '2', 0.00030000, 0, '2015-10-23 14:38:01'),
+(3, 'Euro', 'EUR', '', '€', '2', 0.00030000, 0, '2015-10-23 14:38:01'),
+(4, 'Pesos', 'COP', 'COP$', '', '0', 1.00000000, 1, '2015-10-23 14:38:26');
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 
 -- --------------------------------------------------------
 
@@ -1045,6 +1057,7 @@ CREATE TABLE IF NOT EXISTS `ar_customer_online` (
 --
 
 INSERT INTO `ar_customer_online` (`ip`, `customer_id`, `url`, `referer`, `date_added`) VALUES
+<<<<<<< HEAD
 ('157.55.39.139', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Gourmet-grano-tostado?sort=p.model&amp;order=DESC&amp;limit=75', '', '2016-03-04 13:53:10'),
 ('190.0.37.18', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', 'http://cafeaguilaroja.com/', '2016-03-04 10:23:50'),
 ('88.16.215.210', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/CAF%C3%89-SOLUBLE-GRANULADO-85g', 'https://www.google.es/', '2016-03-04 10:25:39'),
@@ -1054,6 +1067,16 @@ INSERT INTO `ar_customer_online` (`ip`, `customer_id`, `url`, `referer`, `date_a
 ('157.55.39.67', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido/CAF%C3%83%C6%92%C3%A2%E2%82%AC%C2%B0-SUPREMO-TOSTADO-Y-MOLIDO-500g', '', '2016-03-04 14:48:24'),
 ('66.249.75.80', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado?sort=p.model&amp;order=ASC', '', '2016-03-04 10:12:51'),
 ('181.48.16.100', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=61', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Granulado/CAF%C3%89-SOLUBLE-GRANULADO-30-SOBRES%20DE-1.8g', '2016-03-04 10:19:36');
+=======
+('190.156.93.109', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', '2015-11-12 08:54:41'),
+('157.55.39.45', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/CAF%C3%89-SOLUBLE-INSTANT%C3%81NEO-50g', '', '2015-11-12 09:25:50'),
+('207.46.13.84', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado/CAF%C3%83%E2%80%B0-SOLUBLE-DESCAFEINADO-85g', '', '2015-11-12 09:39:17'),
+('66.249.64.126', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado?sort=p.model&amp;order=DESC&amp;limit=75', '', '2015-11-12 09:37:09'),
+('8.37.71.25', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/CAF%C3%89-SOLUBLE-INSTANT%C3%81NEO-50g', '', '2015-11-12 09:11:06'),
+('190.144.85.130', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=61', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', '2015-11-12 09:30:11'),
+('157.55.39.34', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Descafeinado/CAF%C3%83%C6%92%C3%86%E2%80%99%C3%83%E2%80%A0%C3%A2%E2%82%AC%E2%84%A2%C3%83%C6%92%C3%A2%E2%82%AC%C2%A0%C3%83%C2%A2%C3%A2%E2%80%9A%C2%AC%C3%A2%E2%80%9E%C2%A2%C3%83%C6%92%C3%86%E2%80%99%C3%83%E2%80%9A%C3%82%C2%A2%C3%83%C6%92%C3%82%C2%A2%C3%83%C2%A2%C3%A2%E2%80%9A%C2%AC%C3%85%C2%A1%C3%83%E2%80%9A%C3%82%C2%AC%C3%83%C6%92%C3%A2%E2%82%AC%C5%A1%C3%83%E2%80%9A%C3%82%C2%B0-SOLUBLE-DESCAFEINADO-50g?limit=50', '', '2015-11-12 09:19:23'),
+('66.249.64.9', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado/CAF%C3%89-SOLUBLE-DESCAFEINADO-85g?sort=p.model&amp;order=DESC&amp;limit=75', '', '2015-11-12 09:40:55');
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 
 -- --------------------------------------------------------
 
@@ -2125,6 +2148,7 @@ CREATE TABLE IF NOT EXISTS `ar_product` (
 --
 
 INSERT INTO `ar_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `paisEan`, `paisItf`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
+<<<<<<< HEAD
 (51, '47702040087003', '', '', '7702040087005', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-2500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '2500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 0, 1, '2014-12-17 17:04:12', '2015-09-14 08:38:21', 1403),
 (52, '47702040067036', '', '123125459781', '7702040067014', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-1000G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '1000.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 1, 1, '2015-02-13 09:25:24', '2015-09-14 08:38:36', 1806),
 (53, '47702040067005', '', '', '7702040027001', '', '27702040027609', '', '', '', 'Colombia', 25, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-250G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '250.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 3, 1, '2015-02-13 09:34:01', '2015-09-14 08:39:27', 1106),
@@ -2153,6 +2177,36 @@ INSERT INTO `ar_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `paisEan`,
 (80, '47702040003218', '', '', '7702040003210', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-VASO-MULTIUSO-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:48:11', '2015-06-16 11:43:20', 1242),
 (81, '47702040003201', '', '', '7702040003203', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-VASO-MULTIUSO-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 2, 1, '2015-04-10 14:51:44', '2015-06-16 11:42:40', 1782),
 (82, 'SOLUBLE LIOFILIZADO 170g', '', '', '', '', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/SOLUBLE LIOFILIZADO/SOLUBLE-LIOFILIZADO-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:59:52', '2015-06-12 11:11:07', 576);
+=======
+(51, '47702040087003', '', '', '7702040087005', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-2500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '2500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 0, 1, '2014-12-17 17:04:12', '2015-09-14 08:38:21', 1062),
+(52, '47702040067036', '', '123125459781', '7702040067014', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-1000G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '1000.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 1, 1, '2015-02-13 09:25:24', '2015-09-14 08:38:36', 1264),
+(53, '47702040067005', '', '', '7702040027001', '', '27702040027609', '', '', '', 'Colombia', 25, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-250G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '250.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 3, 1, '2015-02-13 09:34:01', '2015-09-14 08:39:27', 799),
+(54, '47702040227003', '', '', '7702040047009', '', '27702040127408', '', '', '', 'Colombia', 35, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 2, 1, '2015-02-13 09:45:38', '2015-09-14 08:39:07', 1196),
+(55, '47702040017002', '', '', '7702040007003', '', '27702040027401', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-125G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '125.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 4, 1, '2015-02-13 09:53:10', '2015-09-14 08:39:49', 946),
+(56, '47702040005205', '', '', '7702040005009', '7702040005009', '47702040000538', '', '', '', 'Colombia', 100, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-50G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '50.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 25, 1, 0, '2015-02-13 09:56:05', '2015-09-14 08:40:13', 558),
+(57, '47702040150042', '', '', '7702040051006', '', '', '', '', '', 'Colombia', 20, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 10:18:40', '2015-09-14 08:43:02', 1045),
+(58, '47702040160034', '', '', '7702040031008', '', '', '', '', '', 'Colombia', 40, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-250G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:10:31', '2015-09-14 08:43:17', 1041),
+(59, '47702040067043', '', '', '7702040045012', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO TOSTADO Y MOLIDO/SUPREMO-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:42:56', '2015-09-14 08:37:19', 1413),
+(60, '47702040067050', '', '', '7702040045029', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO GRANO TOSTADO/SUPREMO-GRANO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:48:19', '2015-09-14 08:36:55', 1216),
+(61, '47702040043009', '', '', '7702040038007', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/gourmet grano tostado/GOURMET-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:53:42', '2015-09-14 08:35:58', 1162),
+(62, '47702040127006', '', '', '7702040127008', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:58:17', '2015-09-14 08:45:21', 799),
+(63, '47702040630092', '', '12345', '7702040063009', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-1000G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '1000.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:02:39', '2015-09-14 08:43:49', 835),
+(64, '47702040060013', '', '', '7702040001001', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:11:06', '2015-06-16 11:37:49', 1329),
+(65, '4770204000132', '', '', '7702040000134', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:15:38', '2015-06-16 11:37:19', 1070),
+(66, '47702040003317', '', '', '7702040003319', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/INSTANTANEO-36G-24-SOBRES-DE-1.5G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '36.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:20:38', '2015-06-16 11:44:16', 1119),
+(68, '47702040000224', '', '', '7702040000226', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:27:28', '2015-06-16 11:39:01', 1121),
+(69, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:33:41', '2015-06-16 11:39:40', 1122),
+(70, '47702040003324', '', '', '7702040003326', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/GRANULADO-54G-30-SOBRES-DE-1.8G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '54.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:37:05', '2015-06-16 11:46:13', 920),
+(72, '47702040000644', '', '', '7702040000646', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE-DESCAFEINADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:40:15', '2015-06-16 11:41:19', 1051),
+(73, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE DESCAFEINADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:41:18', '2015-06-16 11:41:50', 1080),
+(74, '47702040011015', '', '', '7702040003012', '', '', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CONFITES/GRANINOS-50-UNIDADES-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:44:52', '2015-09-14 09:25:05', 1264),
+(77, 'PAQUETE CAFÉ TOSTADO Y MOLIDO 50g', '', '', '', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-10-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 0, '2015-04-10 09:21:39', '2015-09-14 08:41:49', 166),
+(78, '47702040004147', '', '', '7702040004125', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-20G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 6, 1, '2015-04-10 09:32:06', '2015-09-14 08:41:13', 663),
+(79, '47702040047106', '', '', '7702040004132', '7702040005009', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '1250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 5, 1, '2015-04-10 09:37:29', '2015-09-14 08:42:37', 857),
+(80, '47702040003218', '', '', '7702040003210', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-VASO-MULTIUSO-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:48:11', '2015-06-16 11:43:20', 923),
+(81, '47702040003201', '', '', '7702040003203', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-VASO-MULTIUSO-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 2, 1, '2015-04-10 14:51:44', '2015-06-16 11:42:40', 1290),
+(82, 'SOLUBLE LIOFILIZADO 170g', '', '', '', '', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/SOLUBLE LIOFILIZADO/SOLUBLE-LIOFILIZADO-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:59:52', '2015-06-12 11:11:07', 382);
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 
 -- --------------------------------------------------------
 
@@ -2761,7 +2815,11 @@ INSERT INTO `ar_review` (`review_id`, `product_id`, `customer_id`, `author`, `te
 (1, 69, 0, 'Mario Norambuena', 'Soy de  Chile,necesito el valor del produto, forma de pago  y envio(forma de envio y costo). \r\nemail: norambuena.mario@gmail.com.\r\nMuchas Gracias.', 5, 1, '2015-10-01 08:53:05', '0000-00-00 00:00:00'),
 (2, 54, 0, 'yenni', 'Me parece increíble que hagan paginas con toda esta información valiosa!', 5, 1, '2015-10-01 08:53:28', '0000-00-00 00:00:00'),
 (3, 74, 0, 'lyzett pedraza guerrero', 'Buenas tardes,  el producto es muy rico, lastima q no hay suficiente publicidad sobre ella. ', 3, 1, '2015-10-01 08:53:16', '0000-00-00 00:00:00'),
+<<<<<<< HEAD
 (4, 59, 0, 'PEDRO JUAREZ', 'Es muy rico, lo preparé en casa y lo compartí con mis amigos y mi familia y les pareció muy rico', 4, 1, '2016-02-22 07:46:23', '0000-00-00 00:00:00');
+=======
+(4, 59, 0, 'PEDRO JUAREZ', 'Es muy rico, lo preparé en casa y lo compartí con mis amigos y mi familia y les pareció muy rico', 4, 0, '2015-10-09 18:37:15', '0000-00-00 00:00:00');
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 
 -- --------------------------------------------------------
 

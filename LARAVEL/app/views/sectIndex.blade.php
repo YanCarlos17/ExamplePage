@@ -36,6 +36,7 @@
 
                     
 
+<<<<<<< HEAD
                     <!-- FULL WIDTH slides 
 		   
 			<li data-thumb="img/slider/WEB_Navidad-50-mini.png" class="pmslide_0" ><img src="img/slider/02-Slider-Pagina-Web-subete-a-mi-moto.jpg" alt="Facebook de Caf&eacute; Aguila Roja" >
@@ -46,6 +47,12 @@
                             </div>
                         </div>
 			</li>-->
+=======
+                    <!-- FULL WIDTH slides -->
+		   
+			<!--<li data-thumb="img/slider/slider-mini-foto1.jpg" class="pmslide_0" ><img src="img/slider/Sliders-1920x600-2.jpg" alt="Facebook de Caf&eacute; Aguila Roja" />-->
+		  
+>>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
 		   <!-- antes del concurso 
 			<li data-thumb="img/slider/slider-mini-foto1.jpg" class="pmslide_0" ><img src="img/slider/Slider-Pagina-Web-50-2.jpg" alt="Facebook de Caf&eacute; Aguila Roja" />
 			<div class="pm-holder botones-slider" >

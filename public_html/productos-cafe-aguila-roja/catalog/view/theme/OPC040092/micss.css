@@ -1,0 +1,151 @@
+#content-wrapper{
+
+
+}
+
+
+
+#footer-container{
+
+
+	background-image:url(http://cafeaguilaroja.com/img/Footer2.jpg); 
+	padding: 0px 0px;
+	background-repeat: repeat-y;
+	border-top: 10px solid #EAD2B0;
+	padding-top: 10px;
+	background-position:50% 0%;
+
+}
+
+
+
+#header-container{
+
+
+
+	background-image:url(http://cafeaguilaroja.com/img/Header_Aguila_Roja.jpg) !important;
+
+	background-size: 100% ;
+	
+	  background-position: 100% 50%;
+
+}
+
+.nav-inner{
+width: 700px;
+}
+
+.main-menu > ul > li > a {
+	color:white;
+}
+
+.main-menu > ul > li:hover > a {
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+	color: #8782EE;
+  	background: none;
+}
+
+.product-block-inner .cart,.product-block-inner .wishlist,.product-block-inner .compare{
+
+	display:none;
+
+}
+
+#transparencia{
+  width: 100%;
+  height: 35px;
+  z-index: -999;
+  position: absolute;
+  background:#140F73;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  bottom: 0;
+}
+.header_top{
+	background:none;
+}
+div#copy{
+	text-align:center;
+}
+div#copy a,div#xigna a{
+	color:#EBD1AE;
+}
+div#copy a:hover,div#xigna a:hover{
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+	color:red;
+	text-decoration:underline;
+}
+div#xigna{
+  font-size: 10px;
+  color: #EAD2B0;
+  text-align: center;
+}
+
+div.mitexto{
+	text-align:center;
+}
+
+@media only screen and (min-width: 979px){
+	
+}
+
+@media only screen and (max-width: 979px){
+
+	.nav-inner{
+		width: 450px;
+	}
+	#transparencia{
+		display:none;
+	}
+	#header-container {
+	background-size: 130%;
+	background-repeat-y: no-repeat;
+	}
+
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.nav-inner{
+		width: 100%;
+	}
+	#header-container {
+	background-size: 200%;
+	background-repeat-y: no-repeat;
+	  background-position: 50% 50%;
+	}
+
+}
+@media only screen and (max-width: 767px){
+	div.tm_headerlinkmenu{
+		display:none !important;
+	}
+}
+
+
+@media only screen and (max-width: 660px){
+
+	#header-container {
+	background-size: 275%;
+	}
+
+
+}
+
+@media only screen and (max-width: 480px){
+
+	#header-container {
+	background-size: 315%;
+	}
+
+
+}
+
+

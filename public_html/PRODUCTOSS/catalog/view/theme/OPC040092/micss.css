@@ -1,0 +1,45 @@
+#header-container{
+
+	
+
+}
+
+
+
+#content-wrapper{
+
+
+
+	padding-top: 30px;
+
+}
+
+
+
+#footer-container{
+
+
+	background-image:url(/aaguilaroja/LARAVEL/public/img/Footer2.jpg); 
+	padding: 0px 0px;
+	background-repeat: repeat-y;
+	border-top: 10px solid #EAD2B0;
+	padding-top: 10px;
+	background-position:50% 0%;
+
+}
+
+
+
+#header-container{
+
+	background-image:url(http://67.23.247.140/~aguilaroja/LARAVEL/public/img/imagengris.png) !important;
+
+	background-size: 100% 133%;
+
+
+
+}
+
+.nav-inner{
+width: 700px;
+}

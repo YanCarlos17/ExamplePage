@@ -1,0 +1,44 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteBase /
+
+    #Dominio preferido sin www
+    RewriteCond %{HTTP_HOST} ^www.cafeaguilaroja.com [NC]
+    RewriteRule ^(.*)$ http://cafeaguilaroja.com/$1 [L,R=301]
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+</IfModule>
+# PARA UNA SEMANA 604800
+<FilesMatch ".(jpg|jpeg|png|gif|swf)$">
+	    <IfModule mod_headers.c>
+	        Header set Cache-Control "max-age=604800, public"
+	    </IfModule>
+</FilesMatch>
+
+<FilesMatch ".(xml|txt|css|js)$">
+	    <IfModule mod_headers.c>
+	        Header set Cache-Control "max-age=604800, proxy-revalidate"
+	    </IfModule>
+</FilesMatch>
+
+<IfModule mod_filter.c>
+
+AddOutputFilterByType DEFLATE application/atom+xml application/x-javascript application/javascript application/json application/rss+xml application/xhtml+xml application/xml image/svg+xml image/x-icon  text/css text/html text/plain text/x-component text/xml
+</IfModule>
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 186.117.182.45

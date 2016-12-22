@@ -10,8 +10,17 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+Route::get('/feliz-navidad-aguila-roja', function(){
+	return View::make('videonavidad2016');
+});
+
 Route::get('/sitemap',function(){
 	return View::make('sitemap');
+});
+
+Route::get('/terminos-decora-y-gana', function(){
+	return View::make('concurso-decora-y-gana-terminos');
 });
 
 /*Route::get('/prueba',function(){
@@ -72,6 +81,12 @@ Route::get('/clubGranito','MainController@clubGranito');
 Route::get('/politica',function(){
 	return View::make('politica');
 });
+
+Route::get('/politica-de-tratamiento-de-datos-personales',['as' => 'politicaDatosPersonales', function(){
+
+    return View::make('politicadatospersonales');
+
+}]);
 
 Route::get('/terminos',function(){
 	return View::make('terminos');

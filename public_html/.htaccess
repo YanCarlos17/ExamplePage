@@ -4,7 +4,6 @@
     </IfModule>
     Options +FollowSymLinks
     RewriteEngine On
-    RewriteBase /
 
     #Dominio preferido sin www
     RewriteCond %{HTTP_HOST} ^www.cafeaguilaroja.com [NC]

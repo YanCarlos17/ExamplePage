@@ -381,7 +381,7 @@
 		
             <div id="terminos" style="text-align:center;color:#EAD2B0;">
                 &copy; 2007 AGUILA ROJA TODOS LOS DERECHOS RESERVADOS CANDELARIA-COLOMBIA<br>
-                <a class="terms" href="{{URL::route('politica')}}" target="_blank">Pol&iacute;tica de Privacidad</a> | <a class="terms" href="{{URL::route('terminos')}}" target="_blank">Terminos Legales</a>
+                <a class="terms" href="{{URL::route('politica')}}" target="_blank">Pol&iacute;tica de Privacidad</a> | <a class="terms" href="{{URL::route('terminos')}}" target="_blank">Terminos Legales</a> | <a class="terms" href="{{URL::route('politicaDatosPersonales')}}" target="_blank">Pol&iacute;ticas de Datos Personales</a>
             </div>
 	    <div id="firma"><a href="http://xignacv.com" target="_blank">Desarrollado por: XIGNA</a></div>
         </div>

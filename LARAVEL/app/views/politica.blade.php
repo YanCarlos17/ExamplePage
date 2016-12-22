@@ -30,8 +30,6 @@
 
         <div class="pm-sub-header-container pm-parallax-panel" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0" style="background-image: url(img/banner-contacto.png);">
 
-            
-
             <div class="pm-sub-header-title-container">
 
                 <p class="pm-sub-header-title post">POL&Iacute;TICAS DE PRIVACIDAD</p>

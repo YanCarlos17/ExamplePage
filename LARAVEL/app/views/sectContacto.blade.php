@@ -169,22 +169,22 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Andorra")<option selected value="Andorra">Andorra</option>@else <option value="Andorra">Andorra</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Angola")<option selected value="Angola">Angola</option>@else <option value="Angola">Angola</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Anguilla")<option selected value="Anguilla">Anguilla</option>@else <option value="Anguilla">Anguilla</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Ant·rtida")<option selected value="Ant·rtida">Ant√°rtida</option>@else <option value="Ant·rtida">Ant√°rtida</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "AntÔøΩrtida")<option selected value="AntÔøΩrtida">Ant√°rtida</option>@else <option value="AntÔøΩrtida">Ant√°rtida</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Antigua y Barbuda")<option selected value="Antigua y Barbuda">Antigua y Barbuda</option>@else <option value="Antigua y Barbuda">Antigua y Barbuda</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Antillas Holandesas")<option selected value="Antillas Holandesas">Antillas Holandesas</option>@else <option value="Antillas Holandesas">Antillas Holandesas</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Arabia SaudÌ")<option selected value="Arabia SaudÌ">Arabia Saud√≠</option>@else <option value="Arabia SaudÌ">Arabia Saud√≠</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Arabia SaudÔøΩ")<option selected value="Arabia SaudÔøΩ">Arabia Saud√≠</option>@else <option value="Arabia SaudÔøΩ">Arabia Saud√≠</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Argelia")<option selected value="Argelia">Argelia</option>@else <option value="Argelia">Argelia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Argentina")<option selected value="Argentina">Argentina</option>@else <option value="Argentina">Argentina</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Armenia")<option selected value="Armenia">Armenia</option>@else <option value="Armenia">Armenia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Aruba")<option selected value="Aruba">Aruba</option>@else <option value="Aruba">Aruba</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Australia")<option selected value="Australia">Australia</option>@else <option value="Australia">Australia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Austria")<option selected value="Austria">Austria</option>@else <option value="Austria">Austria</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Azerbaiy·n")<option selected value="Azerbaiy·n">Azerbaiy√°n</option>@else <option value="Azerbaiy·n">Azerbaiy√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "AzerbaiyÔøΩn")<option selected value="AzerbaiyÔøΩn">Azerbaiy√°n</option>@else <option value="AzerbaiyÔøΩn">Azerbaiy√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Bahamas")<option selected value="Bahamas">Bahamas</option>@else <option value="Bahamas">Bahamas</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Bahrein")<option selected value="Bahrein">Bahrein</option>@else <option value="Bahrein">Bahrein</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Bangladesh")<option selected value="Bangladesh">Bangladesh</option>@else <option value="Bangladesh">Bangladesh</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Barbados")<option selected value="Barbados">Barbados</option>@else <option value="Barbados">Barbados</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "BÈlgica")<option selected value="BÈlgica">B√©lgica</option>@else <option value="BÈlgica">B√©lgica</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "BÔøΩlgica")<option selected value="BÔøΩlgica">B√©lgica</option>@else <option value="BÔøΩlgica">B√©lgica</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Belice")<option selected value="Belice">Belice</option>@else <option value="Belice">Belice</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Benin")<option selected value="Benin">Benin</option>@else <option value="Benin">Benin</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Bermudas")<opti on selected value="BermudasBermudas">Bermudas</option>@else <option value="Bermudas">Bermudas</option> @endif
@@ -198,11 +198,11 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Bulgaria")<option selected value="Bulgaria">Bulgaria</option>@else <option value="Bulgaria">Bulgaria</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Burkina Faso")<option selected value="Burkina Faso">Burkina Faso</option>@else <option value="Burkina Faso">Burkina Faso</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Burundi")<option selected value="Burundi">Burundi</option>@else <option value="Burundi">Burundi</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "But·n")<option selected value="But·n">But√°n</option>@else <option value="But·n">But√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "ButÔøΩn")<option selected value="ButÔøΩn">But√°n</option>@else <option value="ButÔøΩn">But√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Cabo Verde")<option selected value="Cabo Verde">Cabo Verde</option>@else <option value="Cabo Verde">Cabo Verde</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Camboya")<option selected value="Camboya">Camboya</option>@else <option value="Camboya">Camboya</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Camer˙n")<option selected value="Camer˙n">Camer√∫n</option>@else <option value="Camer˙n">Camer√∫n</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Canad·")<option selected value="Canad·">Canad√°</option>@else <option value="Canad·">Canad√°</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "CamerÔøΩn")<option selected value="CamerÔøΩn">Camer√∫n</option>@else <option value="CamerÔøΩn">Camer√∫n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "CanadÔøΩ")<option selected value="CanadÔøΩ">Canad√°</option>@else <option value="CanadÔøΩ">Canad√°</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Chad")<option selected value="Chad">Chad</option>@else <option value="Chad">Chad</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Chile")<option selected value="Chile">Chile</option>@else <option value="Chile">Chile</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "China")<option selected value="China">China</option>@else <option value="China">China</option> @endif
@@ -211,7 +211,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Colombia")<option selected value="Colombia">Colombia</option>@else <option value="Colombia">Colombia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Comores")<option selected value="Comores">Comores</option>@else <option value="Comores">Comores</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Congo")<option selected value="Congo">Congo</option>@else <option value="Congo">Congo</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Rep˙blica Democr·tica del Congo")<option selected value="Rep˙blica Democr·tica del Congo">Rep√∫blica Democr√°tica del Congo</option>@else <option value="Rep˙blica Democr·tica del Congo">Rep√∫blica Democr√°tica del Congo</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "RepÔøΩblica DemocrÔøΩtica del Congo")<option selected value="RepÔøΩblica DemocrÔøΩtica del Congo">Rep√∫blica Democr√°tica del Congo</option>@else <option value="RepÔøΩblica DemocrÔøΩtica del Congo">Rep√∫blica Democr√°tica del Congo</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Corea")<option selected value="Corea">Corea</option>@else <option value="Corea">Corea</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Corea del Norte")<option selected value="Corea del Norte">Corea del Norte</option>@else <option value="Corea del Norte">Corea del Norte</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Costa de Marfil")<option selected value="Costa de Marfil">Costa de Marf√≠l</option>@else <option value="Costa de Marfil">Costa de Marf√≠l</option> @endif
@@ -230,12 +230,12 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Espana")<option selected value="Espana">Espa√±a</option>@else <option value="Espana">Espa√±a</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Estados Unidos")<option selected value="Estados Unidos">Estados Unidos</option>@else <option value="Estados Unidos">Estados Unidos</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Estonia")<option selected value="Estonia">Estonia</option>@else <option value="Estonia">Estonia</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "EtiopÌa")<option selected value="EtiopÌa">Etiop√≠a</option>@else <option value="EtiopÌa">Etiop√≠a</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "EtiopÔøΩa")<option selected value="EtiopÔøΩa">Etiop√≠a</option>@else <option value="EtiopÔøΩa">Etiop√≠a</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Fiji")<option selected value="Fiji">Fiji</option>@else <option value="Fiji">Fiji</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Filipinas")<option selected value="Filipinas">Filipinas</option>@else <option value="Filipinas">Filipinas</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Finlandia")<option selected value="Finlandia">Finlandia</option>@else <option value="Finlandia">Finlandia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Francia")<option selected value="Francia">Francia</option>@else <option value="Francia">Francia</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "GabÛn")<option selected value="GabÛn">Gab√≥n</option>@else <option value="GabÛn">Gab√≥n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "GabÔøΩn")<option selected value="GabÔøΩn">Gab√≥n</option>@else <option value="GabÔøΩn">Gab√≥n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Gambia")<option selected value="Gambia">Gambia</option>@else <option value="Gambia">Gambia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Georgia")<option selected value="Georgia">Georgia</option>@else <option value="Georgia">Georgia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Ghana")<option selected value="Ghana">Ghana</option>@else <option value="Ghana">Ghana</option> @endif
@@ -251,7 +251,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Guinea")<option selected value="Guinea">Guinea</option>@else <option value="Guinea">Guinea</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Guinea Ecuatorial")<option selected value="Guinea Ecuatorial">Guinea Ecuatorial</option>@else <option value="Guinea Ecuatorial">Guinea Ecuatorial</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Guinea-Bissau")<option selected value="Guinea-Bissau">Guinea-Bissau</option>@else <option value="Guinea-Bissau">Guinea-Bissau</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "HaitÌ")<option selected value="HaitÌ">Hait√≠</option>@else <option value="HaitÌ">Hait√≠</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "HaitÔøΩ")<option selected value="HaitÔøΩ">Hait√≠</option>@else <option value="HaitÔøΩ">Hait√≠</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Honduras")<option selected value="Honduras">Honduras</option>@else <option value="Honduras">Honduras</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Hungria")<option selected value="Hungria">Hungr√≠a</option>@else <option value="Hungria">Hungr√≠a</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "India")<option selected value="India">India</option>@else <option value="India">India</option> @endif
@@ -262,7 +262,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Isla")<option selected value="Isla">Isla Bouvet</option>@else <option value="Isla">Isla Bouvet</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Isla de Christmas")<option selected value="Isla de Christmas">Isla de Christmas</option>@else <option value="Isla de Christmas">Isla de Christmas</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islandia")<option selected value="Islandia">Islandia</option>@else <option value="Islandia">Islandia</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Islas Caim·n")<option selected value="Islas Caim·n">Islas Caim√°n</option>@else <option value="Islas Caim·n">Islas Caim√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Islas CaimÔøΩn")<option selected value="Islas CaimÔøΩn">Islas Caim√°n</option>@else <option value="Islas CaimÔøΩn">Islas Caim√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Cook")<option selected value="Islas Cook">Islas Cook</option>@else <option value="Islas Cook">Islas Cook</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas de Cocos o Keeling")<option selected value="Islas de Cocos o Keeling">Islas de Cocos o Keeling</option>@else <option value="Islas de Cocos o Keeling">Islas de Cocos o Keeling</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Faroe")<option selected value="Islas Faroe">Islas Faroe</option>@else <option value="Islas Faroe">Islas Faroe</option> @endif
@@ -276,23 +276,23 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Svalbard y Jan Mayen")<option selected value="Islas Svalbard y Jan Mayen">Islas Svalbard y Jan Mayen</option>@else <option value="Islas Svalbard y Jan Mayen">Islas Svalbard y Jan Mayen</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Tokelau")<option selected value="Islas Tokelau">Islas Tokelau</option>@else <option value="Islas Tokelau">Islas Tokelau</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Turks y Caicos")<option selected value="Islas Turks y Caicos">Islas Turks y Caicos</option>@else <option value="Islas Turks y Caicos">Islas Turks y Caicos</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Islas VÌrgenes (EEUU)")<option selected value="Islas VÌrgenes (EEUU)">Islas Virgenes (EEUU)</option>@else <option value="Islas VÌrgenes (EEUU)">Islas Virgenes (EEUU)</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Islas VÌrgenes (Reino Unido)")<option selected value="Islas VÌrgenes (Reino Unido)">Islas Virgenes (Reino Unido)</option>@else <option value="Islas VÌrgenes (Reino Unido)">Islas Virgenes (Reino Unido)</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Islas VÔøΩrgenes (EEUU)")<option selected value="Islas VÔøΩrgenes (EEUU)">Islas Virgenes (EEUU)</option>@else <option value="Islas VÔøΩrgenes (EEUU)">Islas Virgenes (EEUU)</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Islas VÔøΩrgenes (Reino Unido)")<option selected value="Islas VÔøΩrgenes (Reino Unido)">Islas Virgenes (Reino Unido)</option>@else <option value="Islas VÔøΩrgenes (Reino Unido)">Islas Virgenes (Reino Unido)</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Islas Wallis y Futuna")<option selected value="Islas Wallis y Futuna">Islas Wallis y Futuna</option>@else <option value="Islas Wallis y Futuna">Islas Wallis y Futuna</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Israel")<option selected value="Israel">Israel</option>@else <option value="Israel">Israel</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Italia")<option selected value="Italia">Italia</option>@else <option value="Italia">Italia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Jamaica")<option selected value="Jamaica">Jamaica</option>@else <option value="Jamaica">Jamaica</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "JapÛn")<option selected value="JapÛn">Jap√≥n</option>@else <option value="JapÛn">Jap√≥n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "JapÔøΩn")<option selected value="JapÔøΩn">Jap√≥n</option>@else <option value="JapÔøΩn">Jap√≥n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Jordania")<option selected value="Jordania">Jordania</option>@else <option value="Jordania">Jordania</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Kazajist·n")<option selected value="Kazajist·n">Kazajist√°n</option>@else <option value="Kazajist·n">Kazajist√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "KazajistÔøΩn")<option selected value="KazajistÔøΩn">Kazajist√°n</option>@else <option value="KazajistÔøΩn">Kazajist√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Kenia")<option selected value="Kenia">Kenia</option>@else <option value="Kenia">Kenia</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Kirguizist·n")<option selected value="Kirguizist·n">Kirguizist√°n</option>@else <option value="Kirguizist·n">Kirguizist√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "KirguizistÔøΩn")<option selected value="KirguizistÔøΩn">Kirguizist√°n</option>@else <option value="KirguizistÔøΩn">Kirguizist√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Kiribati")<option selected value="Kiribati">Kiribati</option>@else <option value="Kiribati">Kiribati</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Kuwait")<option selected value="Kuwait">Kuwait</option>@else <option value="Kuwait">Kuwait</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Laos")<option selected value="Laos">Laos</option>@else <option value="Laos">Laos</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Lesotho")<option selected value="Lesotho">Lesotho</option>@else <option value="Lesotho">Lesotho</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Letonia")<option selected value="Letonia">Letonia</option>@else <option value="Letonia">Letonia</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "LÌbano")<option selected value="LÌbano">L√≠bano</option>@else <option value="LÌbano">L√≠bano</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "LÔøΩbano")<option selected value="LÔøΩbano">L√≠bano</option>@else <option value="LÔøΩbano">L√≠bano</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Liberia")<option selected value="Liberia">Liberia</option>@else <option value="Liberia">Liberia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Libia")<option selected value="Libia">Libia</option>@else <option value="Libia">Libia</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Liechtenstein")<option selected value="Liechtenstein">Liechtenstein</option>@else <option value="Liechtenstein">Liechtenstein</option> @endif
@@ -321,7 +321,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Nauru")<option selected value="Nauru">Nauru</option>@else <option value="Nauru">Nauru</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Nepal")<option selected value="Nepal">Nepal</option>@else <option value="Nepal">Nepal</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Nicaragua")<option selected value="Nicaragua">Nicaragua</option>@else <option value="Nicaragua">Nicaragua</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "NÌger")<option selected value="NÌger">N√≠ger</option>@else <option value="NÌger">N√≠ger</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "NÔøΩger")<option selected value="NÔøΩger">N√≠ger</option>@else <option value="NÔøΩger">N√≠ger</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Nigeria")<option selected value="Nigeria">Nigeria</option>@else <option value="Nigeria">Nigeria</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Niue")<option selected value="Niue">Niue</option>@else <option value="Niue">Niue</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Norfolk")<option selected value="Norfolk">Norfolk</option>@else <option value="Norfolk">Norfolk</option> @endif
@@ -344,7 +344,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Reino Unido")<option selected value="Reino Unido">Reino Unido</option>@else <option value="Reino Unido">Reino Unido</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Republica Centroafricana")<option selected value="Republica Centroafricana">Rep√∫blica Centroafricana</option>@else <option value="Republica Centroafricana">Rep√∫blica Centroafricana</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Republica Checa")<option selected value="Republica Checa">Rep√∫blica Checa</option>@else <option value="Republica Checa">Rep√∫blica Checa</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Republica de Sud·frica")<option selected value="Republica de Sud·frica">Rep√∫blica de Sud√°frica</option>@else <option value="Republica de Sud·frica">Rep√∫blica de Sud√°frica</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Republica de SudÔøΩfrica")<option selected value="Republica de SudÔøΩfrica">Rep√∫blica de Sud√°frica</option>@else <option value="Republica de SudÔøΩfrica">Rep√∫blica de Sud√°frica</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Republica Dominicana")<option selected value="Republica Dominicana">Rep√∫blica Dominicana</option>@else <option value="Republica Dominicana">Rep√∫blica Dominicana</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Republica Eslovaca")<option selected value="Republica Eslovaca">Rep√∫blica Eslovaca</option>@else <option value="Republica Eslovaca">Rep√∫blica Eslovaca</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Reunion")<option selected value="Reunion">Reuni√≥n</option>@else <option value="Reunion">Reuni√≥n</option> @endif
@@ -359,7 +359,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "San Vicente y Granadinas")<option selected value="San Vicente y Granadinas">San Vicente y Granadinas</option>@else <option value="San Vicente y Granadinas">San Vicente y Granadinas</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Santa Helena")<option selected value="Santa Helena">Santa Helena</option>@else <option value="Santa Helena">Santa Helena</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Santa Lucia")<option selected value="Santa Lucia">Santa Luc√≠a</option>@else <option value="Santa Lucia">Santa Luc√≠a</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Santo TomÈ y PrÌncipe")<option selected value="Santo TomÈ y PrÌncipe">Santo Tom√© y Pr√≠ncipe</option>@else <option value="Santo TomÈ y PrÌncipe">Santo Tom√© y Pr√≠ncipe</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "Santo TomÔøΩ y PrÔøΩncipe")<option selected value="Santo TomÔøΩ y PrÔøΩncipe">Santo Tom√© y Pr√≠ncipe</option>@else <option value="Santo TomÔøΩ y PrÔøΩncipe">Santo Tom√© y Pr√≠ncipe</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Senegal")<option selected value="Senegal">Senegal</option>@else <option value="Senegal">Senegal</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Seychelles")<option selected value="Seychelles">Seychelles</option>@else <option value="Seychelles">Seychelles</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Sierra Leona")<option selected value="Sierra Leona">Sierra Leona</option>@else <option value="Sierra Leona">Sierra Leona</option> @endif
@@ -389,7 +389,7 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                     @if(Session::get('errorcaptcha')['pais'] == "Ucrania")<option selected value="Ucrania">Ucrania</option>@else <option value="Ucrania">Ucrania</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Uganda")<option selected value="Uganda">Uganda</option>@else <option value="Uganda">Uganda</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Uruguay")<option selected value="Uruguay">Uruguay</option>@else <option value="Uruguay">Uruguay</option> @endif
-                                    @if(Session::get('errorcaptcha')['pais'] == "Uzbekist·n")<option selected value="Uzbekist·n">Uzbekist√°n</option>@else <option value="Uzbekist·n">Uzbekist√°n</option> @endif
+                                    @if(Session::get('errorcaptcha')['pais'] == "UzbekistÔøΩn")<option selected value="UzbekistÔøΩn">Uzbekist√°n</option>@else <option value="UzbekistÔøΩn">Uzbekist√°n</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Vanuatu")<option selected value="Vanuatu">Vanuatu</option>@else <option value="Vanuatu">Vanuatu</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Venezuela")<option selected value="Venezuela">Venezuela</option>@else <option value="Venezuela">Venezuela</option> @endif
                                     @if(Session::get('errorcaptcha')['pais'] == "Vietnam")<option selected value="Vietnam">Vietnam</option>@else <option value="Vietnam">Vietnam</option> @endif
@@ -487,6 +487,11 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                                 <input value="{{Session::get('errorcaptcha')['direccion'];}}" name="direccion" id="pm_s_subject" type="text" placeholder="Direcci&oacute;n" class="pm-form-textfield" required>
 
                                 <textarea name="mensaje" id="pm_s_message" cols="20" rows="6" placeholder="Mensaje *" class="pm-form-textarea" required>{{Session::get('errorcaptcha')['mensaje'];}}</textarea>
+
+                                <label>
+                                    <input type="checkbox" id="checkpoliticasdatos" name="politicasdatos" required> Acepto las <a href="{{URL::route('politicaDatosPersonales')}}" target="_blank">pol&iacute;ticas de datos personales</a>
+                                </label>
+
                                 <div id="pm-contact-form-response"></div>
                     
                                  {{HTML::image(Captcha::img(), 'Captcha image')}}<br><br>
@@ -793,6 +798,11 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
                             <input name="direccion" id="pm_s_subject" type="text" placeholder="Direcci&oacute;n" class="pm-form-textfield" required>
 
                             <textarea name="mensaje" id="pm_s_message" cols="20" rows="6" placeholder="Mensaje *" class="pm-form-textarea" required></textarea>
+
+                            <label>
+                                <input type="checkbox" id="checkpoliticasdatos" name="politicasdatos" required> Acepto las <a href="{{URL::route('politicaDatosPersonales')}}" target="_blank">pol&iacute;ticas de datos personales</a>
+                            </label>
+
                             <div id="pm-contact-form-response"></div>
                 
                              {{HTML::image(Captcha::img(), 'Captcha image')}}<br><br>
@@ -818,6 +828,20 @@ La informaci√≥n consignada en este formulario podr√° ser verificada por nuestra 
 
 @section('footer')
 
-    
-    
+    <script type='text/javascript'>
+            $(document).ready(function() {
+                $("#pm-contact-form").submit(function(e){
+
+                    if(document.getElementById('checkpoliticasdatos').checked) {
+
+                    } else {
+                        alert('Debes aceptar las politicas de datos');
+                        e.preventDefault(e);
+                    }
+
+
+                });
+            });
+    </script>
+
 @stop

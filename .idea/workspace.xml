@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="333e13c0-e237-457c-a795-0d2edb290346" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/config/database.php" afterPath="$PROJECT_DIR$/LARAVEL/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/routes.php" afterPath="$PROJECT_DIR$/LARAVEL/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/index.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/.htaccess" afterPath="$PROJECT_DIR$/public_html/.htaccess" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATABASES/cafeagui_db (1).sql" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATABASES/cafeagui_db.sql" afterPath="$PROJECT_DIR$/DATABASES/cafeagui_db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATABASES/cafeagui_tienda.sql" afterPath="$PROJECT_DIR$/DATABASES/cafeagui_tienda.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/.gitignore" afterPath="$PROJECT_DIR$/LARAVEL/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php" />
     </list>
     <ignored path="cafeaguilaroja.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,47 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
-                <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
-                <marker date="1476982512346" expanded="true" signature="722:885" ph="&lt;FilesMatch &quot;.(xml|txt|css|js)$&quot;&gt;" />
-                <marker date="1476982512346" expanded="true" signature="887:1181" ph="&lt;IfModule mod_filter.c&gt;" />
-                <marker date="1476982512346" expanded="true" signature="1182:1240" ph="&lt;Files 403.shtml&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6511">
-              <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+            <state relative-caret-position="1122">
+              <caret line="75" column="3" lean-forward="false" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -77,38 +42,43 @@
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2261">
-              <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+            <state relative-caret-position="658">
+              <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="politica.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
+      <file leaf-file-name="sectIndex.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="118" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
-              <folding />
+            <state relative-caret-position="296">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="e#883#900#0#HTML" expanded="true" />
+                <element signature="e#1199#1296#0#HTML" expanded="true" />
+                <element signature="e#2780#2788#0#HTML" expanded="true" />
+                <element signature="e#3761#3769#0#HTML" expanded="true" />
+                <element signature="e#3807#3815#0#HTML" expanded="true" />
+                <element signature="e#6601#6609#0#HTML" expanded="true" />
+                <element signature="e#6726#6734#0#HTML" expanded="true" />
+                <element signature="e#7122#7183#0#HTML" expanded="true" />
+                <element signature="e#7650#7658#0#HTML" expanded="true" />
+                <element signature="e#7666#7674#0#HTML" expanded="true" />
+                <element signature="e#8056#8113#0#HTML" expanded="true" />
+                <element signature="e#8632#8640#0#HTML" expanded="true" />
+                <element signature="e#8648#8656#0#HTML" expanded="true" />
+                <element signature="e#9020#9084#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="politicadatospersonales.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LARAVEL/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sectContacto.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7565">
-              <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+            <state relative-caret-position="136">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -129,6 +99,8 @@
         <option value="$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php" />
         <option value="$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php" />
         <option value="$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php" />
+        <option value="$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php" />
+        <option value="$PROJECT_DIR$/LARAVEL/.gitignore" />
       </list>
     </option>
   </component>
@@ -148,15 +120,8 @@
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -180,12 +145,6 @@
               <option name="myItemId" value="cafeaguilaroja" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cafeaguilaroja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cafeaguilaroja" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
@@ -220,50 +179,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cafeaguilaroja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cafeaguilaroja" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LARAVEL" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cafeaguilaroja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cafeaguilaroja" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LARAVEL" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,8 +189,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../capacitacion-virtual-colgate-2016" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -305,7 +232,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -343,34 +270,40 @@
       <workItem from="1477435693617" duration="819000" />
       <workItem from="1477486542848" duration="2739000" />
       <workItem from="1477660117853" duration="16000" />
+      <workItem from="1491942091568" duration="1289000" />
+      <workItem from="1492468643135" duration="54000" />
+      <workItem from="1494342583212" duration="1198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13612000" />
+    <option name="totallyTimeSpent" value="16153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26432666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27507162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -388,18 +321,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
             <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
@@ -412,8 +337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+        <state relative-caret-position="1122">
+          <caret line="75" column="3" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -421,7 +346,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
-          <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
           <folding />
         </state>
       </provider>
@@ -429,7 +354,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
-          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -437,15 +362,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="46" column="118" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="46" column="118" lean-forward="false" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
           <folding />
         </state>
       </provider>
@@ -453,7 +370,15 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7565">
-          <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -461,7 +386,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -469,7 +394,7 @@
     <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
             <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
@@ -483,7 +408,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
-          <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+          <caret line="75" column="91" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -491,7 +416,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
-          <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
           <folding />
         </state>
       </provider>
@@ -499,7 +424,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
-          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -507,7 +432,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="46" column="118" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
+          <caret line="46" column="118" lean-forward="false" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
           <folding />
         </state>
       </provider>
@@ -515,7 +440,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -523,7 +448,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7565">
-          <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -531,7 +456,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -539,7 +464,7 @@
     <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
             <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
@@ -553,7 +478,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
-          <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+          <caret line="75" column="91" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -561,7 +486,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
-          <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
           <folding />
         </state>
       </provider>
@@ -569,15 +494,23 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
-          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="118" lean-forward="false" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -585,7 +518,69 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7565">
-          <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
+            <marker date="1476982512346" expanded="true" signature="722:885" ph="&lt;FilesMatch &quot;.(xml|txt|css|js)$&quot;&gt;" />
+            <marker date="1476982512346" expanded="true" signature="887:1181" ph="&lt;IfModule mod_filter.c&gt;" />
+            <marker date="1476982512346" expanded="true" signature="1182:1240" ph="&lt;Files 403.shtml&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="91" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6511">
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7565">
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -594,7 +589,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -602,7 +597,7 @@
     <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
             <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
@@ -616,7 +611,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
-          <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+          <caret line="75" column="91" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -624,7 +619,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
-          <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
           <folding />
         </state>
       </provider>
@@ -632,7 +627,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
-          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -640,7 +635,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -648,7 +643,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7565">
-          <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -657,7 +652,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -665,7 +660,7 @@
     <entry file="file://$PROJECT_DIR$/public_html/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <marker date="1476982512346" expanded="true" signature="0:535" ph="&lt;IfModule mod_rewrite.c&gt;" />
             <marker date="1476982512346" expanded="true" signature="561:720" ph="&lt;FilesMatch &quot;.(jpg|jpeg|png|gif|swf)$&quot;&gt;" />
@@ -676,18 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="91" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="91" />
+        <state relative-caret-position="1122">
+          <caret line="75" column="3" lean-forward="false" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -695,7 +682,7 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
-          <caret line="383" column="274" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
+          <caret line="383" column="274" lean-forward="false" selection-start-line="383" selection-start-column="226" selection-end-line="383" selection-end-column="274" />
           <folding />
         </state>
       </provider>
@@ -703,25 +690,64 @@
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectContacto.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7565">
-          <caret line="445" column="49" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
+          <caret line="445" column="49" lean-forward="false" selection-start-line="445" selection-start-column="49" selection-end-line="445" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/BANNER/REFERENCIA CustomHeader/panels/customheader/scripts/script.js" />
     <entry file="file://$USER_HOME$/Desktop/BANNER/REFERENCIA CustomHeader/panels/customheader/scripts/infos.js" />
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="118" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
+        <state relative-caret-position="459">
+          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politicadatospersonales.blade.php">
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/politica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="658">
+          <caret line="46" column="118" lean-forward="false" selection-start-line="46" selection-start-column="117" selection-end-line="46" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="133" column="45" lean-forward="false" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#883#900#0#HTML" expanded="true" />
+            <element signature="e#1199#1296#0#HTML" expanded="true" />
+            <element signature="e#2780#2788#0#HTML" expanded="true" />
+            <element signature="e#3761#3769#0#HTML" expanded="true" />
+            <element signature="e#3807#3815#0#HTML" expanded="true" />
+            <element signature="e#6601#6609#0#HTML" expanded="true" />
+            <element signature="e#6726#6734#0#HTML" expanded="true" />
+            <element signature="e#7122#7183#0#HTML" expanded="true" />
+            <element signature="e#7650#7658#0#HTML" expanded="true" />
+            <element signature="e#7666#7674#0#HTML" expanded="true" />
+            <element signature="e#8056#8113#0#HTML" expanded="true" />
+            <element signature="e#8632#8640#0#HTML" expanded="true" />
+            <element signature="e#8648#8656#0#HTML" expanded="true" />
+            <element signature="e#9020#9084#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>

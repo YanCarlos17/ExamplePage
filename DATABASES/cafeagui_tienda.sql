@@ -1,16 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.7
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
-<<<<<<< HEAD
--- Tiempo de generación: 04-03-2016 a las 10:33:15
--- Versión del servidor: 5.5.48-cll
-=======
--- Tiempo de generación: 12-11-2015 a las 09:41:38
--- Versión del servidor: 5.5.46-cll
->>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
--- Versión de PHP: 5.4.31
+-- Tiempo de generación: 09-05-2017 a las 11:28:56
+-- Versión del servidor: 5.5.54-cll
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `cafeagui_tienda`
@@ -31,8 +26,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `ar_address`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_address` (
-  `address_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_address` (
+  `address_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
@@ -44,10 +39,8 @@ CREATE TABLE IF NOT EXISTS `ar_address` (
   `city` varchar(128) NOT NULL,
   `postcode` varchar(10) NOT NULL,
   `country_id` int(11) NOT NULL DEFAULT '0',
-  `zone_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`address_id`),
-  KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `zone_id` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_address`
@@ -55,8 +48,7 @@ CREATE TABLE IF NOT EXISTS `ar_address` (
 
 INSERT INTO `ar_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 (1, 1, 'Hola ', 'hola2 ', '', '', '', 'falsa 1', '', 'cali', '', 47, 750),
-(2, 2, 'ola', 'ola2', '', '', '', 'calle cualquiera', '', 'cali', '', 47, 750),
-(3, 3, 'prueba', 'prueba', '', '', '', 'calle cualquiera', '', 'cali', '', 47, 750);
+(2, 2, 'ola', 'ola2', '', '', '', 'calle cualquiera', '', 'cali', '', 47, 750);
 
 -- --------------------------------------------------------
 
@@ -64,8 +56,8 @@ INSERT INTO `ar_address` (`address_id`, `customer_id`, `firstname`, `lastname`, 
 -- Estructura de tabla para la tabla `ar_affiliate`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_affiliate` (
-  `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_affiliate` (
+  `affiliate_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
   `email` varchar(96) NOT NULL,
@@ -95,9 +87,8 @@ CREATE TABLE IF NOT EXISTS `ar_affiliate` (
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `approved` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`affiliate_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -105,15 +96,14 @@ CREATE TABLE IF NOT EXISTS `ar_affiliate` (
 -- Estructura de tabla para la tabla `ar_affiliate_transaction`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_affiliate_transaction` (
-  `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_affiliate_transaction` (
+  `affiliate_transaction_id` int(11) NOT NULL,
   `affiliate_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `description` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`affiliate_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -121,12 +111,11 @@ CREATE TABLE IF NOT EXISTS `ar_affiliate_transaction` (
 -- Estructura de tabla para la tabla `ar_attribute`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_attribute` (
-  `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_attribute` (
+  `attribute_id` int(11) NOT NULL,
   `attribute_group_id` int(11) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`attribute_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_attribute`
@@ -151,11 +140,10 @@ INSERT INTO `ar_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 -- Estructura de tabla para la tabla `ar_attribute_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_attribute_description` (
+CREATE TABLE `ar_attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`attribute_id`,`language_id`)
+  `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -192,11 +180,10 @@ INSERT INTO `ar_attribute_description` (`attribute_id`, `language_id`, `name`) V
 -- Estructura de tabla para la tabla `ar_attribute_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_attribute_group` (
-  `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`attribute_group_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+CREATE TABLE `ar_attribute_group` (
+  `attribute_group_id` int(11) NOT NULL,
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_attribute_group`
@@ -214,11 +201,10 @@ INSERT INTO `ar_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Estructura de tabla para la tabla `ar_attribute_group_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_attribute_group_description` (
+CREATE TABLE `ar_attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`attribute_group_id`,`language_id`)
+  `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -241,12 +227,11 @@ INSERT INTO `ar_attribute_group_description` (`attribute_group_id`, `language_id
 -- Estructura de tabla para la tabla `ar_banner`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_banner` (
-  `banner_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_banner` (
+  `banner_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  PRIMARY KEY (`banner_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+  `status` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_banner`
@@ -264,13 +249,12 @@ INSERT INTO `ar_banner` (`banner_id`, `name`, `status`) VALUES
 -- Estructura de tabla para la tabla `ar_banner_image`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_banner_image` (
-  `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_banner_image` (
+  `banner_image_id` int(11) NOT NULL,
   `banner_id` int(11) NOT NULL,
   `link` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
+  `image` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_banner_image`
@@ -290,12 +274,11 @@ INSERT INTO `ar_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) 
 -- Estructura de tabla para la tabla `ar_banner_image_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_banner_image_description` (
+CREATE TABLE `ar_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `banner_id` int(11) NOT NULL,
-  `title` varchar(64) NOT NULL,
-  PRIMARY KEY (`banner_image_id`,`language_id`)
+  `title` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -322,8 +305,8 @@ INSERT INTO `ar_banner_image_description` (`banner_image_id`, `language_id`, `ba
 -- Estructura de tabla para la tabla `ar_category`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category` (
-  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_category` (
+  `category_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `top` tinyint(1) NOT NULL,
@@ -331,9 +314,8 @@ CREATE TABLE IF NOT EXISTS `ar_category` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_category`
@@ -361,15 +343,13 @@ INSERT INTO `ar_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 -- Estructura de tabla para la tabla `ar_category_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category_description` (
+CREATE TABLE `ar_category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `meta_description` varchar(255) NOT NULL,
-  `meta_keyword` varchar(255) NOT NULL,
-  PRIMARY KEY (`category_id`,`language_id`),
-  KEY `name` (`name`)
+  `meta_keyword` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -412,10 +392,9 @@ INSERT INTO `ar_category_description` (`category_id`, `language_id`, `name`, `de
 -- Estructura de tabla para la tabla `ar_category_filter`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category_filter` (
+CREATE TABLE `ar_category_filter` (
   `category_id` int(11) NOT NULL,
-  `filter_id` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`filter_id`)
+  `filter_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -424,11 +403,10 @@ CREATE TABLE IF NOT EXISTS `ar_category_filter` (
 -- Estructura de tabla para la tabla `ar_category_path`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category_path` (
+CREATE TABLE `ar_category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
-  `level` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`path_id`)
+  `level` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -467,11 +445,10 @@ INSERT INTO `ar_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- Estructura de tabla para la tabla `ar_category_to_layout`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category_to_layout` (
+CREATE TABLE `ar_category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `layout_id` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`store_id`)
+  `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -480,10 +457,9 @@ CREATE TABLE IF NOT EXISTS `ar_category_to_layout` (
 -- Estructura de tabla para la tabla `ar_category_to_store`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_category_to_store` (
+CREATE TABLE `ar_category_to_store` (
   `category_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`store_id`)
+  `store_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -512,16 +488,15 @@ INSERT INTO `ar_category_to_store` (`category_id`, `store_id`) VALUES
 -- Estructura de tabla para la tabla `ar_country`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_country` (
-  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_country` (
+  `country_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `iso_code_2` varchar(2) NOT NULL,
   `iso_code_3` varchar(3) NOT NULL,
   `address_format` text NOT NULL,
   `postcode_required` tinyint(1) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`country_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=252 ;
+  `status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_country`
@@ -579,7 +554,7 @@ INSERT INTO `ar_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 (49, 'Congo', 'CG', 'COG', '', 0, 1),
 (50, 'Cook Islands', 'CK', 'COK', '', 0, 1),
 (51, 'Costa Rica', 'CR', 'CRI', '', 0, 1),
-(52, 'Cote D''Ivoire', 'CI', 'CIV', '', 0, 1),
+(52, 'Cote D\'Ivoire', 'CI', 'CIV', '', 0, 1),
 (53, 'Croatia', 'HR', 'HRV', '', 0, 1),
 (54, 'Cuba', 'CU', 'CUB', '', 0, 1),
 (55, 'Cyprus', 'CY', 'CYP', '', 0, 1),
@@ -642,7 +617,7 @@ INSERT INTO `ar_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 (113, 'Korea, Republic of', 'KR', 'KOR', '', 0, 1),
 (114, 'Kuwait', 'KW', 'KWT', '', 0, 1),
 (115, 'Kyrgyzstan', 'KG', 'KGZ', '', 0, 1),
-(116, 'Lao People''s Democratic Republic', 'LA', 'LAO', '', 0, 1),
+(116, 'Lao People\'s Democratic Republic', 'LA', 'LAO', '', 0, 1),
 (117, 'Latvia', 'LV', 'LVA', '', 0, 1),
 (118, 'Lebanon', 'LB', 'LBN', '', 0, 1),
 (119, 'Lesotho', 'LS', 'LSO', '', 0, 1),
@@ -784,8 +759,8 @@ INSERT INTO `ar_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- Estructura de tabla para la tabla `ar_coupon`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_coupon` (
-  `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_coupon` (
+  `coupon_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `code` varchar(10) NOT NULL,
   `type` char(1) NOT NULL,
@@ -798,9 +773,8 @@ CREATE TABLE IF NOT EXISTS `ar_coupon` (
   `uses_total` int(11) NOT NULL,
   `uses_customer` varchar(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`coupon_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_coupon`
@@ -817,10 +791,9 @@ INSERT INTO `ar_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- Estructura de tabla para la tabla `ar_coupon_category`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_coupon_category` (
+CREATE TABLE `ar_coupon_category` (
   `coupon_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`coupon_id`,`category_id`)
+  `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -829,15 +802,14 @@ CREATE TABLE IF NOT EXISTS `ar_coupon_category` (
 -- Estructura de tabla para la tabla `ar_coupon_history`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_coupon_history` (
-  `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_coupon_history` (
+  `coupon_history_id` int(11) NOT NULL,
   `coupon_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`coupon_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -845,12 +817,11 @@ CREATE TABLE IF NOT EXISTS `ar_coupon_history` (
 -- Estructura de tabla para la tabla `ar_coupon_product`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_coupon_product` (
-  `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_coupon_product` (
+  `coupon_product_id` int(11) NOT NULL,
   `coupon_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`coupon_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `product_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -858,8 +829,8 @@ CREATE TABLE IF NOT EXISTS `ar_coupon_product` (
 -- Estructura de tabla para la tabla `ar_currency`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_currency` (
-  `currency_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_currency` (
+  `currency_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
   `code` varchar(3) NOT NULL,
   `symbol_left` varchar(12) NOT NULL,
@@ -867,26 +838,18 @@ CREATE TABLE IF NOT EXISTS `ar_currency` (
   `decimal_place` char(1) NOT NULL,
   `value` float(15,8) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_currency`
 --
 
 INSERT INTO `ar_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-<<<<<<< HEAD
-(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.00020000, 0, '2016-02-29 23:01:56'),
-(2, 'US Dollar', 'USD', 'US$', '', '2', 0.00030000, 0, '2016-02-29 23:01:56'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.00030000, 0, '2016-02-29 23:01:56'),
-(4, 'Pesos', 'COP', 'COP$', '', '0', 1.00000000, 1, '2016-02-29 23:01:56');
-=======
-(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.00020000, 0, '2015-10-23 14:38:01'),
-(2, 'US Dollar', 'USD', 'US$', '', '2', 0.00030000, 0, '2015-10-23 14:38:01'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.00030000, 0, '2015-10-23 14:38:01'),
-(4, 'Pesos', 'COP', 'COP$', '', '0', 1.00000000, 1, '2015-10-23 14:38:26');
->>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
+(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.00030000, 0, '2017-02-28 20:28:51'),
+(2, 'US Dollar', 'USD', 'US$', '', '2', 0.00030000, 0, '2017-02-28 20:28:51'),
+(3, 'Euro', 'EUR', '', '€', '2', 0.00030000, 0, '2017-02-28 20:28:51'),
+(4, 'Pesos', 'COP', 'COP$', '', '0', 1.00000000, 1, '2017-02-28 20:34:39');
 
 -- --------------------------------------------------------
 
@@ -894,8 +857,8 @@ INSERT INTO `ar_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbo
 -- Estructura de tabla para la tabla `ar_customer`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer` (
-  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer` (
+  `customer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
@@ -913,16 +876,8 @@ CREATE TABLE IF NOT EXISTS `ar_customer` (
   `status` tinyint(1) NOT NULL,
   `approved` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
-
---
--- Volcado de datos para la tabla `ar_customer`
---
-
-INSERT INTO `ar_customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-(3, 0, 'prueba', 'prueba', 'interactivo@xignacv2.com', '1234567456', '', '108bd8ce6adbb0c67ecace3635675cdc32db6b54', '38687c36e', 'a:0:{}', 'a:0:{}', 0, 3, 1, '190.0.37.18', 1, 1, '', '2015-01-27 15:14:52');
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -930,12 +885,10 @@ INSERT INTO `ar_customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `
 -- Estructura de tabla para la tabla `ar_customer_ban_ip`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_ban_ip` (
-  `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip` varchar(40) NOT NULL,
-  PRIMARY KEY (`customer_ban_ip_id`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE `ar_customer_ban_ip` (
+  `customer_ban_ip_id` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -943,14 +896,13 @@ CREATE TABLE IF NOT EXISTS `ar_customer_ban_ip` (
 -- Estructura de tabla para la tabla `ar_customer_field`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_field` (
+CREATE TABLE `ar_customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
   `custom_field_value_id` int(11) NOT NULL,
   `name` int(128) NOT NULL,
   `value` text NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
+  `sort_order` int(3) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -959,16 +911,15 @@ CREATE TABLE IF NOT EXISTS `ar_customer_field` (
 -- Estructura de tabla para la tabla `ar_customer_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_group` (
-  `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer_group` (
+  `customer_group_id` int(11) NOT NULL,
   `approval` int(1) NOT NULL,
   `company_id_display` int(1) NOT NULL,
   `company_id_required` int(1) NOT NULL,
   `tax_id_display` int(1) NOT NULL,
   `tax_id_required` int(1) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`customer_group_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_customer_group`
@@ -983,12 +934,11 @@ INSERT INTO `ar_customer_group` (`customer_group_id`, `approval`, `company_id_di
 -- Estructura de tabla para la tabla `ar_customer_group_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_group_description` (
+CREATE TABLE `ar_customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`customer_group_id`,`language_id`)
+  `description` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1005,13 +955,12 @@ INSERT INTO `ar_customer_group_description` (`customer_group_id`, `language_id`,
 -- Estructura de tabla para la tabla `ar_customer_history`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_history` (
-  `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer_history` (
+  `customer_history_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `comment` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`customer_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1019,14 +968,12 @@ CREATE TABLE IF NOT EXISTS `ar_customer_history` (
 -- Estructura de tabla para la tabla `ar_customer_ip`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_ip` (
-  `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer_ip` (
+  `customer_ip_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`customer_ip_id`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_customer_ip`
@@ -1034,8 +981,7 @@ CREATE TABLE IF NOT EXISTS `ar_customer_ip` (
 
 INSERT INTO `ar_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 (1, 1, '192.168.1.222', '2014-12-18 14:26:54'),
-(2, 2, '192.168.1.222', '2014-12-18 14:28:05'),
-(3, 3, '190.0.37.18', '2015-01-27 15:14:53');
+(2, 2, '192.168.1.222', '2014-12-18 14:28:05');
 
 -- --------------------------------------------------------
 
@@ -1043,13 +989,12 @@ INSERT INTO `ar_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added
 -- Estructura de tabla para la tabla `ar_customer_online`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_online` (
+CREATE TABLE `ar_customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `url` text NOT NULL,
   `referer` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`ip`)
+  `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1057,26 +1002,15 @@ CREATE TABLE IF NOT EXISTS `ar_customer_online` (
 --
 
 INSERT INTO `ar_customer_online` (`ip`, `customer_id`, `url`, `referer`, `date_added`) VALUES
-<<<<<<< HEAD
-('157.55.39.139', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Gourmet-grano-tostado?sort=p.model&amp;order=DESC&amp;limit=75', '', '2016-03-04 13:53:10'),
-('190.0.37.18', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', 'http://cafeaguilaroja.com/', '2016-03-04 10:23:50'),
-('88.16.215.210', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/CAF%C3%89-SOLUBLE-GRANULADO-85g', 'https://www.google.es/', '2016-03-04 10:25:39'),
-('66.249.75.94', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Tostado-y-Molido/CAF%C3%89-TOSTADO-Y-MOLIDO-500g', '', '2016-03-04 10:22:02'),
-('186.85.8.33', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', 'http://cafeaguilaroja.com/proceso-de-produccion-del-cafe', '2016-03-04 14:31:38'),
-('157.55.39.250', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Tostado-y-Molido/CAF%C3%83%C6%92%C3%A2%E2%82%AC%C2%B0-TOSTADO-Y-MOLIDO-2500g', '', '2016-03-04 14:36:36'),
-('157.55.39.67', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido/CAF%C3%83%C6%92%C3%A2%E2%82%AC%C2%B0-SUPREMO-TOSTADO-Y-MOLIDO-500g', '', '2016-03-04 14:48:24'),
-('66.249.75.80', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado?sort=p.model&amp;order=ASC', '', '2016-03-04 10:12:51'),
-('181.48.16.100', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=61', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Granulado/CAF%C3%89-SOLUBLE-GRANULADO-30-SOBRES%20DE-1.8g', '2016-03-04 10:19:36');
-=======
-('190.156.93.109', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', '2015-11-12 08:54:41'),
-('157.55.39.45', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/CAF%C3%89-SOLUBLE-INSTANT%C3%81NEO-50g', '', '2015-11-12 09:25:50'),
-('207.46.13.84', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado/CAF%C3%83%E2%80%B0-SOLUBLE-DESCAFEINADO-85g', '', '2015-11-12 09:39:17'),
-('66.249.64.126', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado?sort=p.model&amp;order=DESC&amp;limit=75', '', '2015-11-12 09:37:09'),
-('8.37.71.25', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/CAF%C3%89-SOLUBLE-INSTANT%C3%81NEO-50g', '', '2015-11-12 09:11:06'),
-('190.144.85.130', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=61', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', '2015-11-12 09:30:11'),
-('157.55.39.34', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Descafeinado/CAF%C3%83%C6%92%C3%86%E2%80%99%C3%83%E2%80%A0%C3%A2%E2%82%AC%E2%84%A2%C3%83%C6%92%C3%A2%E2%82%AC%C2%A0%C3%83%C2%A2%C3%A2%E2%80%9A%C2%AC%C3%A2%E2%80%9E%C2%A2%C3%83%C6%92%C3%86%E2%80%99%C3%83%E2%80%9A%C3%82%C2%A2%C3%83%C6%92%C3%82%C2%A2%C3%83%C2%A2%C3%A2%E2%80%9A%C2%AC%C3%85%C2%A1%C3%83%E2%80%9A%C3%82%C2%AC%C3%83%C6%92%C3%A2%E2%82%AC%C5%A1%C3%83%E2%80%9A%C3%82%C2%B0-SOLUBLE-DESCAFEINADO-50g?limit=50', '', '2015-11-12 09:19:23'),
-('66.249.64.9', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Soluble-Instantaneo/Soluble-Descafeinado/CAF%C3%89-SOLUBLE-DESCAFEINADO-85g?sort=p.model&amp;order=DESC&amp;limit=75', '', '2015-11-12 09:40:55');
->>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
+('66.249.65.53', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Descafeinado/CAF%C3%89-SOLUBLE-DESCAFEINADO-50g?sort=pd.name&amp;order=ASC&amp;limit=75', '', '2017-05-09 09:48:47'),
+('66.249.88.59', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=62', '2017-05-09 09:50:05'),
+('201.245.161.18', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Tostado-y-Molido', 'https://www.google.com.co/', '2017-05-09 10:08:50'),
+('66.249.88.57', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Supremo-Tostado-y-Molido', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=62', '2017-05-09 09:50:21'),
+('177.252.229.107', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', 'http://www.google.com.co/search?q=que+cafes+comercializa+aguila+Roja&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwiE79bohuPTAhULOSYKHT2XBaQQvwUILw', '2017-05-09 09:47:16'),
+('181.50.96.114', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', 'android-app://com.google.android.googlequicksearchbox', '2017-05-09 10:10:36'),
+('66.249.88.58', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/index.php?route=product/category&amp;path=62', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/', '2017-05-09 09:50:22'),
+('66.249.65.54', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Descafeinado/CAF%C3%89-SOLUBLE-DESCAFEINADO-85g?sort=p.model&amp;order=ASC&amp;limit=100', '', '2017-05-09 10:24:29'),
+('66.249.65.55', 0, 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/Solubles/Soluble-Descafeinado/CAF%C3%89-SOLUBLE-DESCAFEINADO-50g?sort=rating&amp;order=ASC&amp;limit=100', '', '2017-05-09 09:37:45');
 
 -- --------------------------------------------------------
 
@@ -1084,15 +1018,14 @@ INSERT INTO `ar_customer_online` (`ip`, `customer_id`, `url`, `referer`, `date_a
 -- Estructura de tabla para la tabla `ar_customer_reward`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_reward` (
-  `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer_reward` (
+  `customer_reward_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL DEFAULT '0',
   `order_id` int(11) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
   `points` int(8) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`customer_reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1100,15 +1033,14 @@ CREATE TABLE IF NOT EXISTS `ar_customer_reward` (
 -- Estructura de tabla para la tabla `ar_customer_transaction`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_customer_transaction` (
-  `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_customer_transaction` (
+  `customer_transaction_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `description` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`customer_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1116,16 +1048,15 @@ CREATE TABLE IF NOT EXISTS `ar_customer_transaction` (
 -- Estructura de tabla para la tabla `ar_custom_field`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_custom_field` (
-  `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_custom_field` (
+  `custom_field_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   `location` varchar(32) NOT NULL,
   `position` int(3) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1133,11 +1064,10 @@ CREATE TABLE IF NOT EXISTS `ar_custom_field` (
 -- Estructura de tabla para la tabla `ar_custom_field_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_custom_field_description` (
+CREATE TABLE `ar_custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`custom_field_id`,`language_id`)
+  `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1146,10 +1076,9 @@ CREATE TABLE IF NOT EXISTS `ar_custom_field_description` (
 -- Estructura de tabla para la tabla `ar_custom_field_to_customer_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_custom_field_to_customer_group` (
+CREATE TABLE `ar_custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
-  `customer_group_id` int(11) NOT NULL,
-  PRIMARY KEY (`custom_field_id`,`customer_group_id`)
+  `customer_group_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1158,12 +1087,11 @@ CREATE TABLE IF NOT EXISTS `ar_custom_field_to_customer_group` (
 -- Estructura de tabla para la tabla `ar_custom_field_value`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_custom_field_value` (
-  `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_custom_field_value` (
+  `custom_field_value_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1171,12 +1099,11 @@ CREATE TABLE IF NOT EXISTS `ar_custom_field_value` (
 -- Estructura de tabla para la tabla `ar_custom_field_value_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_custom_field_value_description` (
+CREATE TABLE `ar_custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`custom_field_value_id`,`language_id`)
+  `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1185,14 +1112,13 @@ CREATE TABLE IF NOT EXISTS `ar_custom_field_value_description` (
 -- Estructura de tabla para la tabla `ar_download`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_download` (
-  `download_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_download` (
+  `download_id` int(11) NOT NULL,
   `filename` varchar(128) NOT NULL,
   `mask` varchar(128) NOT NULL,
   `remaining` int(11) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1200,11 +1126,10 @@ CREATE TABLE IF NOT EXISTS `ar_download` (
 -- Estructura de tabla para la tabla `ar_download_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_download_description` (
+CREATE TABLE `ar_download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`download_id`,`language_id`)
+  `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1213,12 +1138,11 @@ CREATE TABLE IF NOT EXISTS `ar_download_description` (
 -- Estructura de tabla para la tabla `ar_extension`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_extension` (
-  `extension_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_extension` (
+  `extension_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
-  `code` varchar(32) NOT NULL,
-  PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=435 ;
+  `code` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_extension`
@@ -1257,12 +1181,11 @@ INSERT INTO `ar_extension` (`extension_id`, `type`, `code`) VALUES
 -- Estructura de tabla para la tabla `ar_filter`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_filter` (
-  `filter_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_filter` (
+  `filter_id` int(11) NOT NULL,
   `filter_group_id` int(11) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1270,12 +1193,11 @@ CREATE TABLE IF NOT EXISTS `ar_filter` (
 -- Estructura de tabla para la tabla `ar_filter_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_filter_description` (
+CREATE TABLE `ar_filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `filter_group_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`filter_id`,`language_id`)
+  `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1284,11 +1206,10 @@ CREATE TABLE IF NOT EXISTS `ar_filter_description` (
 -- Estructura de tabla para la tabla `ar_filter_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_filter_group` (
-  `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`filter_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE `ar_filter_group` (
+  `filter_group_id` int(11) NOT NULL,
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1296,11 +1217,10 @@ CREATE TABLE IF NOT EXISTS `ar_filter_group` (
 -- Estructura de tabla para la tabla `ar_filter_group_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_filter_group_description` (
+CREATE TABLE `ar_filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`filter_group_id`,`language_id`)
+  `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1309,14 +1229,13 @@ CREATE TABLE IF NOT EXISTS `ar_filter_group_description` (
 -- Estructura de tabla para la tabla `ar_geo_zone`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_geo_zone` (
-  `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_geo_zone` (
+  `geo_zone_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`geo_zone_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_geo_zone`
@@ -1332,13 +1251,12 @@ INSERT INTO `ar_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`
 -- Estructura de tabla para la tabla `ar_information`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_information` (
-  `information_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_information` (
+  `information_id` int(11) NOT NULL,
   `bottom` int(1) NOT NULL DEFAULT '0',
   `sort_order` int(3) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`information_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_information`
@@ -1356,12 +1274,11 @@ INSERT INTO `ar_information` (`information_id`, `bottom`, `sort_order`, `status`
 -- Estructura de tabla para la tabla `ar_information_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_information_description` (
+CREATE TABLE `ar_information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`information_id`,`language_id`)
+  `description` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1384,11 +1301,10 @@ INSERT INTO `ar_information_description` (`information_id`, `language_id`, `titl
 -- Estructura de tabla para la tabla `ar_information_to_layout`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_information_to_layout` (
+CREATE TABLE `ar_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `layout_id` int(11) NOT NULL,
-  PRIMARY KEY (`information_id`,`store_id`)
+  `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1397,10 +1313,9 @@ CREATE TABLE IF NOT EXISTS `ar_information_to_layout` (
 -- Estructura de tabla para la tabla `ar_information_to_store`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_information_to_store` (
+CREATE TABLE `ar_information_to_store` (
   `information_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  PRIMARY KEY (`information_id`,`store_id`)
+  `store_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1419,8 +1334,8 @@ INSERT INTO `ar_information_to_store` (`information_id`, `store_id`) VALUES
 -- Estructura de tabla para la tabla `ar_language`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_language` (
-  `language_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_language` (
+  `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   `code` varchar(5) NOT NULL,
   `locale` varchar(255) NOT NULL,
@@ -1428,10 +1343,8 @@ CREATE TABLE IF NOT EXISTS `ar_language` (
   `directory` varchar(32) NOT NULL,
   `filename` varchar(64) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL,
-  PRIMARY KEY (`language_id`),
-  KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `status` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_language`
@@ -1447,11 +1360,10 @@ INSERT INTO `ar_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- Estructura de tabla para la tabla `ar_layout`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_layout` (
-  `layout_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+CREATE TABLE `ar_layout` (
+  `layout_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_layout`
@@ -1476,13 +1388,12 @@ INSERT INTO `ar_layout` (`layout_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `ar_layout_route`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_layout_route` (
-  `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_layout_route` (
+  `layout_route_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `route` varchar(255) NOT NULL,
-  PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+  `route` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_layout_route`
@@ -1506,11 +1417,10 @@ INSERT INTO `ar_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- Estructura de tabla para la tabla `ar_length_class`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_length_class` (
-  `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
-  `value` decimal(15,8) NOT NULL,
-  PRIMARY KEY (`length_class_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+CREATE TABLE `ar_length_class` (
+  `length_class_id` int(11) NOT NULL,
+  `value` decimal(15,8) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_length_class`
@@ -1527,13 +1437,12 @@ INSERT INTO `ar_length_class` (`length_class_id`, `value`) VALUES
 -- Estructura de tabla para la tabla `ar_length_class_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_length_class_description` (
-  `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_length_class_description` (
+  `length_class_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
-  `unit` varchar(4) NOT NULL,
-  PRIMARY KEY (`length_class_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `unit` varchar(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_length_class_description`
@@ -1553,13 +1462,12 @@ INSERT INTO `ar_length_class_description` (`length_class_id`, `language_id`, `ti
 -- Estructura de tabla para la tabla `ar_manufacturer`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_manufacturer` (
-  `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_manufacturer` (
+  `manufacturer_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`manufacturer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_manufacturer`
@@ -1579,10 +1487,9 @@ INSERT INTO `ar_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 -- Estructura de tabla para la tabla `ar_manufacturer_to_store`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_manufacturer_to_store` (
+CREATE TABLE `ar_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  PRIMARY KEY (`manufacturer_id`,`store_id`)
+  `store_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1603,12 +1510,11 @@ INSERT INTO `ar_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- Estructura de tabla para la tabla `ar_option`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_option` (
-  `option_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_option` (
+  `option_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`option_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_option`
@@ -1633,11 +1539,10 @@ INSERT INTO `ar_option` (`option_id`, `type`, `sort_order`) VALUES
 -- Estructura de tabla para la tabla `ar_option_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_option_description` (
+CREATE TABLE `ar_option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`option_id`,`language_id`)
+  `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1674,13 +1579,12 @@ INSERT INTO `ar_option_description` (`option_id`, `language_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `ar_option_value`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_option_value` (
-  `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_option_value` (
+  `option_value_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`option_value_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_option_value`
@@ -1708,12 +1612,11 @@ INSERT INTO `ar_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 -- Estructura de tabla para la tabla `ar_option_value_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_option_value_description` (
+CREATE TABLE `ar_option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`option_value_id`,`language_id`)
+  `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1756,8 +1659,8 @@ INSERT INTO `ar_option_value_description` (`option_value_id`, `language_id`, `op
 -- Estructura de tabla para la tabla `ar_order`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order` (
-  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order` (
+  `order_id` int(11) NOT NULL,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
   `invoice_prefix` varchar(26) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -1814,9 +1717,8 @@ CREATE TABLE IF NOT EXISTS `ar_order` (
   `user_agent` varchar(255) NOT NULL,
   `accept_language` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `date_modified` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1824,16 +1726,15 @@ CREATE TABLE IF NOT EXISTS `ar_order` (
 -- Estructura de tabla para la tabla `ar_order_download`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_download` (
-  `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_download` (
+  `order_download_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `order_product_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `filename` varchar(128) NOT NULL,
   `mask` varchar(128) NOT NULL,
-  `remaining` int(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`order_download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `remaining` int(3) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1841,14 +1742,13 @@ CREATE TABLE IF NOT EXISTS `ar_order_download` (
 -- Estructura de tabla para la tabla `ar_order_field`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_field` (
+CREATE TABLE `ar_order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
   `custom_field_value_id` int(11) NOT NULL,
   `name` int(128) NOT NULL,
   `value` text NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
+  `sort_order` int(3) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1857,7 +1757,7 @@ CREATE TABLE IF NOT EXISTS `ar_order_field` (
 -- Estructura de tabla para la tabla `ar_order_fraud`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_fraud` (
+CREATE TABLE `ar_order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `country_match` varchar(3) NOT NULL,
@@ -1910,8 +1810,7 @@ CREATE TABLE IF NOT EXISTS `ar_order_fraud` (
   `queries_remaining` int(11) NOT NULL,
   `maxmind_id` varchar(8) NOT NULL,
   `error` text NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`order_id`)
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1920,15 +1819,14 @@ CREATE TABLE IF NOT EXISTS `ar_order_fraud` (
 -- Estructura de tabla para la tabla `ar_order_history`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_history` (
-  `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_history` (
+  `order_history_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `order_status_id` int(5) NOT NULL,
   `notify` tinyint(1) NOT NULL DEFAULT '0',
   `comment` text NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1936,17 +1834,16 @@ CREATE TABLE IF NOT EXISTS `ar_order_history` (
 -- Estructura de tabla para la tabla `ar_order_option`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_option` (
-  `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_option` (
+  `order_option_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `order_product_id` int(11) NOT NULL,
   `product_option_id` int(11) NOT NULL,
   `product_option_value_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
   `value` text NOT NULL,
-  `type` varchar(32) NOT NULL,
-  PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `type` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1954,8 +1851,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_option` (
 -- Estructura de tabla para la tabla `ar_order_product`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_product` (
-  `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_product` (
+  `order_product_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1964,9 +1861,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_product` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `reward` int(8) NOT NULL,
-  PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `reward` int(8) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1974,8 +1870,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_product` (
 -- Estructura de tabla para la tabla `ar_order_recurring`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_recurring` (
-  `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_recurring` (
+  `order_recurring_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `status` tinyint(4) NOT NULL,
@@ -1994,9 +1890,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_recurring` (
   `trial_cycle` smallint(6) NOT NULL,
   `trial_duration` smallint(6) NOT NULL,
   `trial_price` decimal(10,4) NOT NULL,
-  `profile_reference` varchar(255) NOT NULL,
-  PRIMARY KEY (`order_recurring_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `profile_reference` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2004,14 +1899,13 @@ CREATE TABLE IF NOT EXISTS `ar_order_recurring` (
 -- Estructura de tabla para la tabla `ar_order_recurring_transaction`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_recurring_transaction` (
-  `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_recurring_transaction` (
+  `order_recurring_transaction_id` int(11) NOT NULL,
   `order_recurring_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `amount` decimal(10,4) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  PRIMARY KEY (`order_recurring_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `type` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2019,12 +1913,11 @@ CREATE TABLE IF NOT EXISTS `ar_order_recurring_transaction` (
 -- Estructura de tabla para la tabla `ar_order_status`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_status` (
-  `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_status` (
+  `order_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`order_status_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+  `name` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_order_status`
@@ -2066,17 +1959,15 @@ INSERT INTO `ar_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `ar_order_total`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_total` (
-  `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_total` (
+  `order_total_id` int(10) NOT NULL,
   `order_id` int(11) NOT NULL,
   `code` varchar(32) NOT NULL,
   `title` varchar(255) NOT NULL,
   `text` varchar(255) NOT NULL,
   `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`order_total_id`),
-  KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+  `sort_order` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2084,8 +1975,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_total` (
 -- Estructura de tabla para la tabla `ar_order_voucher`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_order_voucher` (
-  `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_order_voucher` (
+  `order_voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `voucher_id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -2096,9 +1987,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_voucher` (
   `to_email` varchar(96) NOT NULL,
   `voucher_theme_id` int(11) NOT NULL,
   `message` text NOT NULL,
-  `amount` decimal(15,4) NOT NULL,
-  PRIMARY KEY (`order_voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `amount` decimal(15,4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2106,8 +1996,8 @@ CREATE TABLE IF NOT EXISTS `ar_order_voucher` (
 -- Estructura de tabla para la tabla `ar_product`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product` (
+  `product_id` int(11) NOT NULL,
   `model` varchar(64) NOT NULL,
   `sku` varchar(64) NOT NULL,
   `upc` varchar(12) NOT NULL,
@@ -2139,74 +2029,42 @@ CREATE TABLE IF NOT EXISTS `ar_product` (
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `viewed` int(5) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+  `viewed` int(5) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_product`
 --
 
 INSERT INTO `ar_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `paisEan`, `paisItf`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-<<<<<<< HEAD
-(51, '47702040087003', '', '', '7702040087005', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-2500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '2500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 0, 1, '2014-12-17 17:04:12', '2015-09-14 08:38:21', 1403),
-(52, '47702040067036', '', '123125459781', '7702040067014', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-1000G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '1000.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 1, 1, '2015-02-13 09:25:24', '2015-09-14 08:38:36', 1806),
-(53, '47702040067005', '', '', '7702040027001', '', '27702040027609', '', '', '', 'Colombia', 25, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-250G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '250.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 3, 1, '2015-02-13 09:34:01', '2015-09-14 08:39:27', 1106),
-(54, '47702040227003', '', '', '7702040047009', '', '27702040127408', '', '', '', 'Colombia', 35, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 2, 1, '2015-02-13 09:45:38', '2015-09-14 08:39:07', 1695),
-(55, '47702040017002', '', '', '7702040007003', '', '27702040027401', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-125G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '125.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 4, 1, '2015-02-13 09:53:10', '2015-09-14 08:39:49', 1277),
+(51, '47702040087003', '', '', '7702040087005', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-2500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '2500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 0, 1, '2014-12-17 17:04:12', '2015-09-14 08:38:21', 2890),
+(52, '47702040067036', '', '123125459781', '7702040067014', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-1000G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '1000.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 1, 1, '2015-02-13 09:25:24', '2015-09-14 08:38:36', 3739),
+(53, '47702040067005', '', '', '7702040027001', '', '27702040027609', '', '', '', 'Colombia', 25, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-250G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '250.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 3, 1, '2015-02-13 09:34:01', '2015-09-14 08:39:27', 2407),
+(54, '47702040227003', '', '', '7702040047009', '', '27702040127408', '', '', '', 'Colombia', 35, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 2, 1, '2015-02-13 09:45:38', '2015-09-14 08:39:07', 4121),
+(55, '47702040017002', '', '', '7702040007003', '', '27702040027401', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-125G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '125.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 4, 1, '2015-02-13 09:53:10', '2015-09-14 08:39:49', 2664),
 (56, '47702040005205', '', '', '7702040005009', '7702040005009', '47702040000538', '', '', '', 'Colombia', 100, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-50G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '50.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 25, 1, 0, '2015-02-13 09:56:05', '2015-09-14 08:40:13', 558),
-(57, '47702040150042', '', '', '7702040051006', '', '', '', '', '', 'Colombia', 20, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 10:18:40', '2015-09-14 08:43:02', 1423),
-(58, '47702040160034', '', '', '7702040031008', '', '', '', '', '', 'Colombia', 40, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-250G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:10:31', '2015-09-14 08:43:17', 1373),
-(59, '47702040067043', '', '', '7702040045012', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO TOSTADO Y MOLIDO/SUPREMO-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:42:56', '2015-09-14 08:37:19', 2105),
-(60, '47702040067050', '', '', '7702040045029', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO GRANO TOSTADO/SUPREMO-GRANO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:48:19', '2015-09-14 08:36:55', 1658),
-(61, '47702040043009', '', '', '7702040038007', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/gourmet grano tostado/GOURMET-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:53:42', '2015-09-14 08:35:58', 1592),
-(62, '47702040127006', '', '', '7702040127008', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:58:17', '2015-09-14 08:45:21', 1121),
-(63, '47702040630092', '', '12345', '7702040063009', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-1000G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '1000.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:02:39', '2015-09-14 08:43:49', 1242),
-(64, '47702040060013', '', '', '7702040001001', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:11:06', '2015-06-16 11:37:49', 1865),
-(65, '4770204000132', '', '', '7702040000134', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:15:38', '2015-06-16 11:37:19', 1389),
-(66, '47702040003317', '', '', '7702040003319', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/INSTANTANEO-36G-24-SOBRES-DE-1.5G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '36.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:20:38', '2015-06-16 11:44:16', 1506),
-(68, '47702040000224', '', '', '7702040000226', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:27:28', '2015-06-16 11:39:01', 1431),
-(69, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:33:41', '2015-06-16 11:39:40', 1519),
-(70, '47702040003324', '', '', '7702040003326', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/GRANULADO-54G-30-SOBRES-DE-1.8G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '54.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:37:05', '2015-06-16 11:46:13', 1234),
-(72, '47702040000644', '', '', '7702040000646', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE-DESCAFEINADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:40:15', '2015-06-16 11:41:19', 1333),
-(73, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE DESCAFEINADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:41:18', '2015-06-16 11:41:50', 1358),
-(74, '47702040011015', '', '', '7702040003012', '', '', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CONFITES/GRANINOS-50-UNIDADES-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:44:52', '2015-09-14 09:25:05', 1757),
+(57, '47702040150042', '', '', '7702040051006', '', '', '', '', '', 'Colombia', 20, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 10:18:40', '2015-09-14 08:43:02', 3176),
+(58, '47702040160034', '', '', '7702040031008', '', '', '', '', '', 'Colombia', 40, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-250G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:10:31', '2015-09-14 08:43:17', 2954),
+(59, '47702040067043', '', '', '7702040045012', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO TOSTADO Y MOLIDO/SUPREMO-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:42:56', '2015-09-14 08:37:19', 4963),
+(60, '47702040067050', '', '', '7702040045029', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO GRANO TOSTADO/SUPREMO-GRANO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:48:19', '2015-09-14 08:36:55', 3808),
+(61, '47702040043009', '', '', '7702040038007', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/gourmet grano tostado/GOURMET-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:53:42', '2015-09-14 08:35:58', 3322),
+(62, '47702040127006', '', '', '7702040127008', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:58:17', '2015-09-14 08:45:21', 2370),
+(63, '47702040630092', '', '12345', '7702040063009', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-1000G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '1000.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:02:39', '2015-09-14 08:43:49', 2893),
+(64, '47702040060013', '', '', '7702040001001', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:11:06', '2015-06-16 11:37:49', 4342),
+(65, '4770204000132', '', '', '7702040000134', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:15:38', '2015-06-16 11:37:19', 2846),
+(66, '47702040003317', '', '', '7702040003319', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/INSTANTANEO-36G-24-SOBRES-DE-1.5G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '36.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:20:38', '2015-06-16 11:44:16', 3417),
+(68, '47702040000224', '', '', '7702040000226', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:27:28', '2015-06-16 11:39:01', 2642),
+(69, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:33:41', '2015-06-16 11:39:40', 3265),
+(70, '47702040003324', '', '', '7702040003326', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/GRANULADO-54G-30-SOBRES-DE-1.8G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '54.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:37:05', '2015-06-16 11:46:13', 2194),
+(72, '47702040000644', '', '', '7702040000646', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE-DESCAFEINADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:40:15', '2015-06-16 11:41:19', 2770),
+(73, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE DESCAFEINADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:41:18', '2015-06-16 11:41:50', 2746),
+(74, '47702040011015', '', '', '7702040003012', '', '', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CONFITES/GRANINOS-50-UNIDADES-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:44:52', '2015-09-14 09:25:05', 3942),
 (77, 'PAQUETE CAFÉ TOSTADO Y MOLIDO 50g', '', '', '', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-10-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 0, '2015-04-10 09:21:39', '2015-09-14 08:41:49', 166),
-(78, '47702040004147', '', '', '7702040004125', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-20G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 6, 1, '2015-04-10 09:32:06', '2015-09-14 08:41:13', 943),
-(79, '47702040047106', '', '', '7702040004132', '7702040005009', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '1250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 5, 1, '2015-04-10 09:37:29', '2015-09-14 08:42:37', 1224),
-(80, '47702040003218', '', '', '7702040003210', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-VASO-MULTIUSO-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:48:11', '2015-06-16 11:43:20', 1242),
-(81, '47702040003201', '', '', '7702040003203', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-VASO-MULTIUSO-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 2, 1, '2015-04-10 14:51:44', '2015-06-16 11:42:40', 1782),
-(82, 'SOLUBLE LIOFILIZADO 170g', '', '', '', '', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/SOLUBLE LIOFILIZADO/SOLUBLE-LIOFILIZADO-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:59:52', '2015-06-12 11:11:07', 576);
-=======
-(51, '47702040087003', '', '', '7702040087005', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-2500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '2500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 0, 1, '2014-12-17 17:04:12', '2015-09-14 08:38:21', 1062),
-(52, '47702040067036', '', '123125459781', '7702040067014', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-1000G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '1000.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 1, 1, '2015-02-13 09:25:24', '2015-09-14 08:38:36', 1264),
-(53, '47702040067005', '', '', '7702040027001', '', '27702040027609', '', '', '', 'Colombia', 25, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-250G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '250.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 3, 1, '2015-02-13 09:34:01', '2015-09-14 08:39:27', 799),
-(54, '47702040227003', '', '', '7702040047009', '', '27702040127408', '', '', '', 'Colombia', 35, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '500.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 2, 1, '2015-02-13 09:45:38', '2015-09-14 08:39:07', 1196),
-(55, '47702040017002', '', '', '7702040007003', '', '27702040027401', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-125G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '125.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 1, 4, 1, '2015-02-13 09:53:10', '2015-09-14 08:39:49', 946),
-(56, '47702040005205', '', '', '7702040005009', '7702040005009', '47702040000538', '', '', '', 'Colombia', 100, 5, 'data/aguila_roja/CAFE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-50G.jpg', 0, 1, '0.0000', 0, 0, '2014-12-16', '50.00000000', 2, '635156.00000000', '32132.00000000', '321321.00000000', 1, 1, 25, 1, 0, '2015-02-13 09:56:05', '2015-09-14 08:40:13', 558),
-(57, '47702040150042', '', '', '7702040051006', '', '', '', '', '', 'Colombia', 20, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 10:18:40', '2015-09-14 08:43:02', 1045),
-(58, '47702040160034', '', '', '7702040031008', '', '', '', '', '', 'Colombia', 40, 5, 'data/aguila_roja/TOSTADO Y MOLIDO DESCAFEINADO/DESCAFEINADO-250G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:10:31', '2015-09-14 08:43:17', 1041),
-(59, '47702040067043', '', '', '7702040045012', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO TOSTADO Y MOLIDO/SUPREMO-TOSTADO-Y-MOLIDO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:42:56', '2015-09-14 08:37:19', 1413),
-(60, '47702040067050', '', '', '7702040045029', '', '', '', '', '', '', 10, 5, 'data/aguila_roja/SUPREMO GRANO TOSTADO/SUPREMO-GRANO-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:48:19', '2015-09-14 08:36:55', 1216),
-(61, '47702040043009', '', '', '7702040038007', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/gourmet grano tostado/GOURMET-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:53:42', '2015-09-14 08:35:58', 1162),
-(62, '47702040127006', '', '', '7702040127008', '', '', '', '', '', 'Colombia', 10, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-500G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 11:58:17', '2015-09-14 08:45:21', 799),
-(63, '47702040630092', '', '12345', '7702040063009', '', '', '', '', '', 'Colombia', 12, 5, 'data/aguila_roja/TOSTADO TRADICIONAL/GRANO-TRADICIONAL-1000G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '1000.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:02:39', '2015-09-14 08:43:49', 835),
-(64, '47702040060013', '', '', '7702040001001', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 12:11:06', '2015-06-16 11:37:49', 1329),
-(65, '4770204000132', '', '', '7702040000134', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-INSTANTANEO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:15:38', '2015-06-16 11:37:19', 1070),
-(66, '47702040003317', '', '', '7702040003319', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/INSTANTANEO-36G-24-SOBRES-DE-1.5G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '36.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:20:38', '2015-06-16 11:44:16', 1119),
-(68, '47702040000224', '', '', '7702040000226', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:27:28', '2015-06-16 11:39:01', 1121),
-(69, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:33:41', '2015-06-16 11:39:40', 1122),
-(70, '47702040003324', '', '', '7702040003326', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/GRANULADO-54G-30-SOBRES-DE-1.8G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '54.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 3, 1, '2015-02-13 14:37:05', '2015-06-16 11:46:13', 920),
-(72, '47702040000644', '', '', '7702040000646', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE-DESCAFEINADO-85G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '85.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2015-02-13 14:40:15', '2015-06-16 11:41:19', 1051),
-(73, '47702040180018', '', '', '7702040000240', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE DESCAFEINADO/SOLUBLE DESCAFEINADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:41:18', '2015-06-16 11:41:50', 1080),
-(74, '47702040011015', '', '', '7702040003012', '', '', '', '', '', 'Colombia', 50, 5, 'data/aguila_roja/CONFITES/GRANINOS-50-UNIDADES-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-02-12', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-02-13 14:44:52', '2015-09-14 09:25:05', 1264),
-(77, 'PAQUETE CAFÉ TOSTADO Y MOLIDO 50g', '', '', '', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-10-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 0, '2015-04-10 09:21:39', '2015-09-14 08:41:49', 166),
-(78, '47702040004147', '', '', '7702040004125', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-20G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 6, 1, '2015-04-10 09:32:06', '2015-09-14 08:41:13', 663),
-(79, '47702040047106', '', '', '7702040004132', '7702040005009', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '1250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 5, 1, '2015-04-10 09:37:29', '2015-09-14 08:42:37', 857),
-(80, '47702040003218', '', '', '7702040003210', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-VASO-MULTIUSO-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:48:11', '2015-06-16 11:43:20', 923),
-(81, '47702040003201', '', '', '7702040003203', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-VASO-MULTIUSO-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 2, 1, '2015-04-10 14:51:44', '2015-06-16 11:42:40', 1290),
-(82, 'SOLUBLE LIOFILIZADO 170g', '', '', '', '', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/SOLUBLE LIOFILIZADO/SOLUBLE-LIOFILIZADO-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:59:52', '2015-06-12 11:11:07', 382);
->>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
+(78, '47702040004147', '', '', '7702040004125', '', '', '', '', '', 'Colombia', 15, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-20G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '500.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 6, 1, '2015-04-10 09:32:06', '2015-09-14 08:41:13', 2234),
+(79, '47702040047106', '', '', '7702040004132', '7702040005009', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/PAQUETE TOSTADO Y MOLIDO/CAFÉ-TOSTADO-Y-MOLIDO-500G-25-PAPELESTAS-DE-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '1250.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 5, 1, '2015-04-10 09:37:29', '2015-09-14 08:42:37', 2730),
+(80, '47702040003218', '', '', '7702040003210', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/CAFE SOLUBLE GRANULADO/SOLUBLE-VASO-MULTIUSO-GRANULADO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:48:11', '2015-06-16 11:43:20', 2656),
+(81, '47702040003201', '', '', '7702040003203', '', '', '', '', '', 'Colombia', 24, 5, 'data/aguila_roja/SOLUBLE INSTANTANEO/SOLUBLE-VASO-MULTIUSO-INSTANTANEO-50G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '50.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 2, 1, '2015-04-10 14:51:44', '2015-06-16 11:42:40', 3567),
+(82, 'SOLUBLE LIOFILIZADO 170g', '', '', '', '', '', '', '', '', 'Colombia', 1, 5, 'data/aguila_roja/SOLUBLE LIOFILIZADO/SOLUBLE-LIOFILIZADO-170G.jpg', 0, 1, '0.0000', 0, 0, '2015-04-09', '170.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2015-04-10 14:59:52', '2015-06-12 11:11:07', 1437);
 
 -- --------------------------------------------------------
 
@@ -2214,12 +2072,11 @@ INSERT INTO `ar_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `paisEan`,
 -- Estructura de tabla para la tabla `ar_product_attribute`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_attribute` (
+CREATE TABLE `ar_product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `text` text NOT NULL,
-  PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
+  `text` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2228,16 +2085,14 @@ CREATE TABLE IF NOT EXISTS `ar_product_attribute` (
 -- Estructura de tabla para la tabla `ar_product_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_description` (
+CREATE TABLE `ar_product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `meta_description` varchar(255) NOT NULL,
   `meta_keyword` varchar(255) NOT NULL,
-  `tag` text NOT NULL,
-  PRIMARY KEY (`product_id`,`language_id`),
-  KEY `name` (`name`)
+  `tag` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2308,18 +2163,16 @@ INSERT INTO `ar_product_description` (`product_id`, `language_id`, `name`, `desc
 -- Estructura de tabla para la tabla `ar_product_discount`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_discount` (
-  `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_discount` (
+  `product_discount_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   `quantity` int(4) NOT NULL DEFAULT '0',
   `priority` int(5) NOT NULL DEFAULT '1',
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `date_start` date NOT NULL DEFAULT '0000-00-00',
-  `date_end` date NOT NULL DEFAULT '0000-00-00',
-  PRIMARY KEY (`product_discount_id`),
-  KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=441 ;
+  `date_end` date NOT NULL DEFAULT '0000-00-00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2327,10 +2180,9 @@ CREATE TABLE IF NOT EXISTS `ar_product_discount` (
 -- Estructura de tabla para la tabla `ar_product_filter`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_filter` (
+CREATE TABLE `ar_product_filter` (
   `product_id` int(11) NOT NULL,
-  `filter_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`filter_id`)
+  `filter_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2339,13 +2191,12 @@ CREATE TABLE IF NOT EXISTS `ar_product_filter` (
 -- Estructura de tabla para la tabla `ar_product_image`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_image` (
-  `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_image` (
+  `product_image_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `sort_order` int(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2471 ;
+  `sort_order` int(3) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2353,14 +2204,13 @@ CREATE TABLE IF NOT EXISTS `ar_product_image` (
 -- Estructura de tabla para la tabla `ar_product_option`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_option` (
-  `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_option` (
+  `product_option_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   `option_value` text NOT NULL,
-  `required` tinyint(1) NOT NULL,
-  PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=227 ;
+  `required` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2368,8 +2218,8 @@ CREATE TABLE IF NOT EXISTS `ar_product_option` (
 -- Estructura de tabla para la tabla `ar_product_option_value`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_option_value` (
-  `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_option_value` (
+  `product_option_value_id` int(11) NOT NULL,
   `product_option_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
@@ -2381,9 +2231,8 @@ CREATE TABLE IF NOT EXISTS `ar_product_option_value` (
   `points` int(8) NOT NULL,
   `points_prefix` varchar(1) NOT NULL,
   `weight` decimal(15,8) NOT NULL,
-  `weight_prefix` varchar(1) NOT NULL,
-  PRIMARY KEY (`product_option_value_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+  `weight_prefix` varchar(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2391,11 +2240,10 @@ CREATE TABLE IF NOT EXISTS `ar_product_option_value` (
 -- Estructura de tabla para la tabla `ar_product_profile`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_profile` (
+CREATE TABLE `ar_product_profile` (
   `product_id` int(11) NOT NULL,
   `profile_id` int(11) NOT NULL,
-  `customer_group_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`profile_id`,`customer_group_id`)
+  `customer_group_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2411,10 +2259,9 @@ INSERT INTO `ar_product_profile` (`product_id`, `profile_id`, `customer_group_id
 -- Estructura de tabla para la tabla `ar_product_recurring`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_recurring` (
+CREATE TABLE `ar_product_recurring` (
   `product_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`store_id`)
+  `store_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2423,10 +2270,9 @@ CREATE TABLE IF NOT EXISTS `ar_product_recurring` (
 -- Estructura de tabla para la tabla `ar_product_related`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_related` (
+CREATE TABLE `ar_product_related` (
   `product_id` int(11) NOT NULL,
-  `related_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`related_id`)
+  `related_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2435,13 +2281,12 @@ CREATE TABLE IF NOT EXISTS `ar_product_related` (
 -- Estructura de tabla para la tabla `ar_product_reward`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_reward` (
-  `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_reward` (
+  `product_reward_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL DEFAULT '0',
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
-  `points` int(8) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=960 ;
+  `points` int(8) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_product_reward`
@@ -2483,17 +2328,15 @@ INSERT INTO `ar_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 -- Estructura de tabla para la tabla `ar_product_special`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_special` (
-  `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_product_special` (
+  `product_special_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   `priority` int(5) NOT NULL DEFAULT '1',
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `date_start` date NOT NULL DEFAULT '0000-00-00',
-  `date_end` date NOT NULL DEFAULT '0000-00-00',
-  PRIMARY KEY (`product_special_id`),
-  KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
+  `date_end` date NOT NULL DEFAULT '0000-00-00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2501,10 +2344,9 @@ CREATE TABLE IF NOT EXISTS `ar_product_special` (
 -- Estructura de tabla para la tabla `ar_product_to_category`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_to_category` (
+CREATE TABLE `ar_product_to_category` (
   `product_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`category_id`)
+  `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2563,10 +2405,9 @@ INSERT INTO `ar_product_to_category` (`product_id`, `category_id`) VALUES
 -- Estructura de tabla para la tabla `ar_product_to_download`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_to_download` (
+CREATE TABLE `ar_product_to_download` (
   `product_id` int(11) NOT NULL,
-  `download_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`download_id`)
+  `download_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2575,11 +2416,10 @@ CREATE TABLE IF NOT EXISTS `ar_product_to_download` (
 -- Estructura de tabla para la tabla `ar_product_to_layout`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_to_layout` (
+CREATE TABLE `ar_product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `layout_id` int(11) NOT NULL,
-  PRIMARY KEY (`product_id`,`store_id`)
+  `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2588,10 +2428,9 @@ CREATE TABLE IF NOT EXISTS `ar_product_to_layout` (
 -- Estructura de tabla para la tabla `ar_product_to_store`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_product_to_store` (
+CREATE TABLE `ar_product_to_store` (
   `product_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`product_id`,`store_id`)
+  `store_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2634,21 +2473,20 @@ INSERT INTO `ar_product_to_store` (`product_id`, `store_id`) VALUES
 -- Estructura de tabla para la tabla `ar_profile`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_profile` (
-  `profile_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_profile` (
+  `profile_id` int(11) NOT NULL,
   `sort_order` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL,
   `price` decimal(10,4) NOT NULL,
   `frequency` enum('day','week','semi_month','month','year') NOT NULL,
-  `duration` int(10) unsigned NOT NULL,
-  `cycle` int(10) unsigned NOT NULL,
+  `duration` int(10) UNSIGNED NOT NULL,
+  `cycle` int(10) UNSIGNED NOT NULL,
   `trial_status` tinyint(4) NOT NULL,
   `trial_price` decimal(10,4) NOT NULL,
   `trial_frequency` enum('day','week','semi_month','month','year') NOT NULL,
-  `trial_duration` int(10) unsigned NOT NULL,
-  `trial_cycle` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`profile_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `trial_duration` int(10) UNSIGNED NOT NULL,
+  `trial_cycle` int(10) UNSIGNED NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2656,11 +2494,10 @@ CREATE TABLE IF NOT EXISTS `ar_profile` (
 -- Estructura de tabla para la tabla `ar_profile_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_profile_description` (
+CREATE TABLE `ar_profile_description` (
   `profile_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`profile_id`,`language_id`)
+  `name` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2669,8 +2506,8 @@ CREATE TABLE IF NOT EXISTS `ar_profile_description` (
 -- Estructura de tabla para la tabla `ar_return`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_return` (
-  `return_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_return` (
+  `return_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -2688,9 +2525,8 @@ CREATE TABLE IF NOT EXISTS `ar_return` (
   `comment` text,
   `date_ordered` date NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`return_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_modified` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2698,12 +2534,11 @@ CREATE TABLE IF NOT EXISTS `ar_return` (
 -- Estructura de tabla para la tabla `ar_return_action`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_return_action` (
-  `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_return_action` (
+  `return_action_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`return_action_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `name` varchar(64) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_return_action`
@@ -2723,15 +2558,14 @@ INSERT INTO `ar_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- Estructura de tabla para la tabla `ar_return_history`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_return_history` (
-  `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_return_history` (
+  `return_history_id` int(11) NOT NULL,
   `return_id` int(11) NOT NULL,
   `return_status_id` int(11) NOT NULL,
   `notify` tinyint(1) NOT NULL,
   `comment` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`return_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2739,12 +2573,11 @@ CREATE TABLE IF NOT EXISTS `ar_return_history` (
 -- Estructura de tabla para la tabla `ar_return_reason`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_return_reason` (
-  `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_return_reason` (
+  `return_reason_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`return_reason_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `name` varchar(128) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_return_reason`
@@ -2768,12 +2601,11 @@ INSERT INTO `ar_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- Estructura de tabla para la tabla `ar_return_status`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_return_status` (
-  `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_return_status` (
+  `return_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`return_status_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `name` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_return_status`
@@ -2793,8 +2625,8 @@ INSERT INTO `ar_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- Estructura de tabla para la tabla `ar_review`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_review` (
-  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_review` (
+  `review_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `author` varchar(64) NOT NULL,
@@ -2802,10 +2634,8 @@ CREATE TABLE IF NOT EXISTS `ar_review` (
   `rating` int(1) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`review_id`),
-  KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_review`
@@ -2815,11 +2645,15 @@ INSERT INTO `ar_review` (`review_id`, `product_id`, `customer_id`, `author`, `te
 (1, 69, 0, 'Mario Norambuena', 'Soy de  Chile,necesito el valor del produto, forma de pago  y envio(forma de envio y costo). \r\nemail: norambuena.mario@gmail.com.\r\nMuchas Gracias.', 5, 1, '2015-10-01 08:53:05', '0000-00-00 00:00:00'),
 (2, 54, 0, 'yenni', 'Me parece increíble que hagan paginas con toda esta información valiosa!', 5, 1, '2015-10-01 08:53:28', '0000-00-00 00:00:00'),
 (3, 74, 0, 'lyzett pedraza guerrero', 'Buenas tardes,  el producto es muy rico, lastima q no hay suficiente publicidad sobre ella. ', 3, 1, '2015-10-01 08:53:16', '0000-00-00 00:00:00'),
-<<<<<<< HEAD
-(4, 59, 0, 'PEDRO JUAREZ', 'Es muy rico, lo preparé en casa y lo compartí con mis amigos y mi familia y les pareció muy rico', 4, 1, '2016-02-22 07:46:23', '0000-00-00 00:00:00');
-=======
-(4, 59, 0, 'PEDRO JUAREZ', 'Es muy rico, lo preparé en casa y lo compartí con mis amigos y mi familia y les pareció muy rico', 4, 0, '2015-10-09 18:37:15', '0000-00-00 00:00:00');
->>>>>>> f055a255091bd0df6553bd628ab3a0d38cc35959
+(4, 59, 0, 'PEDRO JUAREZ', 'Es muy rico, lo preparé en casa y lo compartí con mis amigos y mi familia y les pareció muy rico', 4, 1, '2016-02-22 07:46:23', '0000-00-00 00:00:00'),
+(5, 52, 0, 'maryory', 'cuanto cuesta 2 pacas de este para tenderos con envío a la Tebaida Quindio?', 5, 1, '2016-06-01 15:52:11', '0000-00-00 00:00:00'),
+(6, 54, 0, 'maryory', 'cuanto cuesta 2 pacasde este para tenderos y con envio a La Tebaida Quindio?\r\n', 5, 1, '2016-06-01 15:52:00', '0000-00-00 00:00:00'),
+(7, 59, 0, 'Daniela Bedoya', 'Hola buenas tardes quiero saber el valor del cafe AGUILA ROJA, en que presentaciones vienen y si al comprar al por mayor me sale al mismo valor que comprar individuales. \nmuchas gracias y espero pronta respuesta.\n\njennybedoya62@gmail.com \n\nGRACIAS.', 5, 0, '2017-01-17 10:58:12', '0000-00-00 00:00:00'),
+(8, 74, 0, 'Oscar', 'Me gustaría saber si en Bogotá hay de este producto, lo he buscado por todas las tiendas de cadena y no he dado con el.dejo mi correo para que me envíen tiendas o sucursales donde pueda conseguirlo . Muchas gracias por su colaboración ', 4, 0, '2017-02-04 20:23:23', '0000-00-00 00:00:00'),
+(9, 70, 0, 'Socorro Murgueitio ', 'Donde se puede comprar el café águila roja granulado en sobre', 5, 0, '2017-03-03 07:16:16', '0000-00-00 00:00:00'),
+(10, 70, 0, 'Socorro Murgueitio ', 'Donde se puede comprar el café águila roja granulado en sobre', 5, 0, '2017-03-03 07:16:18', '0000-00-00 00:00:00'),
+(11, 54, 0, 'Patricio', 'Soy del sur de chile, un amigo colombiano una vez me regalo cafe aguila roja, me encanto, lo busco po aca y es imposible encontrarlo, pense que en supermercado jumbo podria encontrar y nada, quiero este cafe', 5, 0, '2017-03-06 16:34:54', '0000-00-00 00:00:00'),
+(12, 78, 0, 'patricia sanchez', 'Hola buen dia, por favor pueden confirmarme que costo tienen dos paquetes de este producto, ya que quiero tener el producto para la exposición acerca de café aguila roja en mi universidad.', 5, 0, '2017-04-17 23:20:25', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2827,15 +2661,14 @@ INSERT INTO `ar_review` (`review_id`, `product_id`, `customer_id`, `author`, `te
 -- Estructura de tabla para la tabla `ar_setting`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_setting` (
-  `setting_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_setting` (
+  `setting_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   `group` varchar(32) NOT NULL,
   `key` varchar(64) NOT NULL,
   `value` text NOT NULL,
-  `serialized` tinyint(1) NOT NULL,
-  PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6075 ;
+  `serialized` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_setting`
@@ -2863,132 +2696,132 @@ INSERT INTO `ar_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (35, 0, 'flat', 'flat_status', '1', 0),
 (36, 0, 'flat', 'flat_geo_zone_id', '0', 0),
 (37, 0, 'flat', 'flat_tax_class_id', '9', 0),
-(2325, 0, 'carousel', 'carousel_module', 'a:1:{i:0;a:9:{s:9:"banner_id";s:1:"9";s:5:"limit";s:1:"5";s:6:"scroll";s:1:"3";s:5:"width";s:2:"80";s:6:"height";s:2:"80";s:9:"layout_id";s:1:"1";s:8:"position";s:14:"content_bottom";s:6:"status";s:1:"0";s:10:"sort_order";s:2:"-1";}}', 1),
-(6073, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"6";s:11:"image_width";s:3:"215";s:12:"image_height";s:3:"215";s:9:"layout_id";s:1:"1";s:8:"position";s:14:"content_bottom";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+(2325, 0, 'carousel', 'carousel_module', 'a:1:{i:0;a:9:{s:9:\"banner_id\";s:1:\"9\";s:5:\"limit\";s:1:\"5\";s:6:\"scroll\";s:1:\"3\";s:5:\"width\";s:2:\"80\";s:6:\"height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:2:\"-1\";}}', 1),
+(6073, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:\"limit\";s:1:\"6\";s:11:\"image_width\";s:3:\"215\";s:12:\"image_height\";s:3:\"215\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}', 1),
 (41, 0, 'flat', 'flat_cost', '5.00', 0),
 (42, 0, 'credit', 'credit_sort_order', '7', 0),
 (43, 0, 'credit', 'credit_status', '1', 0),
 (53, 0, 'reward', 'reward_sort_order', '2', 0),
 (54, 0, 'reward', 'reward_status', '1', 0),
-(354, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-(347, 0, 'category', 'category_module', 'a:8:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:3;a:4:{s:9:"layout_id";s:1:"5";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:4;a:4:{s:9:"layout_id";s:1:"7";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:5;a:4:{s:9:"layout_id";s:1:"8";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:7;a:4:{s:9:"layout_id";s:1:"9";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:8;a:4:{s:9:"layout_id";s:1:"4";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-(353, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+(354, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:\"layout_id\";s:2:\"10\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}', 1),
+(347, 0, 'category', 'category_module', 'a:8:{i:0;a:4:{s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:1;a:4:{s:9:\"layout_id\";s:1:\"2\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:2;a:4:{s:9:\"layout_id\";s:2:\"11\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:3;a:4:{s:9:\"layout_id\";s:1:\"5\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:4;a:4:{s:9:\"layout_id\";s:1:\"7\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:5;a:4:{s:9:\"layout_id\";s:1:\"8\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:7;a:4:{s:9:\"layout_id\";s:1:\"9\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:8;a:4:{s:9:\"layout_id\";s:1:\"4\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}', 1),
+(353, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:\"layout_id\";s:1:\"6\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}', 1),
 (6071, 0, 'featured', 'product', 'cafe tostado', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(340, 0, 'tm_slideshow', 'tm_slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:4:"1000";s:6:"height";s:3:"410";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-(6064, 0, 'config', 'config_google_analytics', '', 0),
-(6063, 0, 'config', 'config_error_filename', 'error.txt', 0),
-(6057, 0, 'config', 'config_maintenance', '0', 0),
-(6058, 0, 'config', 'config_password', '1', 0),
-(6059, 0, 'config', 'config_encryption', '82ee0213baddbb5616d85647ca830f4a', 0),
-(6060, 0, 'config', 'config_compression', '0', 0),
-(6061, 0, 'config', 'config_error_display', '0', 0),
-(6062, 0, 'config', 'config_error_log', '1', 0),
-(6054, 0, 'config', 'config_seo_url', '1', 0),
-(6055, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-(6056, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-(6053, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(6052, 0, 'config', 'config_shared', '0', 0),
-(6051, 0, 'config', 'config_secure', '0', 0),
-(6050, 0, 'config', 'config_fraud_status_id', '7', 0),
-(6049, 0, 'config', 'config_fraud_score', '', 0),
-(6048, 0, 'config', 'config_fraud_key', '', 0),
-(6047, 0, 'config', 'config_fraud_detection', '0', 0),
-(6046, 0, 'config', 'config_alert_emails', '', 0),
-(6045, 0, 'config', 'config_account_mail', '1', 0),
-(6044, 0, 'config', 'config_alert_mail', '1', 0),
-(6043, 0, 'config', 'config_smtp_timeout', '5', 0),
-(6042, 0, 'config', 'config_smtp_port', '25', 0),
-(6041, 0, 'config', 'config_smtp_password', '', 0),
-(3472, 0, 'banner', 'banner_module', 'a:4:{i:0;a:7:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"3";}i:1;a:7:{s:9:"banner_id";s:2:"10";s:5:"width";s:3:"317";s:6:"height";s:3:"153";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"2";}i:2;a:7:{s:9:"banner_id";s:2:"11";s:5:"width";s:3:"317";s:6:"height";s:3:"153";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"2";}i:3;a:7:{s:9:"banner_id";s:2:"12";s:5:"width";s:3:"317";s:6:"height";s:3:"153";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"0";s:10:"sort_order";s:1:"2";}}', 1),
-(6040, 0, 'config', 'config_smtp_username', '', 0),
-(6039, 0, 'config', 'config_smtp_host', '', 0),
-(6038, 0, 'config', 'config_mail_parameter', '', 0),
-(6037, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(6036, 0, 'config', 'config_ftp_status', '0', 0),
-(6035, 0, 'config', 'config_ftp_root', '', 0),
-(348, 0, 'information', 'information_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"8";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:1;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:2;a:4:{s:9:"layout_id";s:1:"9";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
-(349, 0, 'bestseller', 'bestseller_module', 'a:2:{i:0;a:7:{s:5:"limit";s:1:"3";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"7";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:1;a:7:{s:5:"limit";s:1:"4";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-(350, 0, 'latest', 'latest_module', 'a:3:{i:0;a:7:{s:5:"limit";s:1:"3";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:7:{s:5:"limit";s:1:"3";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"5";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:7:{s:5:"limit";s:1:"4";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-(351, 0, 'special', 'special_module', 'a:2:{i:0;a:7:{s:5:"limit";s:1:"4";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"4";}i:1;a:7:{s:5:"limit";s:1:"3";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"4";}}', 1),
-(6034, 0, 'config', 'config_ftp_password', '', 0),
-(6033, 0, 'config', 'config_ftp_username', '', 0),
-(6032, 0, 'config', 'config_ftp_port', '21', 0),
-(6031, 0, 'config', 'config_ftp_host', 'cafeaguilaroja.com', 0),
-(6030, 0, 'config', 'config_image_cart_height', '47', 0),
-(6029, 0, 'config', 'config_image_cart_width', '47', 0),
-(6028, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(6025, 0, 'config', 'config_image_compare_width', '90', 0),
-(6027, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(6026, 0, 'config', 'config_image_compare_height', '90', 0),
-(6024, 0, 'config', 'config_image_related_height', '215', 0),
-(6023, 0, 'config', 'config_image_related_width', '215', 0),
-(6022, 0, 'config', 'config_image_additional_height', '350', 0),
-(6021, 0, 'config', 'config_image_additional_width', '300', 0),
-(6020, 0, 'config', 'config_image_product_height', '215', 0),
-(6019, 0, 'config', 'config_image_product_width', '215', 0),
-(6018, 0, 'config', 'config_image_popup_height', '500', 0),
-(6017, 0, 'config', 'config_image_popup_width', '429', 0),
-(6016, 0, 'config', 'config_image_thumb_height', '350', 0),
-(6015, 0, 'config', 'config_image_thumb_width', '300', 0),
-(6014, 0, 'config', 'config_image_category_height', '125', 0),
-(6013, 0, 'config', 'config_image_category_width', '747', 0),
-(6012, 0, 'config', 'config_icon', 'data/aguila_roja/icono/logo-aguila-roja-icon.png', 0),
-(6011, 0, 'config', 'config_logo', 'data/aguila_roja/icono/logo-aguila-roja.png', 0),
-(6010, 0, 'config', 'config_return_status_id', '2', 0),
-(6009, 0, 'config', 'config_return_id', '0', 0),
-(6008, 0, 'config', 'config_commission', '5', 0),
-(6007, 0, 'config', 'config_affiliate_id', '4', 0),
-(6006, 0, 'config', 'config_stock_status_id', '5', 0),
-(6005, 0, 'config', 'config_stock_checkout', '0', 0),
-(6004, 0, 'config', 'config_stock_warning', '0', 0),
-(6003, 0, 'config', 'config_stock_display', '1', 0),
-(6002, 0, 'config', 'config_complete_status_id', '5', 0),
-(6001, 0, 'config', 'config_order_status_id', '1', 0),
+(340, 0, 'tm_slideshow', 'tm_slideshow_module', 'a:1:{i:0;a:7:{s:9:\"banner_id\";s:1:\"9\";s:5:\"width\";s:4:\"1000\";s:6:\"height\";s:3:\"410\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}', 1),
+(6280, 0, 'config', 'config_google_analytics', '', 0),
+(6278, 0, 'config', 'config_error_log', '1', 0),
+(6279, 0, 'config', 'config_error_filename', 'error.txt', 0),
+(6277, 0, 'config', 'config_error_display', '0', 0),
+(6276, 0, 'config', 'config_compression', '0', 0),
+(6273, 0, 'config', 'config_maintenance', '0', 0),
+(6274, 0, 'config', 'config_password', '1', 0),
+(6275, 0, 'config', 'config_encryption', '82ee0213baddbb5616d85647ca830f4a', 0),
+(6270, 0, 'config', 'config_seo_url', '1', 0),
+(6271, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(6272, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+(6269, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(6268, 0, 'config', 'config_shared', '0', 0),
+(6267, 0, 'config', 'config_secure', '0', 0),
+(6266, 0, 'config', 'config_fraud_status_id', '7', 0),
+(6265, 0, 'config', 'config_fraud_score', '', 0),
+(6264, 0, 'config', 'config_fraud_key', '', 0),
+(6263, 0, 'config', 'config_fraud_detection', '0', 0),
+(6262, 0, 'config', 'config_alert_emails', '', 0),
+(6261, 0, 'config', 'config_account_mail', '1', 0),
+(6260, 0, 'config', 'config_alert_mail', '1', 0),
+(6259, 0, 'config', 'config_smtp_timeout', '5', 0),
+(6258, 0, 'config', 'config_smtp_port', '25', 0),
+(3472, 0, 'banner', 'banner_module', 'a:4:{i:0;a:7:{s:9:\"banner_id\";s:1:\"6\";s:5:\"width\";s:3:\"182\";s:6:\"height\";s:3:\"182\";s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"3\";}i:1;a:7:{s:9:\"banner_id\";s:2:\"10\";s:5:\"width\";s:3:\"317\";s:6:\"height\";s:3:\"153\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"2\";}i:2;a:7:{s:9:\"banner_id\";s:2:\"11\";s:5:\"width\";s:3:\"317\";s:6:\"height\";s:3:\"153\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"2\";}i:3;a:7:{s:9:\"banner_id\";s:2:\"12\";s:5:\"width\";s:3:\"317\";s:6:\"height\";s:3:\"153\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"2\";}}', 1),
+(6257, 0, 'config', 'config_smtp_password', '', 0),
+(6256, 0, 'config', 'config_smtp_username', '', 0),
+(6255, 0, 'config', 'config_smtp_host', '', 0),
+(6254, 0, 'config', 'config_mail_parameter', '', 0),
+(6253, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(6252, 0, 'config', 'config_ftp_status', '0', 0),
+(348, 0, 'information', 'information_module', 'a:3:{i:0;a:4:{s:9:\"layout_id\";s:1:\"8\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"2\";}i:1;a:4:{s:9:\"layout_id\";s:2:\"11\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"2\";}i:2;a:4:{s:9:\"layout_id\";s:1:\"9\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"2\";}}', 1),
+(349, 0, 'bestseller', 'bestseller_module', 'a:2:{i:0;a:7:{s:5:\"limit\";s:1:\"3\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"7\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"2\";}i:1;a:7:{s:5:\"limit\";s:1:\"4\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"2\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"3\";}}', 1),
+(350, 0, 'latest', 'latest_module', 'a:3:{i:0;a:7:{s:5:\"limit\";s:1:\"3\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"3\";}i:1;a:7:{s:5:\"limit\";s:1:\"3\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"5\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:2;a:7:{s:5:\"limit\";s:1:\"4\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"2\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"3\";}}', 1),
+(351, 0, 'special', 'special_module', 'a:2:{i:0;a:7:{s:5:\"limit\";s:1:\"4\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"2\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"4\";}i:1;a:7:{s:5:\"limit\";s:1:\"3\";s:11:\"image_width\";s:2:\"80\";s:12:\"image_height\";s:2:\"80\";s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"column_left\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"4\";}}', 1),
+(6251, 0, 'config', 'config_ftp_root', '', 0),
+(6250, 0, 'config', 'config_ftp_password', '', 0),
+(6249, 0, 'config', 'config_ftp_username', '', 0),
+(6248, 0, 'config', 'config_ftp_port', '21', 0),
+(6247, 0, 'config', 'config_ftp_host', 'cafeaguilaroja.com', 0),
+(6246, 0, 'config', 'config_image_cart_height', '47', 0),
+(6245, 0, 'config', 'config_image_cart_width', '47', 0),
+(6242, 0, 'config', 'config_image_compare_height', '90', 0),
+(6244, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(6243, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(6241, 0, 'config', 'config_image_compare_width', '90', 0),
+(6240, 0, 'config', 'config_image_related_height', '215', 0),
+(6239, 0, 'config', 'config_image_related_width', '215', 0),
+(6238, 0, 'config', 'config_image_additional_height', '350', 0),
+(6237, 0, 'config', 'config_image_additional_width', '300', 0),
+(6236, 0, 'config', 'config_image_product_height', '215', 0),
+(6235, 0, 'config', 'config_image_product_width', '215', 0),
+(6234, 0, 'config', 'config_image_popup_height', '500', 0),
+(6233, 0, 'config', 'config_image_popup_width', '429', 0),
+(6232, 0, 'config', 'config_image_thumb_height', '350', 0),
+(6228, 0, 'config', 'config_icon', 'data/aguila_roja/icono/logo-aguila-roja-icon.png', 0),
+(6229, 0, 'config', 'config_image_category_width', '747', 0),
+(6230, 0, 'config', 'config_image_category_height', '125', 0),
+(6231, 0, 'config', 'config_image_thumb_width', '300', 0),
+(6227, 0, 'config', 'config_logo', 'data/aguila_roja/icono/logo-aguila-roja.png', 0),
+(6226, 0, 'config', 'config_return_status_id', '2', 0),
+(6225, 0, 'config', 'config_return_id', '0', 0),
+(6224, 0, 'config', 'config_commission', '5', 0),
+(6223, 0, 'config', 'config_affiliate_id', '4', 0),
+(6222, 0, 'config', 'config_stock_status_id', '5', 0),
+(6221, 0, 'config', 'config_stock_checkout', '0', 0),
+(6220, 0, 'config', 'config_stock_warning', '0', 0),
+(6219, 0, 'config', 'config_stock_display', '1', 0),
+(6218, 0, 'config', 'config_complete_status_id', '5', 0),
+(6217, 0, 'config', 'config_order_status_id', '1', 0),
 (6072, 0, 'featured', 'featured_product', '59,64,69,60,74,54', 0),
-(5999, 0, 'config', 'config_order_edit', '100', 0),
-(6000, 0, 'config', 'config_invoice_prefix', 'INV-2015-00', 0),
-(5998, 0, 'config', 'config_checkout_id', '5', 0),
-(5997, 0, 'config', 'config_guest_checkout', '1', 0),
-(5996, 0, 'config', 'config_cart_weight', '1', 0),
-(5995, 0, 'config', 'config_account_id', '3', 0),
-(5994, 0, 'config', 'config_customer_price', '0', 0),
-(5993, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(5992, 0, 'config', 'config_customer_group_id', '1', 0),
-(5991, 0, 'config', 'config_customer_online', '1', 0),
-(5990, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(5989, 0, 'config', 'config_tax_default', 'shipping', 0),
-(5988, 0, 'config', 'config_vat', '0', 0),
-(5987, 0, 'config', 'config_tax', '1', 0),
-(5986, 0, 'config', 'config_voucher_max', '1000', 0),
-(5985, 0, 'config', 'config_voucher_min', '1', 0),
-(5984, 0, 'config', 'config_download', '1', 0),
-(5983, 0, 'config', 'config_review_status', '1', 0),
-(5982, 0, 'config', 'config_product_count', '1', 0),
-(5981, 0, 'config', 'config_admin_limit', '20', 0),
-(5980, 0, 'config', 'config_catalog_limit', '15', 0),
-(5979, 0, 'config', 'config_weight_class_id', '2', 0),
-(5978, 0, 'config', 'config_length_class_id', '1', 0),
-(5977, 0, 'config', 'config_currency_auto', '1', 0),
-(5976, 0, 'config', 'config_currency', 'COP', 0),
-(5975, 0, 'config', 'config_admin_language', 'es', 0),
-(5972, 0, 'config', 'config_country_id', '47', 0),
-(5973, 0, 'config', 'config_zone_id', '750', 0),
-(5974, 0, 'config', 'config_language', 'es', 0),
-(5971, 0, 'config', 'config_layout_id', '4', 0),
-(5970, 0, 'config', 'config_template', 'OPC040092', 0),
-(5969, 0, 'config', 'config_meta_description', 'Portafolio de productos de café Águila Roja, encontrarás café tostado, café molido, descafeinado, café granulado, café gourmet, café soluble, confites de café.', 0),
-(5965, 0, 'config', 'config_email', 'kscorrales@misena.edu.co', 0),
-(5966, 0, 'config', 'config_telephone', '018000934777', 0),
-(5967, 0, 'config', 'config_fax', '', 0),
-(5968, 0, 'config', 'config_title', 'Productos Aguila roja', 0),
-(6074, 0, 'welcome', 'magnorcms_module', 'a:1:{i:1;a:6:{s:11:"headertitle";a:2:{i:3;s:0:"";i:1;s:0:"";}s:11:"description";a:2:{i:3;s:1023:"&lt;div class=&quot;column&quot;&gt;\r\n&lt;div class=&quot;social_block&quot;&gt;\r\n&lt;h3&gt;Síguenos&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;nofollow&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;rss&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;column&quot;&gt;\r\n&lt;h3&gt;Contactanos&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n	&lt;div class=&quot;content&quot;&gt;KM. 10 Via Cali-Candelaria&lt;br /&gt;\r\n	Cali, Colombia&lt;br /&gt;\r\n	Teléfono:&amp;nbsp;(+572) 448 4767 - 39 - 95&lt;br /&gt;\r\n    &lt;a href=&quot;mailto:contactoaguilaroja.com&quot;&gt;contactoaguilaroja.com&lt;/a&gt;&lt;/div&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n";i:1;s:1022:"&lt;div class=&quot;column&quot;&gt;\r\n&lt;div class=&quot;social_block&quot;&gt;\r\n&lt;h3&gt;Follow Us&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;nofollow&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;rss&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;column&quot;&gt;\r\n&lt;h3&gt;Contact Us&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n	&lt;div class=&quot;content&quot;&gt;KM. 10 Via Cali-Candelaria&lt;br /&gt;\r\n	Cali, Colombia&lt;br /&gt;\r\n	Teléfono:&amp;nbsp;(+572) 448 4767 - 39 - 95&lt;br /&gt;\r\n    &lt;a href=&quot;mailto:contactoaguilaroja.com&quot;&gt;contactoaguilaroja.com&lt;/a&gt;&lt;/div&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n";}s:8:"position";s:14:"content_footer";s:6:"status";s:1:"1";s:9:"layout_id";s:1:"6";s:10:"sort_order";s:0:"";}}', 1),
-(5962, 0, 'config', 'config_name', '   Productos Águila Roja', 0),
-(5964, 0, 'config', 'config_address', 'KM. 10 Via Cali-Candelaria', 0),
-(5963, 0, 'config', 'config_owner', 'Aguila Roja', 0);
+(6215, 0, 'config', 'config_order_edit', '100', 0),
+(6216, 0, 'config', 'config_invoice_prefix', 'INV-2015-00', 0),
+(6214, 0, 'config', 'config_checkout_id', '5', 0),
+(6213, 0, 'config', 'config_guest_checkout', '1', 0),
+(6212, 0, 'config', 'config_cart_weight', '1', 0),
+(6209, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:\"1\";}', 1),
+(6210, 0, 'config', 'config_customer_price', '0', 0),
+(6211, 0, 'config', 'config_account_id', '3', 0),
+(6208, 0, 'config', 'config_customer_group_id', '1', 0),
+(6207, 0, 'config', 'config_customer_online', '1', 0),
+(6206, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(6205, 0, 'config', 'config_tax_default', 'shipping', 0),
+(6204, 0, 'config', 'config_vat', '0', 0),
+(6203, 0, 'config', 'config_tax', '1', 0),
+(6202, 0, 'config', 'config_voucher_max', '1000', 0),
+(6201, 0, 'config', 'config_voucher_min', '1', 0),
+(6200, 0, 'config', 'config_download', '1', 0),
+(6199, 0, 'config', 'config_review_status', '1', 0),
+(6198, 0, 'config', 'config_product_count', '1', 0),
+(6197, 0, 'config', 'config_admin_limit', '20', 0),
+(6196, 0, 'config', 'config_catalog_limit', '15', 0),
+(6195, 0, 'config', 'config_weight_class_id', '2', 0),
+(6194, 0, 'config', 'config_length_class_id', '1', 0),
+(6193, 0, 'config', 'config_currency_auto', '1', 0),
+(6192, 0, 'config', 'config_currency', 'COP', 0),
+(6191, 0, 'config', 'config_admin_language', 'en', 0),
+(6190, 0, 'config', 'config_language', 'es', 0),
+(6189, 0, 'config', 'config_zone_id', '750', 0),
+(6188, 0, 'config', 'config_country_id', '47', 0),
+(6187, 0, 'config', 'config_layout_id', '4', 0),
+(6185, 0, 'config', 'config_meta_description', 'Portafolio de productos de café Águila Roja, encontrarás café tostado, café molido, descafeinado, café granulado, café gourmet, café soluble, confites de café.', 0),
+(6186, 0, 'config', 'config_template', 'OPC040092', 0),
+(6184, 0, 'config', 'config_title', 'Productos Aguila roja', 0),
+(6183, 0, 'config', 'config_fax', '', 0),
+(6182, 0, 'config', 'config_telephone', '018000934777', 0),
+(6179, 0, 'config', 'config_owner', 'Aguila Roja', 0),
+(6180, 0, 'config', 'config_address', 'KM. 10 Via Cali-Candelaria', 0),
+(6181, 0, 'config', 'config_email', 'trafico@xignacv2.com', 0),
+(6178, 0, 'config', 'config_name', '   Productos Águila Roja', 0),
+(6282, 0, 'welcome', 'magnorcms_module', 'a:1:{i:1;a:6:{s:11:\"headertitle\";a:2:{i:3;s:0:\"\";i:1;s:0:\"\";}s:11:\"description\";a:2:{i:3;s:1374:\"&lt;div class=&quot;column&quot;&gt;\r\n&lt;div class=&quot;social_block&quot;&gt;\r\n&lt;h3&gt;Síguenos&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;https://www.facebook.com/CafeAguilaRoja&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;https://twitter.com/cafeaguilaroja&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;rss&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; target=&quot;_blank&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;googleplus&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Google +&lt;/a&gt;&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;column&quot;&gt;\r\n&lt;h3&gt;Contactanos&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n	&lt;div class=&quot;content&quot;&gt;KM. 10 Via Cali-Candelaria&lt;br /&gt;\r\n	Cali, Colombia&lt;br /&gt;\r\n	Teléfono:&amp;nbsp;(+572) 448 4767 - 39 - 95&lt;br /&gt;\r\n	&lt;a href=&quot;mailto:contactoaguilaroja.com&quot;&gt;contactoaguilaroja.com&lt;/a&gt;&lt;/div&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n\";i:1;s:1373:\"&lt;div class=&quot;column&quot;&gt;\r\n&lt;div class=&quot;social_block&quot;&gt;\r\n&lt;h3&gt;Follow Us&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;https://www.facebook.com/CafeAguilaRoja&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;https://twitter.com/cafeaguilaroja&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;rss&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; target=&quot;_blank&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;\r\n	&lt;li class=&quot;googleplus&quot;&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCkv1JRzgpabhBJgxz29z5YQ&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;Google +&lt;/a&gt;&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;column&quot;&gt;\r\n&lt;h3&gt;Contact Us&lt;/h3&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n	&lt;div class=&quot;content&quot;&gt;KM. 10 Via Cali-Candelaria&lt;br /&gt;\r\n	Cali, Colombia&lt;br /&gt;\r\n	Teléfono:&amp;nbsp;(+572) 448 4767 - 39 - 95&lt;br /&gt;\r\n	&lt;a href=&quot;mailto:contactoaguilaroja.com&quot;&gt;contactoaguilaroja.com&lt;/a&gt;&lt;/div&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/div&gt;\r\n\";}s:8:\"position\";s:14:\"content_footer\";s:6:\"status\";s:1:\"1\";s:9:\"layout_id\";s:1:\"6\";s:10:\"sort_order\";s:0:\"\";}}', 1);
 
 -- --------------------------------------------------------
 
@@ -2996,12 +2829,11 @@ INSERT INTO `ar_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 -- Estructura de tabla para la tabla `ar_stock_status`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_stock_status` (
-  `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_stock_status` (
+  `stock_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`stock_status_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `name` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_stock_status`
@@ -3023,13 +2855,12 @@ INSERT INTO `ar_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Estructura de tabla para la tabla `ar_store`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_store` (
-  `store_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_store` (
+  `store_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `url` varchar(255) NOT NULL,
-  `ssl` varchar(255) NOT NULL,
-  PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `ssl` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3037,14 +2868,13 @@ CREATE TABLE IF NOT EXISTS `ar_store` (
 -- Estructura de tabla para la tabla `ar_tax_class`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_tax_class` (
-  `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_tax_class` (
+  `tax_class_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`tax_class_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_tax_class`
@@ -3060,16 +2890,15 @@ INSERT INTO `ar_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- Estructura de tabla para la tabla `ar_tax_rate`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_tax_rate` (
-  `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_tax_rate` (
+  `tax_rate_id` int(11) NOT NULL,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(32) NOT NULL,
   `rate` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `type` char(1) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`tax_rate_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_tax_rate`
@@ -3085,10 +2914,9 @@ INSERT INTO `ar_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- Estructura de tabla para la tabla `ar_tax_rate_to_customer_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_tax_rate_to_customer_group` (
+CREATE TABLE `ar_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
-  `customer_group_id` int(11) NOT NULL,
-  PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
+  `customer_group_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -3105,14 +2933,13 @@ INSERT INTO `ar_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- Estructura de tabla para la tabla `ar_tax_rule`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_tax_rule` (
-  `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_tax_rule` (
+  `tax_rule_id` int(11) NOT NULL,
   `tax_class_id` int(11) NOT NULL,
   `tax_rate_id` int(11) NOT NULL,
   `based` varchar(10) NOT NULL,
-  `priority` int(5) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`tax_rule_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=129 ;
+  `priority` int(5) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_tax_rule`
@@ -3130,12 +2957,11 @@ INSERT INTO `ar_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- Estructura de tabla para la tabla `ar_url_alias`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_url_alias` (
-  `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_url_alias` (
+  `url_alias_id` int(11) NOT NULL,
   `query` varchar(255) NOT NULL,
-  `keyword` varchar(255) NOT NULL,
-  PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1167 ;
+  `keyword` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_url_alias`
@@ -3190,8 +3016,8 @@ INSERT INTO `ar_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Estructura de tabla para la tabla `ar_user`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_user` (
+  `user_id` int(11) NOT NULL,
   `user_group_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(40) NOT NULL,
@@ -3202,16 +3028,15 @@ CREATE TABLE IF NOT EXISTS `ar_user` (
   `code` varchar(40) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_user`
 --
 
 INSERT INTO `ar_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'webadmin', 'ec566b40cb908c43eeb2cba32838ac1ffe59fcb6', 'e8cc25b54', '', '', 'jcalderon@xignacv.com', '', '190.0.37.18', 1, '2014-12-17 12:07:12');
+(1, 1, 'webadmin', '5913313ba207d9502bf9656f77a03ea3b92f1e26', '0d5d08674', 'Web Admin', 'Xigna', 'trafico@xignacv2.com', '', '190.0.37.18', 1, '2014-12-17 12:07:12');
 
 -- --------------------------------------------------------
 
@@ -3219,19 +3044,18 @@ INSERT INTO `ar_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- Estructura de tabla para la tabla `ar_user_group`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_user_group` (
-  `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_user_group` (
+  `user_group_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
-  `permission` text NOT NULL,
-  PRIMARY KEY (`user_group_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `permission` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_user_group`
 --
 
 INSERT INTO `ar_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Top Administrator', 'a:2:{s:6:"access";a:153:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:15:"catalog/profile";i:10;s:14:"catalog/review";i:11;s:18:"common/filemanager";i:12;s:13:"design/banner";i:13;s:19:"design/custom_field";i:14;s:13:"design/layout";i:15;s:14:"extension/feed";i:16;s:17:"extension/manager";i:17;s:16:"extension/module";i:18;s:17:"extension/openbay";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:29:"module/amazon_checkout_layout";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:18:"module/ebaydisplay";i:46;s:15:"module/featured";i:47;s:13:"module/filter";i:48;s:18:"module/google_talk";i:49;s:18:"module/information";i:50;s:13:"module/latest";i:51;s:17:"module/openbaypro";i:52;s:16:"module/pp_layout";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:14:"openbay/amazon";i:58;s:22:"openbay/amazon_listing";i:59;s:22:"openbay/amazon_product";i:60;s:16:"openbay/amazonus";i:61;s:24:"openbay/amazonus_listing";i:62;s:24:"openbay/amazonus_product";i:63;s:20:"openbay/ebay_profile";i:64;s:21:"openbay/ebay_template";i:65;s:15:"openbay/openbay";i:66;s:23:"payment/amazon_checkout";i:67;s:24:"payment/authorizenet_aim";i:68;s:21:"payment/bank_transfer";i:69;s:14:"payment/cheque";i:70;s:11:"payment/cod";i:71;s:21:"payment/free_checkout";i:72;s:22:"payment/klarna_account";i:73;s:22:"payment/klarna_invoice";i:74;s:14:"payment/liqpay";i:75;s:20:"payment/moneybookers";i:76;s:14:"payment/nochex";i:77;s:15:"payment/paymate";i:78;s:16:"payment/paypoint";i:79;s:13:"payment/payza";i:80;s:26:"payment/perpetual_payments";i:81;s:18:"payment/pp_express";i:82;s:25:"payment/pp_payflow_iframe";i:83;s:14:"payment/pp_pro";i:84;s:21:"payment/pp_pro_iframe";i:85;s:17:"payment/pp_pro_pf";i:86;s:17:"payment/pp_pro_uk";i:87;s:19:"payment/pp_standard";i:88;s:15:"payment/sagepay";i:89;s:22:"payment/sagepay_direct";i:90;s:18:"payment/sagepay_us";i:91;s:19:"payment/twocheckout";i:92;s:28:"payment/web_payment_software";i:93;s:16:"payment/worldpay";i:94;s:27:"report/affiliate_commission";i:95;s:22:"report/customer_credit";i:96;s:22:"report/customer_online";i:97;s:21:"report/customer_order";i:98;s:22:"report/customer_reward";i:99;s:24:"report/product_purchased";i:100;s:21:"report/product_viewed";i:101;s:18:"report/sale_coupon";i:102;s:17:"report/sale_order";i:103;s:18:"report/sale_return";i:104;s:20:"report/sale_shipping";i:105;s:15:"report/sale_tax";i:106;s:14:"sale/affiliate";i:107;s:12:"sale/contact";i:108;s:11:"sale/coupon";i:109;s:13:"sale/customer";i:110;s:20:"sale/customer_ban_ip";i:111;s:19:"sale/customer_group";i:112;s:10:"sale/order";i:113;s:14:"sale/recurring";i:114;s:11:"sale/return";i:115;s:12:"sale/voucher";i:116;s:18:"sale/voucher_theme";i:117;s:15:"setting/setting";i:118;s:13:"setting/store";i:119;s:16:"shipping/auspost";i:120;s:17:"shipping/citylink";i:121;s:14:"shipping/fedex";i:122;s:13:"shipping/flat";i:123;s:13:"shipping/free";i:124;s:13:"shipping/item";i:125;s:23:"shipping/parcelforce_48";i:126;s:15:"shipping/pickup";i:127;s:19:"shipping/royal_mail";i:128;s:12:"shipping/ups";i:129;s:13:"shipping/usps";i:130;s:15:"shipping/weight";i:131;s:11:"tool/backup";i:132;s:14:"tool/error_log";i:133;s:12:"total/coupon";i:134;s:12:"total/credit";i:135;s:14:"total/handling";i:136;s:16:"total/klarna_fee";i:137;s:19:"total/low_order_fee";i:138;s:12:"total/reward";i:139;s:14:"total/shipping";i:140;s:15:"total/sub_total";i:141;s:9:"total/tax";i:142;s:11:"total/total";i:143;s:13:"total/voucher";i:144;s:9:"user/user";i:145;s:20:"user/user_permission";i:146;s:19:"module/tm_slideshow";i:147;s:16:"module/magnorcms";i:148;s:18:"module/information";i:149;s:17:"module/bestseller";i:150;s:13:"module/latest";i:151;s:12:"module/store";i:152;s:14:"module/special";}s:6:"modify";a:153:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:15:"catalog/profile";i:10;s:14:"catalog/review";i:11;s:18:"common/filemanager";i:12;s:13:"design/banner";i:13;s:19:"design/custom_field";i:14;s:13:"design/layout";i:15;s:14:"extension/feed";i:16;s:17:"extension/manager";i:17;s:16:"extension/module";i:18;s:17:"extension/openbay";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:29:"module/amazon_checkout_layout";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:18:"module/ebaydisplay";i:46;s:15:"module/featured";i:47;s:13:"module/filter";i:48;s:18:"module/google_talk";i:49;s:18:"module/information";i:50;s:13:"module/latest";i:51;s:17:"module/openbaypro";i:52;s:16:"module/pp_layout";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:14:"openbay/amazon";i:58;s:22:"openbay/amazon_listing";i:59;s:22:"openbay/amazon_product";i:60;s:16:"openbay/amazonus";i:61;s:24:"openbay/amazonus_listing";i:62;s:24:"openbay/amazonus_product";i:63;s:20:"openbay/ebay_profile";i:64;s:21:"openbay/ebay_template";i:65;s:15:"openbay/openbay";i:66;s:23:"payment/amazon_checkout";i:67;s:24:"payment/authorizenet_aim";i:68;s:21:"payment/bank_transfer";i:69;s:14:"payment/cheque";i:70;s:11:"payment/cod";i:71;s:21:"payment/free_checkout";i:72;s:22:"payment/klarna_account";i:73;s:22:"payment/klarna_invoice";i:74;s:14:"payment/liqpay";i:75;s:20:"payment/moneybookers";i:76;s:14:"payment/nochex";i:77;s:15:"payment/paymate";i:78;s:16:"payment/paypoint";i:79;s:13:"payment/payza";i:80;s:26:"payment/perpetual_payments";i:81;s:18:"payment/pp_express";i:82;s:25:"payment/pp_payflow_iframe";i:83;s:14:"payment/pp_pro";i:84;s:21:"payment/pp_pro_iframe";i:85;s:17:"payment/pp_pro_pf";i:86;s:17:"payment/pp_pro_uk";i:87;s:19:"payment/pp_standard";i:88;s:15:"payment/sagepay";i:89;s:22:"payment/sagepay_direct";i:90;s:18:"payment/sagepay_us";i:91;s:19:"payment/twocheckout";i:92;s:28:"payment/web_payment_software";i:93;s:16:"payment/worldpay";i:94;s:27:"report/affiliate_commission";i:95;s:22:"report/customer_credit";i:96;s:22:"report/customer_online";i:97;s:21:"report/customer_order";i:98;s:22:"report/customer_reward";i:99;s:24:"report/product_purchased";i:100;s:21:"report/product_viewed";i:101;s:18:"report/sale_coupon";i:102;s:17:"report/sale_order";i:103;s:18:"report/sale_return";i:104;s:20:"report/sale_shipping";i:105;s:15:"report/sale_tax";i:106;s:14:"sale/affiliate";i:107;s:12:"sale/contact";i:108;s:11:"sale/coupon";i:109;s:13:"sale/customer";i:110;s:20:"sale/customer_ban_ip";i:111;s:19:"sale/customer_group";i:112;s:10:"sale/order";i:113;s:14:"sale/recurring";i:114;s:11:"sale/return";i:115;s:12:"sale/voucher";i:116;s:18:"sale/voucher_theme";i:117;s:15:"setting/setting";i:118;s:13:"setting/store";i:119;s:16:"shipping/auspost";i:120;s:17:"shipping/citylink";i:121;s:14:"shipping/fedex";i:122;s:13:"shipping/flat";i:123;s:13:"shipping/free";i:124;s:13:"shipping/item";i:125;s:23:"shipping/parcelforce_48";i:126;s:15:"shipping/pickup";i:127;s:19:"shipping/royal_mail";i:128;s:12:"shipping/ups";i:129;s:13:"shipping/usps";i:130;s:15:"shipping/weight";i:131;s:11:"tool/backup";i:132;s:14:"tool/error_log";i:133;s:12:"total/coupon";i:134;s:12:"total/credit";i:135;s:14:"total/handling";i:136;s:16:"total/klarna_fee";i:137;s:19:"total/low_order_fee";i:138;s:12:"total/reward";i:139;s:14:"total/shipping";i:140;s:15:"total/sub_total";i:141;s:9:"total/tax";i:142;s:11:"total/total";i:143;s:13:"total/voucher";i:144;s:9:"user/user";i:145;s:20:"user/user_permission";i:146;s:19:"module/tm_slideshow";i:147;s:16:"module/magnorcms";i:148;s:18:"module/information";i:149;s:17:"module/bestseller";i:150;s:13:"module/latest";i:151;s:12:"module/store";i:152;s:14:"module/special";}}'),
+(1, 'Top Administrator', 'a:2:{s:6:\"access\";a:153:{i:0;s:17:\"catalog/attribute\";i:1;s:23:\"catalog/attribute_group\";i:2;s:16:\"catalog/category\";i:3;s:16:\"catalog/download\";i:4;s:14:\"catalog/filter\";i:5;s:19:\"catalog/information\";i:6;s:20:\"catalog/manufacturer\";i:7;s:14:\"catalog/option\";i:8;s:15:\"catalog/product\";i:9;s:15:\"catalog/profile\";i:10;s:14:\"catalog/review\";i:11;s:18:\"common/filemanager\";i:12;s:13:\"design/banner\";i:13;s:19:\"design/custom_field\";i:14;s:13:\"design/layout\";i:15;s:14:\"extension/feed\";i:16;s:17:\"extension/manager\";i:17;s:16:\"extension/module\";i:18;s:17:\"extension/openbay\";i:19;s:17:\"extension/payment\";i:20;s:18:\"extension/shipping\";i:21;s:15:\"extension/total\";i:22;s:16:\"feed/google_base\";i:23;s:19:\"feed/google_sitemap\";i:24;s:20:\"localisation/country\";i:25;s:21:\"localisation/currency\";i:26;s:21:\"localisation/geo_zone\";i:27;s:21:\"localisation/language\";i:28;s:25:\"localisation/length_class\";i:29;s:25:\"localisation/order_status\";i:30;s:26:\"localisation/return_action\";i:31;s:26:\"localisation/return_reason\";i:32;s:26:\"localisation/return_status\";i:33;s:25:\"localisation/stock_status\";i:34;s:22:\"localisation/tax_class\";i:35;s:21:\"localisation/tax_rate\";i:36;s:25:\"localisation/weight_class\";i:37;s:17:\"localisation/zone\";i:38;s:14:\"module/account\";i:39;s:16:\"module/affiliate\";i:40;s:29:\"module/amazon_checkout_layout\";i:41;s:13:\"module/banner\";i:42;s:17:\"module/bestseller\";i:43;s:15:\"module/carousel\";i:44;s:15:\"module/category\";i:45;s:18:\"module/ebaydisplay\";i:46;s:15:\"module/featured\";i:47;s:13:\"module/filter\";i:48;s:18:\"module/google_talk\";i:49;s:18:\"module/information\";i:50;s:13:\"module/latest\";i:51;s:17:\"module/openbaypro\";i:52;s:16:\"module/pp_layout\";i:53;s:16:\"module/slideshow\";i:54;s:14:\"module/special\";i:55;s:12:\"module/store\";i:56;s:14:\"module/welcome\";i:57;s:14:\"openbay/amazon\";i:58;s:22:\"openbay/amazon_listing\";i:59;s:22:\"openbay/amazon_product\";i:60;s:16:\"openbay/amazonus\";i:61;s:24:\"openbay/amazonus_listing\";i:62;s:24:\"openbay/amazonus_product\";i:63;s:20:\"openbay/ebay_profile\";i:64;s:21:\"openbay/ebay_template\";i:65;s:15:\"openbay/openbay\";i:66;s:23:\"payment/amazon_checkout\";i:67;s:24:\"payment/authorizenet_aim\";i:68;s:21:\"payment/bank_transfer\";i:69;s:14:\"payment/cheque\";i:70;s:11:\"payment/cod\";i:71;s:21:\"payment/free_checkout\";i:72;s:22:\"payment/klarna_account\";i:73;s:22:\"payment/klarna_invoice\";i:74;s:14:\"payment/liqpay\";i:75;s:20:\"payment/moneybookers\";i:76;s:14:\"payment/nochex\";i:77;s:15:\"payment/paymate\";i:78;s:16:\"payment/paypoint\";i:79;s:13:\"payment/payza\";i:80;s:26:\"payment/perpetual_payments\";i:81;s:18:\"payment/pp_express\";i:82;s:25:\"payment/pp_payflow_iframe\";i:83;s:14:\"payment/pp_pro\";i:84;s:21:\"payment/pp_pro_iframe\";i:85;s:17:\"payment/pp_pro_pf\";i:86;s:17:\"payment/pp_pro_uk\";i:87;s:19:\"payment/pp_standard\";i:88;s:15:\"payment/sagepay\";i:89;s:22:\"payment/sagepay_direct\";i:90;s:18:\"payment/sagepay_us\";i:91;s:19:\"payment/twocheckout\";i:92;s:28:\"payment/web_payment_software\";i:93;s:16:\"payment/worldpay\";i:94;s:27:\"report/affiliate_commission\";i:95;s:22:\"report/customer_credit\";i:96;s:22:\"report/customer_online\";i:97;s:21:\"report/customer_order\";i:98;s:22:\"report/customer_reward\";i:99;s:24:\"report/product_purchased\";i:100;s:21:\"report/product_viewed\";i:101;s:18:\"report/sale_coupon\";i:102;s:17:\"report/sale_order\";i:103;s:18:\"report/sale_return\";i:104;s:20:\"report/sale_shipping\";i:105;s:15:\"report/sale_tax\";i:106;s:14:\"sale/affiliate\";i:107;s:12:\"sale/contact\";i:108;s:11:\"sale/coupon\";i:109;s:13:\"sale/customer\";i:110;s:20:\"sale/customer_ban_ip\";i:111;s:19:\"sale/customer_group\";i:112;s:10:\"sale/order\";i:113;s:14:\"sale/recurring\";i:114;s:11:\"sale/return\";i:115;s:12:\"sale/voucher\";i:116;s:18:\"sale/voucher_theme\";i:117;s:15:\"setting/setting\";i:118;s:13:\"setting/store\";i:119;s:16:\"shipping/auspost\";i:120;s:17:\"shipping/citylink\";i:121;s:14:\"shipping/fedex\";i:122;s:13:\"shipping/flat\";i:123;s:13:\"shipping/free\";i:124;s:13:\"shipping/item\";i:125;s:23:\"shipping/parcelforce_48\";i:126;s:15:\"shipping/pickup\";i:127;s:19:\"shipping/royal_mail\";i:128;s:12:\"shipping/ups\";i:129;s:13:\"shipping/usps\";i:130;s:15:\"shipping/weight\";i:131;s:11:\"tool/backup\";i:132;s:14:\"tool/error_log\";i:133;s:12:\"total/coupon\";i:134;s:12:\"total/credit\";i:135;s:14:\"total/handling\";i:136;s:16:\"total/klarna_fee\";i:137;s:19:\"total/low_order_fee\";i:138;s:12:\"total/reward\";i:139;s:14:\"total/shipping\";i:140;s:15:\"total/sub_total\";i:141;s:9:\"total/tax\";i:142;s:11:\"total/total\";i:143;s:13:\"total/voucher\";i:144;s:9:\"user/user\";i:145;s:20:\"user/user_permission\";i:146;s:19:\"module/tm_slideshow\";i:147;s:16:\"module/magnorcms\";i:148;s:18:\"module/information\";i:149;s:17:\"module/bestseller\";i:150;s:13:\"module/latest\";i:151;s:12:\"module/store\";i:152;s:14:\"module/special\";}s:6:\"modify\";a:153:{i:0;s:17:\"catalog/attribute\";i:1;s:23:\"catalog/attribute_group\";i:2;s:16:\"catalog/category\";i:3;s:16:\"catalog/download\";i:4;s:14:\"catalog/filter\";i:5;s:19:\"catalog/information\";i:6;s:20:\"catalog/manufacturer\";i:7;s:14:\"catalog/option\";i:8;s:15:\"catalog/product\";i:9;s:15:\"catalog/profile\";i:10;s:14:\"catalog/review\";i:11;s:18:\"common/filemanager\";i:12;s:13:\"design/banner\";i:13;s:19:\"design/custom_field\";i:14;s:13:\"design/layout\";i:15;s:14:\"extension/feed\";i:16;s:17:\"extension/manager\";i:17;s:16:\"extension/module\";i:18;s:17:\"extension/openbay\";i:19;s:17:\"extension/payment\";i:20;s:18:\"extension/shipping\";i:21;s:15:\"extension/total\";i:22;s:16:\"feed/google_base\";i:23;s:19:\"feed/google_sitemap\";i:24;s:20:\"localisation/country\";i:25;s:21:\"localisation/currency\";i:26;s:21:\"localisation/geo_zone\";i:27;s:21:\"localisation/language\";i:28;s:25:\"localisation/length_class\";i:29;s:25:\"localisation/order_status\";i:30;s:26:\"localisation/return_action\";i:31;s:26:\"localisation/return_reason\";i:32;s:26:\"localisation/return_status\";i:33;s:25:\"localisation/stock_status\";i:34;s:22:\"localisation/tax_class\";i:35;s:21:\"localisation/tax_rate\";i:36;s:25:\"localisation/weight_class\";i:37;s:17:\"localisation/zone\";i:38;s:14:\"module/account\";i:39;s:16:\"module/affiliate\";i:40;s:29:\"module/amazon_checkout_layout\";i:41;s:13:\"module/banner\";i:42;s:17:\"module/bestseller\";i:43;s:15:\"module/carousel\";i:44;s:15:\"module/category\";i:45;s:18:\"module/ebaydisplay\";i:46;s:15:\"module/featured\";i:47;s:13:\"module/filter\";i:48;s:18:\"module/google_talk\";i:49;s:18:\"module/information\";i:50;s:13:\"module/latest\";i:51;s:17:\"module/openbaypro\";i:52;s:16:\"module/pp_layout\";i:53;s:16:\"module/slideshow\";i:54;s:14:\"module/special\";i:55;s:12:\"module/store\";i:56;s:14:\"module/welcome\";i:57;s:14:\"openbay/amazon\";i:58;s:22:\"openbay/amazon_listing\";i:59;s:22:\"openbay/amazon_product\";i:60;s:16:\"openbay/amazonus\";i:61;s:24:\"openbay/amazonus_listing\";i:62;s:24:\"openbay/amazonus_product\";i:63;s:20:\"openbay/ebay_profile\";i:64;s:21:\"openbay/ebay_template\";i:65;s:15:\"openbay/openbay\";i:66;s:23:\"payment/amazon_checkout\";i:67;s:24:\"payment/authorizenet_aim\";i:68;s:21:\"payment/bank_transfer\";i:69;s:14:\"payment/cheque\";i:70;s:11:\"payment/cod\";i:71;s:21:\"payment/free_checkout\";i:72;s:22:\"payment/klarna_account\";i:73;s:22:\"payment/klarna_invoice\";i:74;s:14:\"payment/liqpay\";i:75;s:20:\"payment/moneybookers\";i:76;s:14:\"payment/nochex\";i:77;s:15:\"payment/paymate\";i:78;s:16:\"payment/paypoint\";i:79;s:13:\"payment/payza\";i:80;s:26:\"payment/perpetual_payments\";i:81;s:18:\"payment/pp_express\";i:82;s:25:\"payment/pp_payflow_iframe\";i:83;s:14:\"payment/pp_pro\";i:84;s:21:\"payment/pp_pro_iframe\";i:85;s:17:\"payment/pp_pro_pf\";i:86;s:17:\"payment/pp_pro_uk\";i:87;s:19:\"payment/pp_standard\";i:88;s:15:\"payment/sagepay\";i:89;s:22:\"payment/sagepay_direct\";i:90;s:18:\"payment/sagepay_us\";i:91;s:19:\"payment/twocheckout\";i:92;s:28:\"payment/web_payment_software\";i:93;s:16:\"payment/worldpay\";i:94;s:27:\"report/affiliate_commission\";i:95;s:22:\"report/customer_credit\";i:96;s:22:\"report/customer_online\";i:97;s:21:\"report/customer_order\";i:98;s:22:\"report/customer_reward\";i:99;s:24:\"report/product_purchased\";i:100;s:21:\"report/product_viewed\";i:101;s:18:\"report/sale_coupon\";i:102;s:17:\"report/sale_order\";i:103;s:18:\"report/sale_return\";i:104;s:20:\"report/sale_shipping\";i:105;s:15:\"report/sale_tax\";i:106;s:14:\"sale/affiliate\";i:107;s:12:\"sale/contact\";i:108;s:11:\"sale/coupon\";i:109;s:13:\"sale/customer\";i:110;s:20:\"sale/customer_ban_ip\";i:111;s:19:\"sale/customer_group\";i:112;s:10:\"sale/order\";i:113;s:14:\"sale/recurring\";i:114;s:11:\"sale/return\";i:115;s:12:\"sale/voucher\";i:116;s:18:\"sale/voucher_theme\";i:117;s:15:\"setting/setting\";i:118;s:13:\"setting/store\";i:119;s:16:\"shipping/auspost\";i:120;s:17:\"shipping/citylink\";i:121;s:14:\"shipping/fedex\";i:122;s:13:\"shipping/flat\";i:123;s:13:\"shipping/free\";i:124;s:13:\"shipping/item\";i:125;s:23:\"shipping/parcelforce_48\";i:126;s:15:\"shipping/pickup\";i:127;s:19:\"shipping/royal_mail\";i:128;s:12:\"shipping/ups\";i:129;s:13:\"shipping/usps\";i:130;s:15:\"shipping/weight\";i:131;s:11:\"tool/backup\";i:132;s:14:\"tool/error_log\";i:133;s:12:\"total/coupon\";i:134;s:12:\"total/credit\";i:135;s:14:\"total/handling\";i:136;s:16:\"total/klarna_fee\";i:137;s:19:\"total/low_order_fee\";i:138;s:12:\"total/reward\";i:139;s:14:\"total/shipping\";i:140;s:15:\"total/sub_total\";i:141;s:9:\"total/tax\";i:142;s:11:\"total/total\";i:143;s:13:\"total/voucher\";i:144;s:9:\"user/user\";i:145;s:20:\"user/user_permission\";i:146;s:19:\"module/tm_slideshow\";i:147;s:16:\"module/magnorcms\";i:148;s:18:\"module/information\";i:149;s:17:\"module/bestseller\";i:150;s:13:\"module/latest\";i:151;s:12:\"module/store\";i:152;s:14:\"module/special\";}}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -3240,8 +3064,8 @@ INSERT INTO `ar_user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Estructura de tabla para la tabla `ar_voucher`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_voucher` (
-  `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_voucher` (
+  `voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `code` varchar(10) NOT NULL,
   `from_name` varchar(64) NOT NULL,
@@ -3252,9 +3076,8 @@ CREATE TABLE IF NOT EXISTS `ar_voucher` (
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3262,14 +3085,13 @@ CREATE TABLE IF NOT EXISTS `ar_voucher` (
 -- Estructura de tabla para la tabla `ar_voucher_history`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_voucher_history` (
-  `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_voucher_history` (
+  `voucher_history_id` int(11) NOT NULL,
   `voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`voucher_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `date_added` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3277,11 +3099,10 @@ CREATE TABLE IF NOT EXISTS `ar_voucher_history` (
 -- Estructura de tabla para la tabla `ar_voucher_theme`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_voucher_theme` (
-  `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) NOT NULL,
-  PRIMARY KEY (`voucher_theme_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+CREATE TABLE `ar_voucher_theme` (
+  `voucher_theme_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_voucher_theme`
@@ -3298,11 +3119,10 @@ INSERT INTO `ar_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Estructura de tabla para la tabla `ar_voucher_theme_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_voucher_theme_description` (
+CREATE TABLE `ar_voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`voucher_theme_id`,`language_id`)
+  `name` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -3323,11 +3143,10 @@ INSERT INTO `ar_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- Estructura de tabla para la tabla `ar_weight_class`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_weight_class` (
-  `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
-  `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  PRIMARY KEY (`weight_class_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+CREATE TABLE `ar_weight_class` (
+  `weight_class_id` int(11) NOT NULL,
+  `value` decimal(15,8) NOT NULL DEFAULT '0.00000000'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_weight_class`
@@ -3345,13 +3164,12 @@ INSERT INTO `ar_weight_class` (`weight_class_id`, `value`) VALUES
 -- Estructura de tabla para la tabla `ar_weight_class_description`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_weight_class_description` (
-  `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_weight_class_description` (
+  `weight_class_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
-  `unit` varchar(4) NOT NULL,
-  PRIMARY KEY (`weight_class_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `unit` varchar(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_weight_class_description`
@@ -3373,14 +3191,13 @@ INSERT INTO `ar_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- Estructura de tabla para la tabla `ar_zone`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_zone` (
-  `zone_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_zone` (
+  `zone_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `code` varchar(32) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`zone_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4033 ;
+  `status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_zone`
@@ -3484,7 +3301,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (95, 3, 'Medea', 'MED', 1),
 (96, 3, 'Mila', 'MIL', 1),
 (97, 3, 'Mostaganem', 'MOS', 1),
-(98, 3, 'M''Sila', 'MSI', 1),
+(98, 3, 'M\'Sila', 'MSI', 1),
 (99, 3, 'Naama', 'NAA', 1),
 (100, 3, 'Oran', 'ORA', 1),
 (101, 3, 'Ouargla', 'OUA', 1),
@@ -3504,7 +3321,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (115, 3, 'Tizi Ouzou', 'TOU', 1),
 (116, 3, 'Tlemcen', 'TLE', 1),
 (117, 4, 'Eastern', 'E', 1),
-(118, 4, 'Manu''a', 'M', 1),
+(118, 4, 'Manu\'a', 'M', 1),
 (119, 4, 'Rose Island', 'R', 1),
 (120, 4, 'Swains Island', 'S', 1),
 (121, 4, 'Western', 'W', 1),
@@ -3569,13 +3386,13 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (180, 11, 'Aragatsotn', 'AGT', 1),
 (181, 11, 'Ararat', 'ARR', 1),
 (182, 11, 'Armavir', 'ARM', 1),
-(183, 11, 'Geghark''unik''', 'GEG', 1),
-(184, 11, 'Kotayk''', 'KOT', 1),
+(183, 11, 'Geghark\'unik\'', 'GEG', 1),
+(184, 11, 'Kotayk\'', 'KOT', 1),
 (185, 11, 'Lorri', 'LOR', 1),
 (186, 11, 'Shirak', 'SHI', 1),
-(187, 11, 'Syunik''', 'SYU', 1),
+(187, 11, 'Syunik\'', 'SYU', 1),
 (188, 11, 'Tavush', 'TAV', 1),
-(189, 11, 'Vayots'' Dzor', 'VAY', 1),
+(189, 11, 'Vayots\' Dzor', 'VAY', 1),
 (190, 11, 'Yerevan', 'YER', 1),
 (191, 13, 'Australian Capital Territory', 'ACT', 1),
 (192, 13, 'New South Wales', 'NSW', 1),
@@ -3689,7 +3506,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (300, 16, 'Long Island', 'LNG', 1),
 (301, 16, 'Mangrove Cay', 'MAN', 1),
 (302, 16, 'Mayaguana', 'MAY', 1),
-(303, 16, 'Moore''s Island', 'MOO', 1),
+(303, 16, 'Moore\'s Island', 'MOO', 1),
 (304, 16, 'North Abaco', 'NAB', 1),
 (305, 16, 'North Andros', 'NAN', 1),
 (306, 16, 'North Eleuthera', 'NEL', 1),
@@ -3724,7 +3541,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (335, 19, 'Saint Philip', 'PHI', 1),
 (336, 19, 'Saint Thomas', 'THO', 1),
 (337, 20, 'Brestskaya (Brest)', 'BR', 1),
-(338, 20, 'Homyel''skaya (Homyel'')', 'HO', 1),
+(338, 20, 'Homyel\'skaya (Homyel\')', 'HO', 1),
 (339, 20, 'Horad Minsk', 'HM', 1),
 (340, 20, 'Hrodzyenskaya (Hrodna)', 'HR', 1),
 (341, 20, 'Mahilyowskaya (Mahilyow)', 'MA', 1),
@@ -3764,9 +3581,9 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (375, 24, 'Paget', 'PG', 1),
 (376, 24, 'Pembroke', 'PB', 1),
 (377, 24, 'Saint George City', 'GC', 1),
-(378, 24, 'Saint George''s', 'SG', 1),
+(378, 24, 'Saint George\'s', 'SG', 1),
 (379, 24, 'Sandys', 'SA', 1),
-(380, 24, 'Smith''s', 'SM', 1),
+(380, 24, 'Smith\'s', 'SM', 1),
 (381, 24, 'Southampton', 'SH', 1),
 (382, 24, 'Warwick', 'WA', 1),
 (383, 25, 'Bumthang', 'BUM', 1),
@@ -4035,7 +3852,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (646, 41, 'Mambere-KadeÔ', 'MKD', 1),
 (647, 41, 'Mbomou', 'MBO', 1),
 (648, 41, 'Nana-Mambere', 'NMM', 1),
-(649, 41, 'Ombella-M''Poko', 'OMP', 1),
+(649, 41, 'Ombella-M\'Poko', 'OMP', 1),
 (650, 41, 'Ouaka', 'OUK', 1),
 (651, 41, 'Ouham', 'OUH', 1),
 (652, 41, 'Ouham-Pende', 'OPE', 1),
@@ -4063,7 +3880,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (674, 43, 'Atacama', 'AT', 1),
 (675, 43, 'Bio-Bio', 'BI', 1),
 (676, 43, 'Coquimbo', 'CO', 1),
-(677, 43, 'Libertador General Bernardo O''Hi', 'LI', 1),
+(677, 43, 'Libertador General Bernardo O\'Hi', 'LI', 1),
 (678, 43, 'Los Lagos', 'LL', 1),
 (679, 43, 'Magallanes y de la Antartica Chi', 'MA', 1),
 (680, 43, 'Maule', 'ML', 1),
@@ -4305,7 +4122,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (916, 57, 'Vejle', 'VK', 1),
 (917, 57, 'Vestj&aelig;lland', 'VJ', 1),
 (918, 57, 'Viborg', 'VB', 1),
-(919, 58, '''Ali Sabih', 'S', 1),
+(919, 58, '\'Ali Sabih', 'S', 1),
 (920, 58, 'Dikhil', 'K', 1),
 (921, 58, 'Djibouti', 'J', 1),
 (922, 58, 'Obock', 'O', 1),
@@ -4393,7 +4210,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1004, 63, 'Al Fayyum', 'FYM', 1),
 (1005, 63, 'Al Gharbiyah', 'GBY', 1),
 (1006, 63, 'Al Iskandariyah', 'IDR', 1),
-(1007, 63, 'Al Isma''iliyah', 'IML', 1),
+(1007, 63, 'Al Isma\'iliyah', 'IML', 1),
 (1008, 63, 'Al Jizah', 'JZH', 1),
 (1009, 63, 'Al Minufiyah', 'MFY', 1),
 (1010, 63, 'Al Minya', 'MNY', 1),
@@ -4405,13 +4222,13 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1016, 63, 'Aswan', 'ASW', 1),
 (1017, 63, 'Asyut', 'ASY', 1),
 (1018, 63, 'Bani Suwayf', 'BSW', 1),
-(1019, 63, 'Bur Sa''id', 'BSD', 1),
+(1019, 63, 'Bur Sa\'id', 'BSD', 1),
 (1020, 63, 'Dumyat', 'DMY', 1),
-(1021, 63, 'Janub Sina''', 'JNS', 1),
+(1021, 63, 'Janub Sina\'', 'JNS', 1),
 (1022, 63, 'Kafr ash Shaykh', 'KSH', 1),
 (1023, 63, 'Matruh', 'MAT', 1),
 (1024, 63, 'Qina', 'QIN', 1),
-(1025, 63, 'Shamal Sina''', 'SHS', 1),
+(1025, 63, 'Shamal Sina\'', 'SHS', 1),
 (1026, 63, 'Suhaj', 'SUH', 1),
 (1027, 64, 'Ahuachapan', 'AH', 1),
 (1028, 64, 'Cabanas', 'CA', 1),
@@ -4572,7 +4389,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1206, 74, 'Hauts de Seine', '92', 1),
 (1207, 74, 'Seine St-Denis', '93', 1),
 (1208, 74, 'Val de Marne', '94', 1),
-(1209, 74, 'Val d''Oise', '95', 1),
+(1209, 74, 'Val d\'Oise', '95', 1),
 (1210, 76, 'Archipel des Marquises', 'M', 1),
 (1211, 76, 'Archipel des Tuamotu', 'T', 1),
 (1212, 76, 'Archipel des Tubuai', 'I', 1),
@@ -4744,7 +4561,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1378, 92, 'Upper Takutu-Upper Essequibo', 'UT', 1),
 (1379, 93, 'Artibonite', 'AR', 1),
 (1380, 93, 'Centre', 'CE', 1),
-(1381, 93, 'Grand''Anse', 'GA', 1),
+(1381, 93, 'Grand\'Anse', 'GA', 1),
 (1382, 93, 'Nord', 'ND', 1),
 (1383, 93, 'Nord-Est', 'NE', 1),
 (1384, 93, 'Nord-Ouest', 'NO', 1),
@@ -4921,9 +4738,9 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1555, 101, 'Bushehr', 'BSH', 1),
 (1556, 101, 'Fars', 'FAR', 1),
 (1557, 101, 'Hormozgan', 'HRM', 1),
-(1558, 101, 'Sistan and Baluchistan', 'SBL', 1);
+(1558, 101, 'Sistan and Baluchistan', 'SBL', 1),
+(1559, 101, 'Kerman', 'KRB', 1);
 INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
-(1559, 101, 'Kerman', 'KRB', 1),
 (1560, 101, 'Yazd', 'YZD', 1),
 (1561, 101, 'Esfahan', 'EFH', 1),
 (1562, 101, 'Semnan', 'SMN', 1),
@@ -4948,7 +4765,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1581, 102, 'Ninawa', 'NN', 1),
 (1582, 102, 'Dahuk', 'DH', 1),
 (1583, 102, 'Arbil', 'AL', 1),
-(1584, 102, 'At Ta''mim', 'TM', 1),
+(1584, 102, 'At Ta\'mim', 'TM', 1),
 (1585, 102, 'As Sulaymaniyah', 'SL', 1),
 (1586, 103, 'Carlow', 'CA', 1),
 (1587, 103, 'Cavan', 'CV', 1),
@@ -4976,8 +4793,8 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1609, 103, 'Westmeath', 'WE', 1),
 (1610, 103, 'Wexford', 'WX', 1),
 (1611, 103, 'Wicklow', 'WI', 1),
-(1612, 104, 'Be''er Sheva', 'BS', 1),
-(1613, 104, 'Bika''at Hayarden', 'BH', 1),
+(1612, 104, 'Be\'er Sheva', 'BS', 1),
+(1613, 104, 'Bika\'at Hayarden', 'BH', 1),
 (1614, 104, 'Eilat and Arava', 'EA', 1),
 (1615, 104, 'Galil', 'GA', 1),
 (1616, 104, 'Haifa', 'HA', 1),
@@ -5067,17 +4884,17 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1701, 107, 'Yamagata', 'YA', 1),
 (1702, 107, 'Yamaguchi', 'YM', 1),
 (1703, 107, 'Yamanashi', 'YN', 1),
-(1704, 108, '''Amman', 'AM', 1),
+(1704, 108, '\'Amman', 'AM', 1),
 (1705, 108, 'Ajlun', 'AJ', 1),
-(1706, 108, 'Al ''Aqabah', 'AA', 1),
-(1707, 108, 'Al Balqa''', 'AB', 1),
+(1706, 108, 'Al \'Aqabah', 'AA', 1),
+(1707, 108, 'Al Balqa\'', 'AB', 1),
 (1708, 108, 'Al Karak', 'AK', 1),
 (1709, 108, 'Al Mafraq', 'AL', 1),
 (1710, 108, 'At Tafilah', 'AT', 1),
-(1711, 108, 'Az Zarqa''', 'AZ', 1),
+(1711, 108, 'Az Zarqa\'', 'AZ', 1),
 (1712, 108, 'Irbid', 'IR', 1),
 (1713, 108, 'Jarash', 'JA', 1),
-(1714, 108, 'Ma''an', 'MA', 1),
+(1714, 108, 'Ma\'an', 'MA', 1),
 (1715, 108, 'Madaba', 'MD', 1),
 (1716, 109, 'Almaty', 'AL', 1),
 (1717, 109, 'Almaty City', 'AC', 1),
@@ -5131,30 +4948,30 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1765, 112, 'Hwanghae-bukto', 'HWB', 1),
 (1766, 112, 'Hwanghae-namdo', 'HWN', 1),
 (1767, 112, 'Kangwon-do', 'KAN', 1),
-(1768, 112, 'P''yongan-bukto', 'PYB', 1),
-(1769, 112, 'P''yongan-namdo', 'PYN', 1),
+(1768, 112, 'P\'yongan-bukto', 'PYB', 1),
+(1769, 112, 'P\'yongan-namdo', 'PYN', 1),
 (1770, 112, 'Ryanggang-do (Yanggang-do)', 'YAN', 1),
 (1771, 112, 'Rason Directly Governed City', 'NAJ', 1),
-(1772, 112, 'P''yongyang Special City', 'PYO', 1),
-(1773, 113, 'Ch''ungch''ong-bukto', 'CO', 1),
-(1774, 113, 'Ch''ungch''ong-namdo', 'CH', 1),
+(1772, 112, 'P\'yongyang Special City', 'PYO', 1),
+(1773, 113, 'Ch\'ungch\'ong-bukto', 'CO', 1),
+(1774, 113, 'Ch\'ungch\'ong-namdo', 'CH', 1),
 (1775, 113, 'Cheju-do', 'CD', 1),
 (1776, 113, 'Cholla-bukto', 'CB', 1),
 (1777, 113, 'Cholla-namdo', 'CN', 1),
-(1778, 113, 'Inch''on-gwangyoksi', 'IG', 1),
+(1778, 113, 'Inch\'on-gwangyoksi', 'IG', 1),
 (1779, 113, 'Kangwon-do', 'KA', 1),
 (1780, 113, 'Kwangju-gwangyoksi', 'KG', 1),
 (1781, 113, 'Kyonggi-do', 'KD', 1),
 (1782, 113, 'Kyongsang-bukto', 'KB', 1),
 (1783, 113, 'Kyongsang-namdo', 'KN', 1),
 (1784, 113, 'Pusan-gwangyoksi', 'PG', 1),
-(1785, 113, 'Soul-t''ukpyolsi', 'SO', 1),
+(1785, 113, 'Soul-t\'ukpyolsi', 'SO', 1),
 (1786, 113, 'Taegu-gwangyoksi', 'TA', 1),
 (1787, 113, 'Taejon-gwangyoksi', 'TG', 1),
-(1788, 114, 'Al ''Asimah', 'AL', 1),
+(1788, 114, 'Al \'Asimah', 'AL', 1),
 (1789, 114, 'Al Ahmadi', 'AA', 1),
 (1790, 114, 'Al Farwaniyah', 'AF', 1),
-(1791, 114, 'Al Jahra''', 'AJ', 1),
+(1791, 114, 'Al Jahra\'', 'AJ', 1),
 (1792, 114, 'Hawalli', 'HA', 1),
 (1793, 115, 'Bishkek', 'GB', 1),
 (1794, 115, 'Batken', 'B', 1),
@@ -5220,9 +5037,9 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1854, 119, 'Leribe', 'LE', 1),
 (1855, 119, 'Mafeteng', 'MF', 1),
 (1856, 119, 'Maseru', 'MS', 1),
-(1857, 119, 'Mohale''s Hoek', 'MH', 1),
+(1857, 119, 'Mohale\'s Hoek', 'MH', 1),
 (1858, 119, 'Mokhotlong', 'MK', 1),
-(1859, 119, 'Qacha''s Nek', 'QN', 1),
+(1859, 119, 'Qacha\'s Nek', 'QN', 1),
 (1860, 119, 'Quthing', 'QT', 1),
 (1861, 119, 'Thaba-Tseka', 'TT', 1),
 (1862, 120, 'Bomi', 'BI', 1),
@@ -5239,14 +5056,14 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1873, 120, 'River Cess', 'RC', 1),
 (1874, 120, 'Sinoe', 'SN', 1),
 (1875, 121, 'Ajdabiya', 'AJ', 1),
-(1876, 121, 'Al ''Aziziyah', 'AZ', 1),
+(1876, 121, 'Al \'Aziziyah', 'AZ', 1),
 (1877, 121, 'Al Fatih', 'FA', 1),
 (1878, 121, 'Al Jabal al Akhdar', 'JA', 1),
 (1879, 121, 'Al Jufrah', 'JU', 1),
 (1880, 121, 'Al Khums', 'KH', 1),
 (1881, 121, 'Al Kufrah', 'KU', 1),
 (1882, 121, 'An Nuqat al Khams', 'NK', 1),
-(1883, 121, 'Ash Shati''', 'AS', 1),
+(1883, 121, 'Ash Shati\'', 'AS', 1),
 (1884, 121, 'Awbari', 'AW', 1),
 (1885, 121, 'Az Zawiyah', 'ZA', 1),
 (1886, 121, 'Banghazi', 'BA', 1),
@@ -5713,7 +5530,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2347, 153, 'Coromandel', 'COR', 1),
 (2348, 153, 'Gisborne', 'GIS', 1),
 (2349, 153, 'Fiordland', 'FIO', 1),
-(2350, 153, 'Hawke''s Bay', 'HKB', 1),
+(2350, 153, 'Hawke\'s Bay', 'HKB', 1),
 (2351, 153, 'Marlborough', 'MBH', 1),
 (2352, 153, 'Manawatu-Wanganui', 'MWT', 1),
 (2353, 153, 'Mt Cook-Mackenzie', 'MCM', 1),
@@ -6040,7 +5857,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2674, 173, 'Ar Rayyan', 'RN', 1),
 (2675, 173, 'Jarayan al Batinah', 'JB', 1),
 (2676, 173, 'Madinat ash Shamal', 'MS', 1),
-(2677, 173, 'Umm Sa''id', 'UD', 1),
+(2677, 173, 'Umm Sa\'id', 'UD', 1),
 (2678, 173, 'Umm Salal', 'UL', 1),
 (2679, 175, 'Alba', 'AB', 1),
 (2680, 175, 'Arad', 'AR', 1),
@@ -6158,9 +5975,9 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2792, 176, 'Tver', 'TV', 1),
 (2793, 176, 'Tyumen', 'TY', 1),
 (2794, 176, 'Ufa', 'UF', 1),
-(2795, 176, 'Ul''yanovsk', 'UL', 1),
+(2795, 176, 'Ul\'yanovsk', 'UL', 1),
 (2796, 176, 'Ulan-Ude', 'UU', 1),
-(2797, 176, 'Ust''-Ordynskiy', 'US', 1),
+(2797, 176, 'Ust\'-Ordynskiy', 'US', 1),
 (2798, 176, 'Vladikavkaz', 'VL', 1),
 (2799, 176, 'Vladimir', 'VA', 1),
 (2800, 176, 'Vladivostok', 'VV', 1),
@@ -6215,16 +6032,16 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2849, 180, 'Saint David', 'D', 1),
 (2850, 180, 'Saint George', 'G', 1),
 (2851, 180, 'Saint Patrick', 'P', 1),
-(2852, 181, 'A''ana', 'AN', 1),
+(2852, 181, 'A\'ana', 'AN', 1),
 (2853, 181, 'Aiga-i-le-Tai', 'AI', 1),
 (2854, 181, 'Atua', 'AT', 1),
-(2855, 181, 'Fa''asaleleaga', 'FA', 1),
-(2856, 181, 'Gaga''emauga', 'GE', 1),
+(2855, 181, 'Fa\'asaleleaga', 'FA', 1),
+(2856, 181, 'Gaga\'emauga', 'GE', 1),
 (2857, 181, 'Gagaifomauga', 'GF', 1),
 (2858, 181, 'Palauli', 'PA', 1),
-(2859, 181, 'Satupa''itea', 'SA', 1),
+(2859, 181, 'Satupa\'itea', 'SA', 1),
 (2860, 181, 'Tuamasaga', 'TU', 1),
-(2861, 181, 'Va''a-o-Fonoti', 'VF', 1),
+(2861, 181, 'Va\'a-o-Fonoti', 'VF', 1),
 (2862, 181, 'Vaisigano', 'VS', 1),
 (2863, 182, 'Acquaviva', 'AC', 1),
 (2864, 182, 'Borgo Maggiore', 'BM', 1),
@@ -6244,8 +6061,8 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2878, 184, 'Al Qasim', 'QS', 1),
 (2879, 184, 'Ar Riyad', 'RD', 1),
 (2880, 184, 'Ash Sharqiyah (Eastern)', 'AQ', 1),
-(2881, 184, '''Asir', 'AS', 1),
-(2882, 184, 'Ha''il', 'HL', 1),
+(2881, 184, '\'Asir', 'AS', 1),
+(2882, 184, 'Ha\'il', 'HL', 1),
 (2883, 184, 'Jizan', 'JZ', 1),
 (2884, 184, 'Makkah', 'ML', 1),
 (2885, 184, 'Najran', 'NR', 1),
@@ -6273,8 +6090,8 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2907, 186, 'Bel Ombre', 'BO', 1),
 (2908, 186, 'Cascade', 'CA', 1),
 (2909, 186, 'Glacis', 'GL', 1),
-(2910, 186, 'Grand'' Anse (on Mahe)', 'GM', 1),
-(2911, 186, 'Grand'' Anse (on Praslin)', 'GP', 1),
+(2910, 186, 'Grand\' Anse (on Mahe)', 'GM', 1),
+(2911, 186, 'Grand\' Anse (on Praslin)', 'GP', 1),
 (2912, 186, 'La Digue', 'DG', 1),
 (2913, 186, 'La Riviere Anglaise', 'RA', 1),
 (2914, 186, 'Mont Buxton', 'MB', 1),
@@ -6397,7 +6214,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3031, 197, 'Ascension', 'A', 1),
 (3032, 197, 'Saint Helena', 'S', 1),
 (3033, 197, 'Tristan da Cunha', 'T', 1),
-(3034, 199, 'A''ali an Nil', 'ANL', 1),
+(3034, 199, 'A\'ali an Nil', 'ANL', 1),
 (3035, 199, 'Al Bahr al Ahmar', 'BAM', 1),
 (3036, 199, 'Al Buhayrat', 'BRT', 1),
 (3037, 199, 'Al Jazirah', 'JZR', 1),
@@ -6408,7 +6225,7 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3042, 199, 'An Nil al Azraq', 'ANZ', 1),
 (3043, 199, 'Ash Shamaliyah', 'ASH', 1),
 (3044, 199, 'Bahr al Jabal', 'BJA', 1),
-(3045, 199, 'Gharb al Istiwa''iyah', 'GIS', 1),
+(3045, 199, 'Gharb al Istiwa\'iyah', 'GIS', 1),
 (3046, 199, 'Gharb Bahr al Ghazal', 'GBG', 1),
 (3047, 199, 'Gharb Darfur', 'GDA', 1),
 (3048, 199, 'Gharb Kurdufan', 'GKU', 1),
@@ -6420,10 +6237,10 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3054, 199, 'Shamal Bahr al Ghazal', 'SBG', 1),
 (3055, 199, 'Shamal Darfur', 'SDA', 1),
 (3056, 199, 'Shamal Kurdufan', 'SKU', 1),
-(3057, 199, 'Sharq al Istiwa''iyah', 'SIS', 1),
-(3058, 199, 'Sinnar', 'SNR', 1);
+(3057, 199, 'Sharq al Istiwa\'iyah', 'SIS', 1),
+(3058, 199, 'Sinnar', 'SNR', 1),
+(3059, 199, 'Warab', 'WRB', 1);
 INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
-(3059, 199, 'Warab', 'WRB', 1),
 (3060, 200, 'Brokopondo', 'BR', 1),
 (3061, 200, 'Commewijne', 'CM', 1),
 (3062, 200, 'Coronie', 'CR', 1),
@@ -6508,22 +6325,22 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3141, 206, 'Kin-men', 'KM', 1),
 (3142, 206, 'Lien-chiang', 'LC', 1),
 (3143, 206, 'Miao-li', 'ML', 1),
-(3144, 206, 'Nan-t''ou', 'NT', 1),
-(3145, 206, 'P''eng-hu', 'PH', 1),
-(3146, 206, 'P''ing-tung', 'PT', 1),
-(3147, 206, 'T''ai-chung', 'TG', 1),
-(3148, 206, 'T''ai-nan', 'TA', 1),
-(3149, 206, 'T''ai-pei county', 'TP', 1),
-(3150, 206, 'T''ai-tung', 'TT', 1),
-(3151, 206, 'T''ao-yuan', 'TY', 1),
+(3144, 206, 'Nan-t\'ou', 'NT', 1),
+(3145, 206, 'P\'eng-hu', 'PH', 1),
+(3146, 206, 'P\'ing-tung', 'PT', 1),
+(3147, 206, 'T\'ai-chung', 'TG', 1),
+(3148, 206, 'T\'ai-nan', 'TA', 1),
+(3149, 206, 'T\'ai-pei county', 'TP', 1),
+(3150, 206, 'T\'ai-tung', 'TT', 1),
+(3151, 206, 'T\'ao-yuan', 'TY', 1),
 (3152, 206, 'Yun-lin', 'YL', 1),
 (3153, 206, 'Chia-i city', 'CC', 1),
 (3154, 206, 'Chi-lung', 'CL', 1),
 (3155, 206, 'Hsin-chu', 'HC', 1),
-(3156, 206, 'T''ai-chung', 'TH', 1),
-(3157, 206, 'T''ai-nan', 'TN', 1),
+(3156, 206, 'T\'ai-chung', 'TH', 1),
+(3157, 206, 'T\'ai-nan', 'TN', 1),
 (3158, 206, 'Kao-hsiung city', 'KC', 1),
-(3159, 206, 'T''ai-pei city', 'TC', 1),
+(3159, 206, 'T\'ai-pei city', 'TC', 1),
 (3160, 207, 'Gorno-Badakhstan', 'GB', 1),
 (3161, 207, 'Khatlon', 'KT', 1),
 (3162, 207, 'Sughd', 'SU', 1),
@@ -6637,9 +6454,9 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3270, 211, 'Atafu', 'A', 1),
 (3271, 211, 'Fakaofo', 'F', 1),
 (3272, 211, 'Nukunonu', 'N', 1),
-(3273, 212, 'Ha''apai', 'H', 1),
+(3273, 212, 'Ha\'apai', 'H', 1),
 (3274, 212, 'Tongatapu', 'T', 1),
-(3275, 212, 'Vava''u', 'V', 1),
+(3275, 212, 'Vava\'u', 'V', 1),
 (3276, 213, 'Couva/Tabaquite/Talparo', 'CT', 1),
 (3277, 213, 'Diego Martin', 'DM', 1),
 (3278, 213, 'Mayaro/Rio Claro', 'MR', 1),
@@ -6848,34 +6665,34 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3481, 220, 'Chernihiv', 'CH', 1),
 (3482, 220, 'Chernivtsi', 'CV', 1),
 (3483, 220, 'Crimea', 'CR', 1),
-(3484, 220, 'Dnipropetrovs''k', 'DN', 1),
-(3485, 220, 'Donets''k', 'DO', 1),
-(3486, 220, 'Ivano-Frankivs''k', 'IV', 1),
+(3484, 220, 'Dnipropetrovs\'k', 'DN', 1),
+(3485, 220, 'Donets\'k', 'DO', 1),
+(3486, 220, 'Ivano-Frankivs\'k', 'IV', 1),
 (3487, 220, 'Kharkiv Kherson', 'KL', 1),
-(3488, 220, 'Khmel''nyts''kyy', 'KM', 1),
+(3488, 220, 'Khmel\'nyts\'kyy', 'KM', 1),
 (3489, 220, 'Kirovohrad', 'KR', 1),
 (3490, 220, 'Kiev', 'KV', 1),
 (3491, 220, 'Kyyiv', 'KY', 1),
-(3492, 220, 'Luhans''k', 'LU', 1),
-(3493, 220, 'L''viv', 'LV', 1),
+(3492, 220, 'Luhans\'k', 'LU', 1),
+(3493, 220, 'L\'viv', 'LV', 1),
 (3494, 220, 'Mykolayiv', 'MY', 1),
 (3495, 220, 'Odesa', 'OD', 1),
 (3496, 220, 'Poltava', 'PO', 1),
 (3497, 220, 'Rivne', 'RI', 1),
 (3498, 220, 'Sevastopol', 'SE', 1),
 (3499, 220, 'Sumy', 'SU', 1),
-(3500, 220, 'Ternopil''', 'TE', 1),
+(3500, 220, 'Ternopil\'', 'TE', 1),
 (3501, 220, 'Vinnytsya', 'VI', 1),
-(3502, 220, 'Volyn''', 'VO', 1),
+(3502, 220, 'Volyn\'', 'VO', 1),
 (3503, 220, 'Zakarpattya', 'ZK', 1),
 (3504, 220, 'Zaporizhzhya', 'ZA', 1),
 (3505, 220, 'Zhytomyr', 'ZH', 1),
 (3506, 221, 'Abu Zaby', 'AZ', 1),
-(3507, 221, '''Ajman', 'AJ', 1),
+(3507, 221, '\'Ajman', 'AJ', 1),
 (3508, 221, 'Al Fujayrah', 'FU', 1),
 (3509, 221, 'Ash Shariqah', 'SH', 1),
 (3510, 221, 'Dubayy', 'DU', 1),
-(3511, 221, 'R''as al Khaymah', 'RK', 1),
+(3511, 221, 'R\'as al Khaymah', 'RK', 1),
 (3512, 221, 'Umm al Qaywayn', 'UQ', 1),
 (3513, 222, 'Aberdeen', 'ABN', 1),
 (3514, 222, 'Aberdeenshire', 'ABNS', 1),
@@ -7072,12 +6889,12 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3705, 225, 'Treinta y Tres', 'TT', 1),
 (3706, 226, 'Andijon', 'AN', 1),
 (3707, 226, 'Buxoro', 'BU', 1),
-(3708, 226, 'Farg''ona', 'FA', 1),
+(3708, 226, 'Farg\'ona', 'FA', 1),
 (3709, 226, 'Jizzax', 'JI', 1),
 (3710, 226, 'Namangan', 'NG', 1),
 (3711, 226, 'Navoiy', 'NW', 1),
 (3712, 226, 'Qashqadaryo', 'QA', 1),
-(3713, 226, 'Qoraqalpog''iston Republikasi', 'QR', 1),
+(3713, 226, 'Qoraqalpog\'iston Republikasi', 'QR', 1),
 (3714, 226, 'Samarqand', 'SA', 1),
 (3715, 226, 'Sirdaryo', 'SI', 1),
 (3716, 226, 'Surxondaryo', 'SU', 1),
@@ -7165,13 +6982,13 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3798, 235, 'Ibb', 'IB', 1),
 (3799, 235, 'Al Jawf', 'JA', 1),
 (3800, 235, 'Lahij', 'LA', 1),
-(3801, 235, 'Ma''rib', 'MA', 1),
+(3801, 235, 'Ma\'rib', 'MA', 1),
 (3802, 235, 'Al Mahrah', 'MR', 1),
 (3803, 235, 'Al Mahwit', 'MW', 1),
-(3804, 235, 'Sa''dah', 'SD', 1),
-(3805, 235, 'San''a', 'SN', 1),
+(3804, 235, 'Sa\'dah', 'SD', 1),
+(3805, 235, 'San\'a', 'SN', 1),
 (3806, 235, 'Shabwah', 'SH', 1),
-(3807, 235, 'Ta''izz', 'TA', 1),
+(3807, 235, 'Ta\'izz', 'TA', 1),
 (3812, 237, 'Bas-Congo', 'BC', 1),
 (3813, 237, 'Bandundu', 'BN', 1),
 (3814, 237, 'Equateur', 'EQ', 1),
@@ -7381,15 +7198,14 @@ INSERT INTO `ar_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- Estructura de tabla para la tabla `ar_zone_to_geo_zone`
 --
 
-CREATE TABLE IF NOT EXISTS `ar_zone_to_geo_zone` (
-  `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ar_zone_to_geo_zone` (
+  `zone_to_geo_zone_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
   `zone_id` int(11) NOT NULL DEFAULT '0',
   `geo_zone_id` int(11) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`zone_to_geo_zone_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ar_zone_to_geo_zone`
@@ -7399,6 +7215,1094 @@ INSERT INTO `ar_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 (65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `ar_address`
+--
+ALTER TABLE `ar_address`
+  ADD PRIMARY KEY (`address_id`),
+  ADD KEY `customer_id` (`customer_id`);
+
+--
+-- Indices de la tabla `ar_affiliate`
+--
+ALTER TABLE `ar_affiliate`
+  ADD PRIMARY KEY (`affiliate_id`);
+
+--
+-- Indices de la tabla `ar_affiliate_transaction`
+--
+ALTER TABLE `ar_affiliate_transaction`
+  ADD PRIMARY KEY (`affiliate_transaction_id`);
+
+--
+-- Indices de la tabla `ar_attribute`
+--
+ALTER TABLE `ar_attribute`
+  ADD PRIMARY KEY (`attribute_id`);
+
+--
+-- Indices de la tabla `ar_attribute_description`
+--
+ALTER TABLE `ar_attribute_description`
+  ADD PRIMARY KEY (`attribute_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_attribute_group`
+--
+ALTER TABLE `ar_attribute_group`
+  ADD PRIMARY KEY (`attribute_group_id`);
+
+--
+-- Indices de la tabla `ar_attribute_group_description`
+--
+ALTER TABLE `ar_attribute_group_description`
+  ADD PRIMARY KEY (`attribute_group_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_banner`
+--
+ALTER TABLE `ar_banner`
+  ADD PRIMARY KEY (`banner_id`);
+
+--
+-- Indices de la tabla `ar_banner_image`
+--
+ALTER TABLE `ar_banner_image`
+  ADD PRIMARY KEY (`banner_image_id`);
+
+--
+-- Indices de la tabla `ar_banner_image_description`
+--
+ALTER TABLE `ar_banner_image_description`
+  ADD PRIMARY KEY (`banner_image_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_category`
+--
+ALTER TABLE `ar_category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indices de la tabla `ar_category_description`
+--
+ALTER TABLE `ar_category_description`
+  ADD PRIMARY KEY (`category_id`,`language_id`),
+  ADD KEY `name` (`name`);
+
+--
+-- Indices de la tabla `ar_category_filter`
+--
+ALTER TABLE `ar_category_filter`
+  ADD PRIMARY KEY (`category_id`,`filter_id`);
+
+--
+-- Indices de la tabla `ar_category_path`
+--
+ALTER TABLE `ar_category_path`
+  ADD PRIMARY KEY (`category_id`,`path_id`);
+
+--
+-- Indices de la tabla `ar_category_to_layout`
+--
+ALTER TABLE `ar_category_to_layout`
+  ADD PRIMARY KEY (`category_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_category_to_store`
+--
+ALTER TABLE `ar_category_to_store`
+  ADD PRIMARY KEY (`category_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_country`
+--
+ALTER TABLE `ar_country`
+  ADD PRIMARY KEY (`country_id`);
+
+--
+-- Indices de la tabla `ar_coupon`
+--
+ALTER TABLE `ar_coupon`
+  ADD PRIMARY KEY (`coupon_id`);
+
+--
+-- Indices de la tabla `ar_coupon_category`
+--
+ALTER TABLE `ar_coupon_category`
+  ADD PRIMARY KEY (`coupon_id`,`category_id`);
+
+--
+-- Indices de la tabla `ar_coupon_history`
+--
+ALTER TABLE `ar_coupon_history`
+  ADD PRIMARY KEY (`coupon_history_id`);
+
+--
+-- Indices de la tabla `ar_coupon_product`
+--
+ALTER TABLE `ar_coupon_product`
+  ADD PRIMARY KEY (`coupon_product_id`);
+
+--
+-- Indices de la tabla `ar_currency`
+--
+ALTER TABLE `ar_currency`
+  ADD PRIMARY KEY (`currency_id`);
+
+--
+-- Indices de la tabla `ar_customer`
+--
+ALTER TABLE `ar_customer`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indices de la tabla `ar_customer_ban_ip`
+--
+ALTER TABLE `ar_customer_ban_ip`
+  ADD PRIMARY KEY (`customer_ban_ip_id`),
+  ADD KEY `ip` (`ip`);
+
+--
+-- Indices de la tabla `ar_customer_field`
+--
+ALTER TABLE `ar_customer_field`
+  ADD PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`);
+
+--
+-- Indices de la tabla `ar_customer_group`
+--
+ALTER TABLE `ar_customer_group`
+  ADD PRIMARY KEY (`customer_group_id`);
+
+--
+-- Indices de la tabla `ar_customer_group_description`
+--
+ALTER TABLE `ar_customer_group_description`
+  ADD PRIMARY KEY (`customer_group_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_customer_history`
+--
+ALTER TABLE `ar_customer_history`
+  ADD PRIMARY KEY (`customer_history_id`);
+
+--
+-- Indices de la tabla `ar_customer_ip`
+--
+ALTER TABLE `ar_customer_ip`
+  ADD PRIMARY KEY (`customer_ip_id`),
+  ADD KEY `ip` (`ip`);
+
+--
+-- Indices de la tabla `ar_customer_online`
+--
+ALTER TABLE `ar_customer_online`
+  ADD PRIMARY KEY (`ip`);
+
+--
+-- Indices de la tabla `ar_customer_reward`
+--
+ALTER TABLE `ar_customer_reward`
+  ADD PRIMARY KEY (`customer_reward_id`);
+
+--
+-- Indices de la tabla `ar_customer_transaction`
+--
+ALTER TABLE `ar_customer_transaction`
+  ADD PRIMARY KEY (`customer_transaction_id`);
+
+--
+-- Indices de la tabla `ar_custom_field`
+--
+ALTER TABLE `ar_custom_field`
+  ADD PRIMARY KEY (`custom_field_id`);
+
+--
+-- Indices de la tabla `ar_custom_field_description`
+--
+ALTER TABLE `ar_custom_field_description`
+  ADD PRIMARY KEY (`custom_field_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_custom_field_to_customer_group`
+--
+ALTER TABLE `ar_custom_field_to_customer_group`
+  ADD PRIMARY KEY (`custom_field_id`,`customer_group_id`);
+
+--
+-- Indices de la tabla `ar_custom_field_value`
+--
+ALTER TABLE `ar_custom_field_value`
+  ADD PRIMARY KEY (`custom_field_value_id`);
+
+--
+-- Indices de la tabla `ar_custom_field_value_description`
+--
+ALTER TABLE `ar_custom_field_value_description`
+  ADD PRIMARY KEY (`custom_field_value_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_download`
+--
+ALTER TABLE `ar_download`
+  ADD PRIMARY KEY (`download_id`);
+
+--
+-- Indices de la tabla `ar_download_description`
+--
+ALTER TABLE `ar_download_description`
+  ADD PRIMARY KEY (`download_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_extension`
+--
+ALTER TABLE `ar_extension`
+  ADD PRIMARY KEY (`extension_id`);
+
+--
+-- Indices de la tabla `ar_filter`
+--
+ALTER TABLE `ar_filter`
+  ADD PRIMARY KEY (`filter_id`);
+
+--
+-- Indices de la tabla `ar_filter_description`
+--
+ALTER TABLE `ar_filter_description`
+  ADD PRIMARY KEY (`filter_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_filter_group`
+--
+ALTER TABLE `ar_filter_group`
+  ADD PRIMARY KEY (`filter_group_id`);
+
+--
+-- Indices de la tabla `ar_filter_group_description`
+--
+ALTER TABLE `ar_filter_group_description`
+  ADD PRIMARY KEY (`filter_group_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_geo_zone`
+--
+ALTER TABLE `ar_geo_zone`
+  ADD PRIMARY KEY (`geo_zone_id`);
+
+--
+-- Indices de la tabla `ar_information`
+--
+ALTER TABLE `ar_information`
+  ADD PRIMARY KEY (`information_id`);
+
+--
+-- Indices de la tabla `ar_information_description`
+--
+ALTER TABLE `ar_information_description`
+  ADD PRIMARY KEY (`information_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_information_to_layout`
+--
+ALTER TABLE `ar_information_to_layout`
+  ADD PRIMARY KEY (`information_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_information_to_store`
+--
+ALTER TABLE `ar_information_to_store`
+  ADD PRIMARY KEY (`information_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_language`
+--
+ALTER TABLE `ar_language`
+  ADD PRIMARY KEY (`language_id`),
+  ADD KEY `name` (`name`);
+
+--
+-- Indices de la tabla `ar_layout`
+--
+ALTER TABLE `ar_layout`
+  ADD PRIMARY KEY (`layout_id`);
+
+--
+-- Indices de la tabla `ar_layout_route`
+--
+ALTER TABLE `ar_layout_route`
+  ADD PRIMARY KEY (`layout_route_id`);
+
+--
+-- Indices de la tabla `ar_length_class`
+--
+ALTER TABLE `ar_length_class`
+  ADD PRIMARY KEY (`length_class_id`);
+
+--
+-- Indices de la tabla `ar_length_class_description`
+--
+ALTER TABLE `ar_length_class_description`
+  ADD PRIMARY KEY (`length_class_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_manufacturer`
+--
+ALTER TABLE `ar_manufacturer`
+  ADD PRIMARY KEY (`manufacturer_id`);
+
+--
+-- Indices de la tabla `ar_manufacturer_to_store`
+--
+ALTER TABLE `ar_manufacturer_to_store`
+  ADD PRIMARY KEY (`manufacturer_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_option`
+--
+ALTER TABLE `ar_option`
+  ADD PRIMARY KEY (`option_id`);
+
+--
+-- Indices de la tabla `ar_option_description`
+--
+ALTER TABLE `ar_option_description`
+  ADD PRIMARY KEY (`option_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_option_value`
+--
+ALTER TABLE `ar_option_value`
+  ADD PRIMARY KEY (`option_value_id`);
+
+--
+-- Indices de la tabla `ar_option_value_description`
+--
+ALTER TABLE `ar_option_value_description`
+  ADD PRIMARY KEY (`option_value_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_order`
+--
+ALTER TABLE `ar_order`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indices de la tabla `ar_order_download`
+--
+ALTER TABLE `ar_order_download`
+  ADD PRIMARY KEY (`order_download_id`);
+
+--
+-- Indices de la tabla `ar_order_field`
+--
+ALTER TABLE `ar_order_field`
+  ADD PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`);
+
+--
+-- Indices de la tabla `ar_order_fraud`
+--
+ALTER TABLE `ar_order_fraud`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indices de la tabla `ar_order_history`
+--
+ALTER TABLE `ar_order_history`
+  ADD PRIMARY KEY (`order_history_id`);
+
+--
+-- Indices de la tabla `ar_order_option`
+--
+ALTER TABLE `ar_order_option`
+  ADD PRIMARY KEY (`order_option_id`);
+
+--
+-- Indices de la tabla `ar_order_product`
+--
+ALTER TABLE `ar_order_product`
+  ADD PRIMARY KEY (`order_product_id`);
+
+--
+-- Indices de la tabla `ar_order_recurring`
+--
+ALTER TABLE `ar_order_recurring`
+  ADD PRIMARY KEY (`order_recurring_id`);
+
+--
+-- Indices de la tabla `ar_order_recurring_transaction`
+--
+ALTER TABLE `ar_order_recurring_transaction`
+  ADD PRIMARY KEY (`order_recurring_transaction_id`);
+
+--
+-- Indices de la tabla `ar_order_status`
+--
+ALTER TABLE `ar_order_status`
+  ADD PRIMARY KEY (`order_status_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_order_total`
+--
+ALTER TABLE `ar_order_total`
+  ADD PRIMARY KEY (`order_total_id`),
+  ADD KEY `idx_orders_total_orders_id` (`order_id`);
+
+--
+-- Indices de la tabla `ar_order_voucher`
+--
+ALTER TABLE `ar_order_voucher`
+  ADD PRIMARY KEY (`order_voucher_id`);
+
+--
+-- Indices de la tabla `ar_product`
+--
+ALTER TABLE `ar_product`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indices de la tabla `ar_product_attribute`
+--
+ALTER TABLE `ar_product_attribute`
+  ADD PRIMARY KEY (`product_id`,`attribute_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_product_description`
+--
+ALTER TABLE `ar_product_description`
+  ADD PRIMARY KEY (`product_id`,`language_id`),
+  ADD KEY `name` (`name`);
+
+--
+-- Indices de la tabla `ar_product_discount`
+--
+ALTER TABLE `ar_product_discount`
+  ADD PRIMARY KEY (`product_discount_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indices de la tabla `ar_product_filter`
+--
+ALTER TABLE `ar_product_filter`
+  ADD PRIMARY KEY (`product_id`,`filter_id`);
+
+--
+-- Indices de la tabla `ar_product_image`
+--
+ALTER TABLE `ar_product_image`
+  ADD PRIMARY KEY (`product_image_id`);
+
+--
+-- Indices de la tabla `ar_product_option`
+--
+ALTER TABLE `ar_product_option`
+  ADD PRIMARY KEY (`product_option_id`);
+
+--
+-- Indices de la tabla `ar_product_option_value`
+--
+ALTER TABLE `ar_product_option_value`
+  ADD PRIMARY KEY (`product_option_value_id`);
+
+--
+-- Indices de la tabla `ar_product_profile`
+--
+ALTER TABLE `ar_product_profile`
+  ADD PRIMARY KEY (`product_id`,`profile_id`,`customer_group_id`);
+
+--
+-- Indices de la tabla `ar_product_recurring`
+--
+ALTER TABLE `ar_product_recurring`
+  ADD PRIMARY KEY (`product_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_product_related`
+--
+ALTER TABLE `ar_product_related`
+  ADD PRIMARY KEY (`product_id`,`related_id`);
+
+--
+-- Indices de la tabla `ar_product_reward`
+--
+ALTER TABLE `ar_product_reward`
+  ADD PRIMARY KEY (`product_reward_id`);
+
+--
+-- Indices de la tabla `ar_product_special`
+--
+ALTER TABLE `ar_product_special`
+  ADD PRIMARY KEY (`product_special_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indices de la tabla `ar_product_to_category`
+--
+ALTER TABLE `ar_product_to_category`
+  ADD PRIMARY KEY (`product_id`,`category_id`);
+
+--
+-- Indices de la tabla `ar_product_to_download`
+--
+ALTER TABLE `ar_product_to_download`
+  ADD PRIMARY KEY (`product_id`,`download_id`);
+
+--
+-- Indices de la tabla `ar_product_to_layout`
+--
+ALTER TABLE `ar_product_to_layout`
+  ADD PRIMARY KEY (`product_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_product_to_store`
+--
+ALTER TABLE `ar_product_to_store`
+  ADD PRIMARY KEY (`product_id`,`store_id`);
+
+--
+-- Indices de la tabla `ar_profile`
+--
+ALTER TABLE `ar_profile`
+  ADD PRIMARY KEY (`profile_id`);
+
+--
+-- Indices de la tabla `ar_profile_description`
+--
+ALTER TABLE `ar_profile_description`
+  ADD PRIMARY KEY (`profile_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_return`
+--
+ALTER TABLE `ar_return`
+  ADD PRIMARY KEY (`return_id`);
+
+--
+-- Indices de la tabla `ar_return_action`
+--
+ALTER TABLE `ar_return_action`
+  ADD PRIMARY KEY (`return_action_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_return_history`
+--
+ALTER TABLE `ar_return_history`
+  ADD PRIMARY KEY (`return_history_id`);
+
+--
+-- Indices de la tabla `ar_return_reason`
+--
+ALTER TABLE `ar_return_reason`
+  ADD PRIMARY KEY (`return_reason_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_return_status`
+--
+ALTER TABLE `ar_return_status`
+  ADD PRIMARY KEY (`return_status_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_review`
+--
+ALTER TABLE `ar_review`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indices de la tabla `ar_setting`
+--
+ALTER TABLE `ar_setting`
+  ADD PRIMARY KEY (`setting_id`);
+
+--
+-- Indices de la tabla `ar_stock_status`
+--
+ALTER TABLE `ar_stock_status`
+  ADD PRIMARY KEY (`stock_status_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_store`
+--
+ALTER TABLE `ar_store`
+  ADD PRIMARY KEY (`store_id`);
+
+--
+-- Indices de la tabla `ar_tax_class`
+--
+ALTER TABLE `ar_tax_class`
+  ADD PRIMARY KEY (`tax_class_id`);
+
+--
+-- Indices de la tabla `ar_tax_rate`
+--
+ALTER TABLE `ar_tax_rate`
+  ADD PRIMARY KEY (`tax_rate_id`);
+
+--
+-- Indices de la tabla `ar_tax_rate_to_customer_group`
+--
+ALTER TABLE `ar_tax_rate_to_customer_group`
+  ADD PRIMARY KEY (`tax_rate_id`,`customer_group_id`);
+
+--
+-- Indices de la tabla `ar_tax_rule`
+--
+ALTER TABLE `ar_tax_rule`
+  ADD PRIMARY KEY (`tax_rule_id`);
+
+--
+-- Indices de la tabla `ar_url_alias`
+--
+ALTER TABLE `ar_url_alias`
+  ADD PRIMARY KEY (`url_alias_id`);
+
+--
+-- Indices de la tabla `ar_user`
+--
+ALTER TABLE `ar_user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indices de la tabla `ar_user_group`
+--
+ALTER TABLE `ar_user_group`
+  ADD PRIMARY KEY (`user_group_id`);
+
+--
+-- Indices de la tabla `ar_voucher`
+--
+ALTER TABLE `ar_voucher`
+  ADD PRIMARY KEY (`voucher_id`);
+
+--
+-- Indices de la tabla `ar_voucher_history`
+--
+ALTER TABLE `ar_voucher_history`
+  ADD PRIMARY KEY (`voucher_history_id`);
+
+--
+-- Indices de la tabla `ar_voucher_theme`
+--
+ALTER TABLE `ar_voucher_theme`
+  ADD PRIMARY KEY (`voucher_theme_id`);
+
+--
+-- Indices de la tabla `ar_voucher_theme_description`
+--
+ALTER TABLE `ar_voucher_theme_description`
+  ADD PRIMARY KEY (`voucher_theme_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_weight_class`
+--
+ALTER TABLE `ar_weight_class`
+  ADD PRIMARY KEY (`weight_class_id`);
+
+--
+-- Indices de la tabla `ar_weight_class_description`
+--
+ALTER TABLE `ar_weight_class_description`
+  ADD PRIMARY KEY (`weight_class_id`,`language_id`);
+
+--
+-- Indices de la tabla `ar_zone`
+--
+ALTER TABLE `ar_zone`
+  ADD PRIMARY KEY (`zone_id`);
+
+--
+-- Indices de la tabla `ar_zone_to_geo_zone`
+--
+ALTER TABLE `ar_zone_to_geo_zone`
+  ADD PRIMARY KEY (`zone_to_geo_zone_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `ar_address`
+--
+ALTER TABLE `ar_address`
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `ar_affiliate`
+--
+ALTER TABLE `ar_affiliate`
+  MODIFY `affiliate_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_affiliate_transaction`
+--
+ALTER TABLE `ar_affiliate_transaction`
+  MODIFY `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_attribute`
+--
+ALTER TABLE `ar_attribute`
+  MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de la tabla `ar_attribute_group`
+--
+ALTER TABLE `ar_attribute_group`
+  MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `ar_banner`
+--
+ALTER TABLE `ar_banner`
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `ar_banner_image`
+--
+ALTER TABLE `ar_banner_image`
+  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+--
+-- AUTO_INCREMENT de la tabla `ar_category`
+--
+ALTER TABLE `ar_category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+--
+-- AUTO_INCREMENT de la tabla `ar_country`
+--
+ALTER TABLE `ar_country`
+  MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=252;
+--
+-- AUTO_INCREMENT de la tabla `ar_coupon`
+--
+ALTER TABLE `ar_coupon`
+  MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `ar_coupon_history`
+--
+ALTER TABLE `ar_coupon_history`
+  MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_coupon_product`
+--
+ALTER TABLE `ar_coupon_product`
+  MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_currency`
+--
+ALTER TABLE `ar_currency`
+  MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer`
+--
+ALTER TABLE `ar_customer`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_ban_ip`
+--
+ALTER TABLE `ar_customer_ban_ip`
+  MODIFY `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_group`
+--
+ALTER TABLE `ar_customer_group`
+  MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_history`
+--
+ALTER TABLE `ar_customer_history`
+  MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_ip`
+--
+ALTER TABLE `ar_customer_ip`
+  MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_reward`
+--
+ALTER TABLE `ar_customer_reward`
+  MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_customer_transaction`
+--
+ALTER TABLE `ar_customer_transaction`
+  MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_custom_field`
+--
+ALTER TABLE `ar_custom_field`
+  MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_custom_field_value`
+--
+ALTER TABLE `ar_custom_field_value`
+  MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_download`
+--
+ALTER TABLE `ar_download`
+  MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_extension`
+--
+ALTER TABLE `ar_extension`
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=435;
+--
+-- AUTO_INCREMENT de la tabla `ar_filter`
+--
+ALTER TABLE `ar_filter`
+  MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_filter_group`
+--
+ALTER TABLE `ar_filter_group`
+  MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_geo_zone`
+--
+ALTER TABLE `ar_geo_zone`
+  MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `ar_information`
+--
+ALTER TABLE `ar_information`
+  MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `ar_language`
+--
+ALTER TABLE `ar_language`
+  MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `ar_layout`
+--
+ALTER TABLE `ar_layout`
+  MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de la tabla `ar_layout_route`
+--
+ALTER TABLE `ar_layout_route`
+  MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT de la tabla `ar_length_class`
+--
+ALTER TABLE `ar_length_class`
+  MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `ar_length_class_description`
+--
+ALTER TABLE `ar_length_class_description`
+  MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `ar_manufacturer`
+--
+ALTER TABLE `ar_manufacturer`
+  MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `ar_option`
+--
+ALTER TABLE `ar_option`
+  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `ar_option_value`
+--
+ALTER TABLE `ar_option_value`
+  MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+--
+-- AUTO_INCREMENT de la tabla `ar_order`
+--
+ALTER TABLE `ar_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_download`
+--
+ALTER TABLE `ar_order_download`
+  MODIFY `order_download_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_history`
+--
+ALTER TABLE `ar_order_history`
+  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_option`
+--
+ALTER TABLE `ar_order_option`
+  MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_product`
+--
+ALTER TABLE `ar_order_product`
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_recurring`
+--
+ALTER TABLE `ar_order_recurring`
+  MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_recurring_transaction`
+--
+ALTER TABLE `ar_order_recurring_transaction`
+  MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_status`
+--
+ALTER TABLE `ar_order_status`
+  MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_total`
+--
+ALTER TABLE `ar_order_total`
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `ar_order_voucher`
+--
+ALTER TABLE `ar_order_voucher`
+  MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_product`
+--
+ALTER TABLE `ar_product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_discount`
+--
+ALTER TABLE `ar_product_discount`
+  MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_image`
+--
+ALTER TABLE `ar_product_image`
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2471;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_option`
+--
+ALTER TABLE `ar_product_option`
+  MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_option_value`
+--
+ALTER TABLE `ar_product_option_value`
+  MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_reward`
+--
+ALTER TABLE `ar_product_reward`
+  MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=960;
+--
+-- AUTO_INCREMENT de la tabla `ar_product_special`
+--
+ALTER TABLE `ar_product_special`
+  MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=442;
+--
+-- AUTO_INCREMENT de la tabla `ar_profile`
+--
+ALTER TABLE `ar_profile`
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_return`
+--
+ALTER TABLE `ar_return`
+  MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_return_action`
+--
+ALTER TABLE `ar_return_action`
+  MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `ar_return_history`
+--
+ALTER TABLE `ar_return_history`
+  MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_return_reason`
+--
+ALTER TABLE `ar_return_reason`
+  MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `ar_return_status`
+--
+ALTER TABLE `ar_return_status`
+  MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `ar_review`
+--
+ALTER TABLE `ar_review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `ar_setting`
+--
+ALTER TABLE `ar_setting`
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6283;
+--
+-- AUTO_INCREMENT de la tabla `ar_stock_status`
+--
+ALTER TABLE `ar_stock_status`
+  MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de la tabla `ar_store`
+--
+ALTER TABLE `ar_store`
+  MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_tax_class`
+--
+ALTER TABLE `ar_tax_class`
+  MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `ar_tax_rate`
+--
+ALTER TABLE `ar_tax_rate`
+  MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+--
+-- AUTO_INCREMENT de la tabla `ar_tax_rule`
+--
+ALTER TABLE `ar_tax_rule`
+  MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+--
+-- AUTO_INCREMENT de la tabla `ar_url_alias`
+--
+ALTER TABLE `ar_url_alias`
+  MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1167;
+--
+-- AUTO_INCREMENT de la tabla `ar_user`
+--
+ALTER TABLE `ar_user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `ar_user_group`
+--
+ALTER TABLE `ar_user_group`
+  MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `ar_voucher`
+--
+ALTER TABLE `ar_voucher`
+  MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_voucher_history`
+--
+ALTER TABLE `ar_voucher_history`
+  MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ar_voucher_theme`
+--
+ALTER TABLE `ar_voucher_theme`
+  MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de la tabla `ar_weight_class`
+--
+ALTER TABLE `ar_weight_class`
+  MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `ar_weight_class_description`
+--
+ALTER TABLE `ar_weight_class_description`
+  MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `ar_zone`
+--
+ALTER TABLE `ar_zone`
+  MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4033;
+--
+-- AUTO_INCREMENT de la tabla `ar_zone_to_geo_zone`
+--
+ALTER TABLE `ar_zone_to_geo_zone`
+  MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

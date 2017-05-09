@@ -26,15 +26,11 @@
 
 @stop
 
-
-
 @section('body')
 
     <!-- SUB-HEADER area -->
 
     <div class="pm-sub-header-container pm-parallax-panel" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0" style="background-image: url(img/banner-contacto.png);">
-
-
 
         <div class="pm-sub-header-title-container">
 

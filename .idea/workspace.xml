@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="333e13c0-e237-457c-a795-0d2edb290346" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php" afterPath="$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/terminos.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/terminos.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LARAVEL/app/views/terminos-concurso.blade.php" afterPath="$PROJECT_DIR$/LARAVEL/app/views/terminos-concurso.blade.php" />
     </list>
     <ignored path="cafeaguilaroja.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +24,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-489">
+              <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="terminos-concurso.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/terminos-concurso.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1938">
+              <caret line="269" column="88" lean-forward="false" selection-start-line="269" selection-start-column="88" selection-end-line="269" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sectIndex.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sectIndex.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/sectIndex.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
@@ -52,6 +70,9 @@
     <findStrings>
       <find>terminos</find>
       <find>contenidos</find>
+      <find>iv</find>
+      <find>merece lo mejor</find>
+      <find>terminos-concurso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,6 +92,7 @@
         <option value="$PROJECT_DIR$/LARAVEL/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/LARAVEL/app/routes.php" />
         <option value="$PROJECT_DIR$/LARAVEL/app/views/terminos.blade.php" />
+        <option value="$PROJECT_DIR$/LARAVEL/app/views/terminos-concurso.blade.php" />
       </list>
     </option>
   </component>
@@ -313,16 +335,15 @@
       <workItem from="1492468643135" duration="54000" />
       <workItem from="1494342583212" duration="1356000" />
       <workItem from="1494363138724" duration="833000" />
-      <workItem from="1494877843614" duration="993000" />
+      <workItem from="1494877843614" duration="2514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18137000" />
+    <option name="totallyTimeSpent" value="19658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28366762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -362,14 +383,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="75" column="3" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6511">
@@ -677,14 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/terminos.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -705,6 +710,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-489">
+          <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LARAVEL/app/views/terminos-concurso.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="269" column="88" lean-forward="false" selection-start-line="269" selection-start-column="88" selection-end-line="269" selection-end-column="88" />
           <folding />
         </state>
       </provider>

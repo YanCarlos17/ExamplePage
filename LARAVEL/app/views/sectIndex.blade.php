@@ -34,7 +34,7 @@
 
             <ul class="pm-slides-container" id="pm_slides_container">
 
-                <li data-thumb="img/slider/slider-dia-de-la-madre-2017-mini.jpg" class="pmslide_0" ><img src="img/slider/slider-dia-de-la-madre-2017.jpg" style="no-repeat" alt="Productos de Caf&eacute; Aguila Roja" />
+                <li data-thumb="img/slider/slider-dia-de-la-madre-2017-mini.jpg" class="pmslide_0" ><img src="img/slider/slider-dia-de-la-madre-2017-2.jpg" style="no-repeat" alt="Productos de Caf&eacute; Aguila Roja" />
                     <div class="pm-holder botones-slider" >
                         <div class="pm-caption">
                             <a id="buttonandroid" href="https://www.facebook.com/CafeAguilaRoja" class="pm-slide-btn animated" target="_blank" style="width:150px;height:50px;background:url('img/slider/boton-siguenos.png');margin-top:100px;"></a>

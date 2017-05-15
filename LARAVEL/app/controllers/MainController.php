@@ -93,23 +93,20 @@ public function registro(){
 
 	/*			FORUMLARIO PARA REGISTRAR INCLUIR EN VISTA PARA UTILIZAR
 
-								{{ Form::open(array('url' => 'registro')) }}
+        {{ Form::open(array('url' => 'registro')) }}
 
-                                    {{ Form::label('nombre', 'Nombre'); }}
-                                    {{ Form::text('nombre'); }}
-                                    {{ Form::label('correo', 'Correo'); }}
-                                    {{ Form::text('correo'); }}
-                                    {{ Form::label('password', 'Clave'); }}
-                                    {{ Form::password('password'); }}
-                                    {{ Form::submit('Registrar'); }}
+            {{ Form::label('nombre', 'Nombre'); }}
+            {{ Form::text('nombre'); }}
+            {{ Form::label('correo', 'Correo'); }}
+            {{ Form::text('correo'); }}
+            {{ Form::label('password', 'Clave'); }}
+            {{ Form::password('password'); }}
+            {{ Form::submit('Registrar'); }}
 
-                                {{ Form::close() }}
+        {{ Form::close() }}
 
 
 	*/
-
-
-
 
 	$usuario= new Usuario;
 	 	
@@ -118,7 +115,6 @@ public function registro(){
 	 	$usuario->password = Hash::make(Input::get('password'));
 	 	$usuario->save();
 		return Redirect::route('recetas-nueva');
-
 
 }
 

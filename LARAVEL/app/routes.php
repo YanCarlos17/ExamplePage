@@ -46,7 +46,7 @@ Route::get('/calendario-copa-america-chile-2015',function(){
 });
 
 Route::get('/calendario-copa-america-chile-2015', array('as' => 'calendario-copa-america-chile-2015', function(){return View::make('calendario-copa');}));
- 
+
 
 
 Route::get('/','MainController@index',function(){
@@ -90,6 +90,10 @@ Route::get('/politica-de-tratamiento-de-datos-personales',['as' => 'politicaDato
 
 Route::get('/terminos',function(){
 	return View::make('terminos');
+});
+
+Route::get('/terminos-concurso',function(){
+	return View::make('terminos-concurso');
 });
 
 Route::get('/produccion',function(){
@@ -155,7 +159,7 @@ Route::get('/recetas-nueva', array('before' => 'auth','as' => 'recetas-nueva', f
 Route::get('/controlindex', array('before' => 'auth','as' => 'controlindex', function(){return View::make('controlindex');}));
 Route::get('/salir', array('before' => 'auth','as' => 'salir', function(){
 
-	Auth::logout(); 
+	Auth::logout();
 	return View::make('controles');
 
 }));
@@ -166,10 +170,10 @@ Route::get('/controlindex', ['before' => 'auth', function() {
 
 	return View::make('controlindex');
 
- }]); 
-Route::post('/salir',['before' => 'auth', function() {	
+ }]);
+Route::post('/salir',['before' => 'auth', function() {
 
-	Auth::logout(); 
+	Auth::logout();
 	return View::make('controles');
 
-}]); 
+}]);

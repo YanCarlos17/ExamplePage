@@ -54,7 +54,7 @@
 
 
 
- 
+
 
 
 
@@ -130,9 +130,9 @@ Esta información podrá ser enviada por TORRECAFE AGUILA ROJA & CIA. S.A. y en 
 
 
 
-  
 
- 
+
+
 
 
 
@@ -156,7 +156,7 @@ En todo caso, esto es, sea que la información suministrada esté protegida o no
 
 
 
- 
+
 
 
 
@@ -182,7 +182,7 @@ En consecuencia, TORRECAFE AGUILA ROJA & CIA. S.A. no será responsable de los d
 
   - El contenido sea de un determinado nivel o calidad científica o sirva para
 
-     determinados propósitos, o esté exento de errores.<br> 
+     determinados propósitos, o esté exento de errores.<br>
 
    - Los elementos funcionales del sitio no tengan interrupciones o carezcan de
 
@@ -232,7 +232,7 @@ En consecuencia, TORRECAFE AGUILA ROJA & CIA. S.A. no será responsable de los d
 
      general, caballos de troya, gusanos entre otros. <br><br>
 
- 
+
 
 
 

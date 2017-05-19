@@ -92,9 +92,9 @@ Route::get('/terminos',function(){
 	return View::make('terminos');
 });
 
-Route::get('/terminos-concurso',function(){
+Route::get('/terminos-concurso',['as' => 'terminos-concurso',function(){
 	return View::make('terminos-concurso');
-});
+}]);
 
 Route::get('/produccion',function(){
 	return View::make('mantenimiento');
@@ -108,6 +108,7 @@ Route::get('/cafe-aguila-roja-en-colombia', array('as' => 'cafe-aguila-roja-en-c
 
 
 Route::get('/', array('as' => 'index', function(){return View::make('sectIndex');}));
+
 Route::get('/quienesSomos', array('as' => 'quienesSomos', function(){return View::make('sectQuienesSomos');}));
 Route::get('/contacto', array('as' => 'contacto', function(){return View::make('sectContacto');}));
 Route::get('/wallpapers',array('as' => 'wallpapers','uses' => 'MainController@papelTapiz'));

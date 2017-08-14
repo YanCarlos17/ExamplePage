@@ -23,14 +23,7 @@ Route::get('/terminos-decora-y-gana', function(){
 	return View::make('concurso-decora-y-gana-terminos');
 });
 
-/*Route::get('/prueba',function(){
-	return View::make('prueba123');
-});
-
-Route::get('/prueba', array('as' => 'prueba', function(){return View::make('prueba123');}));*/
-
-Route::post('pruebita','MainController@pruebita');
-
+// Route::post('pruebita','MainController@pruebita');
 
 Route::get('/sitemap.html',function(){
 	return View::make('sitemap');
@@ -86,6 +79,10 @@ Route::get('/politica-de-tratamiento-de-datos-personales',['as' => 'politicaDato
 
     return View::make('politicadatospersonales');
 
+}]);
+
+Route::get('politicas-de-etica-Empresarial-y-Antisoborno',['as' => 'politicaEticaEmpresarial', function(){
+    return View::make('politicasEticaEmpresarial');
 }]);
 
 Route::get('/terminos',function(){

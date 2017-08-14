@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
     @yield('titulo') 
     @yield('descripcion')
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="alternate" hreflang="es" href="http://cafeaguilaroja.com/" />
     <meta name="author" content="xigna">
@@ -164,9 +163,9 @@
 
                                         <li><a href="{{URL::route('nuestraImagen')}}">NUESTRA IMAGEN</a></li>
 
-                                        <li><a href="{{URL::route('proceso-de-produccion-del-cafe')}}">Proceso de producci&oacute;n</a></li>
+                                        <li><a href="{{URL::route('proceso-de-produccion-del-cafe')}}">Proceso de producción</a></li>
 
-                                        <li><a href="{{URL::route('cafe-aguila-roja-en-colombia')}}">Caf&eacute; &Aacute;guila Roja en Colombia</a></li>
+                                        <li><a href="{{URL::route('cafe-aguila-roja-en-colombia')}}">Café guila Roja en Colombia</a></li>
 
 
 
@@ -298,8 +297,9 @@
             <div id="terminos" style="text-align:center;color:#EAD2B0;">
                 &copy; 2007 AGUILA ROJA TODOS LOS DERECHOS RESERVADOS CANDELARIA-COLOMBIA<br>
                 <a class="terms" href="{{URL::route('politica')}}" target="_blank">Pol&iacute;tica de Privacidad</a> |
-                <a
-                    class="terms" href="{{URL::route('terminos')}}" target="_blank">Terminos Legales</a> | <a class="terms" href="{{URL::route('politicaDatosPersonales')}}" target="_blank">Pol&iacute;ticas de Datos Personales</a>
+                <a class="terms" href="{{URL::route('terminos')}}" target="_blank">Terminos Legales</a> | 
+                <a class="terms" href="{{URL::route('politicaDatosPersonales')}}" target="_blank">Pol&iacute;ticas de Datos Personales</a> |
+                <a class="terms" href="{{URL::route('politicaEticaEmpresarial')}}" target="_blank">pol&iacute;ticas de Ética Empresarial y Anti soborno</a> 
             </div>
             <div id="firma"><a href="http://xignacv.com" target="_blank">Desarrollado por: XIGNA</a></div>
         </div>

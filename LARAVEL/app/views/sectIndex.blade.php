@@ -10,39 +10,15 @@
 <div class="pm-pulse-container" id="pm-pulse-container">
     <div id="pm-slider" class="pm-slider">
         <div id="pm-slider-progress-bar"></div>
-        <ul class="pm-slides-container" id="pm_slides_container">
-            
-            <li data-thumb="img/slider/02_SLIDER-AGUILA-ROJA-REDESx134.jpg" class="pmslide_0">
-                <img src="img/slider/02_SLIDER-AGUILA-ROJA-REDES.jpg" alt="" />
-                <!-- <div class="pm-holder botones-slider">
-                    <div class="pm-caption">
-                        <a class="pm-slide-btn" href="{{URL::route('terminos-concurso')}}" class="">Terminos del concurso</a>
-                    </div>
-                </div> -->
+        <ul class="pm-slides-container" id="pm_slides_container"> 
+            <li data-thumb="img/slider/cafe-aguila-roja-halloween-miniatura.jpg" class="pmslide_0">
+                <img src="img/slider/cafe-aguila-roja-halloween.jpg" alt="Caf&eacute; Aguila Roja Halloween" />
             </li>
-
-<!--             <li data-thumb="img/slider/slider-dia-de-la-madre-2017-mini.jpg" class="pmslide_0">
-                <img src="img/slider/slider-dia-de-la-madre-2017-2.jpg" style="no-repeat" 
-                    alt="Productos de Caf&eacute; Aguila Roja" />
-                <div class="pm-holder botones-slider">
-                    <div class="pm-caption">
-                        <a href="https://www.facebook.com/CafeAguilaRoja">
-                            <p class="animated bounce" style="
-                                    background:url('img/slider/boton-siguenos.png');
-                                    background-repeat: no-repeat;
-                                    width: 150px;
-                                    height:50px;
-                                    margin: 0 auto;
-                                    margin-top:5%;
-                            "></p>
-                        </a>
-                    </div>
-                </div>
+            <li data-thumb="img/slider/cafe-aguila-roja-redes-sociales-miniatura.jpg" class="pmslide_1">
+                <img src="img/slider/cafe-aguila-roja-redes-sociales.jpg" alt="Caf&eacute; Aguila Roja Redes Sociales" />
             </li>
- -->
-            <li data-thumb="img/slider/slider-graninostickers-marzo-2017-mini.jpg" class="pmslide_1">
-                <img src="img/slider/slider-graninostickers-marzo-2017.jpg" 
-                    alt="Aplicaci&oacute;n Graninostickers Aguila Roja"/>
+            <li data-thumb="img/slider/aplicacion-cafe-aguila-roja-miniatura.jpg" class="pmslide_2">
+                <img src="img/slider/aplicacion-cafe-aguila-roja.jpg" alt="Aplicaci&oacute;n Graninostickers Aguila Roja"/>
             </li>
         </ul>
     </div>

@@ -11,13 +11,23 @@
     <div id="pm-slider" class="pm-slider">
         <div id="pm-slider-progress-bar"></div>
         <ul class="pm-slides-container" id="pm_slides_container"> 
-            <li data-thumb="img/slider/cafe-aguila-roja-halloween-miniatura.jpg" class="pmslide_0">
+            <li data-thumb="img/slider/concurso-halloween-aguila-roja-miniatura.jpg" class="pmslide_0">
+                <img src="img/slider/concurso-halloween-aguila-roja.jpg" alt="Corcurso Halloween Caf&eacute; Aguila Roja" />
+                <div class="pm-holder botones-slider">
+                    <div class="pm-caption">
+                        <a href="{{ route('terminos-concurso-halloween') }}">
+                            <p class="animated bounce" style="margin: 6% auto 0; max-width: 200px; height: 50px; line-height: 50px;color: #FFF; background-color: #FF6C05; text-align: center; padding-left: 10px; padding-right: 10px; text-transform: uppercase; font-family: 'Open sans'; font-size: 12px; font-weight: 700; border-radius: 4px;">Términos y condiciones</p>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li data-thumb="img/slider/cafe-aguila-roja-halloween-miniatura.jpg" class="pmslide_1">
                 <img src="img/slider/cafe-aguila-roja-halloween.jpg" alt="Caf&eacute; Aguila Roja Halloween" />
             </li>
-            <li data-thumb="img/slider/cafe-aguila-roja-redes-sociales-miniatura.jpg" class="pmslide_1">
+            <li data-thumb="img/slider/cafe-aguila-roja-redes-sociales-miniatura.jpg" class="pmslide_2">
                 <img src="img/slider/cafe-aguila-roja-redes-sociales.jpg" alt="Caf&eacute; Aguila Roja Redes Sociales" />
             </li>
-            <li data-thumb="img/slider/aplicacion-cafe-aguila-roja-miniatura.jpg" class="pmslide_2">
+            <li data-thumb="img/slider/aplicacion-cafe-aguila-roja-miniatura.jpg" class="pmslide_3">
                 <img src="img/slider/aplicacion-cafe-aguila-roja.jpg" alt="Aplicaci&oacute;n Graninostickers Aguila Roja"/>
             </li>
         </ul>

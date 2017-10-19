@@ -12,14 +12,8 @@
 @stop
 @section('body')
 
-    <div class="pm-sub-header-container pm-parallax-panel"
-		data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0"
-		style="background-image: url(img/slider/terminos-concurso-papa.png);background-size: cover;">
-        <div class="pm-sub-header-title-container">
-        </div>
-    </div>
 
-    <div class="container pm-containerPadding80">
+    <div class="container pm-containerPadding80" style="padding-top: 185px;">
         <p align="center"><strong>CONCURSO “¡DISFRAZA A TU HIJO DE GRANINO Y GANA UNA BICI CON CAFÉ ÁGUILA ROJA!</strong></p>
 
         <p>Para conmemorar el mes de Halloween, Café Águila Roja plantea un concurso dirigido a hombres y mujeres mayores de edad, con sus hijos, residentes en Colombia.</p>

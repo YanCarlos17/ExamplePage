@@ -4,8 +4,8 @@ define('HTTP_SERVER', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/admi
 define('HTTP_CATALOG', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/admin/');
-define('HTTPS_CATALOG', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/');
+define('HTTPS_SERVER', 'https://cafeaguilaroja.com/productos-cafe-aguila-roja/admin/');
+define('HTTPS_CATALOG', 'https://cafeaguilaroja.com/productos-cafe-aguila-roja/');
 
 // DIR
 define('DIR_APPLICATION', '/home/cafeaguilaroja/public_html/productos-cafe-aguila-roja/admin/');

@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/');
+define('HTTP_SERVER', 'https://cafeaguilaroja.com/productos-cafe-aguila-roja/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://cafeaguilaroja.com/productos-cafe-aguila-roja/');
+define('HTTPS_SERVER', 'https://cafeaguilaroja.com/productos-cafe-aguila-roja/');
 
 // DIR
 define('DIR_APPLICATION', '/home/cafeaguilaroja/public_html/productos-cafe-aguila-roja/catalog/');

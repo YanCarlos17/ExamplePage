@@ -5,7 +5,7 @@
     @yield('titulo') 
     @yield('descripcion')
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="alternate" hreflang="es" href="http://cafeaguilaroja.com/" />
+    <link rel="alternate" hreflang="es" href="https://cafeaguilaroja.com/" />
     <meta name="author" content="xigna">
     <link rel="shortcut icon" href="{{asset('img/Logo-AguilaRoja-favicon.ico')}}" />
     <link rel="apple-touch-icon" href="{{asset('img/Logo-AguilaRoja-apple.png')}}" /> 

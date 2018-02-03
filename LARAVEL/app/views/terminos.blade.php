@@ -1,7 +1,6 @@
 @extends('index')
 
 
-
 @section('titulo')
 
     <title>T&eacute;rminos y condiciones de Caf&eacute; Aguila Roja</title>

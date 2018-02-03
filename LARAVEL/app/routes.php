@@ -97,6 +97,10 @@ Route::get('/terminos-y-condiciones-concurso-halloween',['as' => 'terminos-concu
 	return View::make('terminos-concurso-halloween');
 }]);
 
+Route::get('/terminos-y-condiciones-concurso-navidad',['as' => 'terminos-concurso-navidad',function(){
+	return View::make('terminos-concurso-navidad');
+}]);
+
 Route::get('/produccion',function(){
 	return View::make('mantenimiento');
 });

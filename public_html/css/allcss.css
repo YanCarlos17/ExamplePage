@@ -718,7 +718,7 @@ h3{
 }
 
 
-li.pmslide_0,li.pmslide_1,li.pmslide_2, li.pmslide_3{
+li.pmslide_0,li.pmslide_1,li.pmslide_2, li.pmslide_3, li.pmslide{
 
 	height: 600px !important;
 
@@ -1010,7 +1010,7 @@ a.boton_jugar_clubgranito{
 		height: 450px !important;
 	}
 
-	li.pmslide_0,li.pmslide_1,li.pmslide_2{
+	li.pmslide_0,li.pmslide_1,li.pmslide_2, li.pmslide{
 
 		height: 450px !important;
 		background-size: 140% !important;
@@ -1051,7 +1051,7 @@ a.boton_jugar_clubgranito{
 		height: 300px !important;
 	}
 
-	li.pmslide_0,li.pmslide_1,li.pmslide_2{
+	li.pmslide_0,li.pmslide_1,li.pmslide_2, li.pmslide{
 
 		height: 300px !important;
 		background-size: 115% !important;
@@ -1165,7 +1165,7 @@ a.boton_jugar_clubgranito{
 		height: 300px !important;
 	}
 
-	li.pmslide_0,li.pmslide_1,li.pmslide_2{
+	li.pmslide_0,li.pmslide_1,li.pmslide_2, li.pmslide{
 
 		height: 300px !important;
 

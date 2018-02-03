@@ -5,16 +5,16 @@
     Options +FollowSymLinks
     RewriteEngine On
 
-    #Dominio preferido sin www
-    RewriteCond %{HTTP_HOST} ^www.cafeaguilaroja.com [NC]
-    RewriteRule ^(.*)$ http://cafeaguilaroja.com/$1 [L,R=301]
-
     # Redirect Trailing Slashes...
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
     RewriteRule ^ index.php [L]
 
 </IfModule>
@@ -34,6 +34,7 @@
 <IfModule mod_filter.c>
 
 AddOutputFilterByType DEFLATE application/atom+xml application/x-javascript application/javascript application/json application/rss+xml application/xhtml+xml application/xml image/svg+xml image/x-icon  text/css text/html text/plain text/x-component text/xml
+
 </IfModule>
 <Files 403.shtml>
 order allow,deny

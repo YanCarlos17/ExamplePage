@@ -71,9 +71,13 @@ Route::get('/proceso-de-produccion-del-cafe', array('as' => 'proceso-de-producci
 
 Route::get('/clubGranito','MainController@clubGranito');
 
+
+
 Route::get('/politica',function(){
 	return View::make('politica');
 });
+
+
 
 Route::get('/politica-de-tratamiento-de-datos-personales',['as' => 'politicaDatosPersonales', function(){
 
